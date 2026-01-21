@@ -1,0 +1,1232 @@
+CREATE (bmc:Master {
+  name: 'bmc',
+  chip: 'AST2520',
+  manufacturer: 'ASPEED',
+  description: '基板管理控制器，位于 SMB，用于系统管理、硬件监控和远程管理，通过 I2C 和 UART 接口控制各组件，支持 JTAG 编程和固件存储。'
+});
+CREATE (com_ec:Device {
+  name: 'com_e_ec',
+  chip: 'Embedded Controller',
+  function: 'System monitoring',
+  description: 'COM-Express 模块的嵌入式控制器，负责系统监控和电源管理功能。'
+});
+CREATE (ir3595_serdes_i2c:Device {
+  name: 'ir3595_serdes_i2c',
+  chip: 'IR3595',
+  description: 'XP3R3V 和 Serdes 电压调节器，通过 I2C 接口与 BMC 通信，负责调节相关电源轨电压。'
+});
+CREATE (ir3595_serdes_pmbus:Device {
+  name: 'ir3595_serdes_pmbus',
+  chip: 'IR3595',
+  description: 'XP3R3V 和 Serdes 电压调节器，通过 PMBus 接口与 BMC 通信，支持电源监控和调节。'
+});
+CREATE (ir3595_0p8v_i2c:Device {
+  name: 'ir3595_0p8v_i2c',
+  chip: 'IR3595',
+  description: 'XP3R3V 和 0.8V 电压调节器，通过 I2C 接口控制，负责调节系统中的关键电压轨。'
+});
+CREATE (ir3595_0p8v_pmbus:Device {
+  name: 'ir3595_0p8v_pmbus',
+  chip: 'IR3595',
+  description: 'XP3R3V 和 0.8V 电压调节器，通过 I2C 接口控制，通过 PMBus 协议实现电源管理和监控。'
+});
+CREATE (isl68137:Device {
+  name: 'isl68137',
+  chip: 'ISL68137',
+  description: 'TH3 交换芯片的核心电压控制器，负责提供稳定的核心电压，确保芯片正常工作，通过I2C总线与BMC通信。'
+});
+CREATE (powr1220:Device {
+  name: 'powr1220',
+  chip: 'POWR1220',
+  function: '电源监控',
+  description: '多通道电源监控集成电路，用于监测系统各电源轨的电压状态，提供电源故障检测和报警功能，通过I2C总线与BMC通信。'
+});
+CREATE (scm_cpld:Proxy {
+  name: 'scm_cpld',
+  chip: 'SCM_CPLD',
+  description: '系统控制模块的 CPLD，负责管理 SCM 的电源轨信号监控、复位序列和状态监控，通过 I2C 与 BMC 通信。'
+});
+CREATE (lm75_scm:Device {
+  name: 'lm75_scm',
+  chip: 'LM75',
+  function: '温度监测',
+  description: 'SCM 模块的温度传感器，用于监测系统控制模块的温度，确保其在正常工作范围内，通过I2C总线获取温度。'
+});
+CREATE (come_cpu:Device {
+  name: 'come_cpu',
+  chip: 'Minilake',
+  function: '主处理器',
+  description: 'COM-Express Broadwell-DE CPU 模块，作为系统主处理器，提供计算和控制功能，支持 PCIe、USB 等接口。'
+});
+CREATE (nvme_ssd:Device {
+  name: 'nvme_ssd',
+  chip: 'NVMe SSD',
+  function: '存储设备',
+  description: '256GB NVMe 固态硬盘，安装在 SCM 模块上，用于系统存储和数据加载。'
+});
+CREATE (come_phy:Device {
+  name: 'come_phy',
+  chip: 'BCM54616S',
+  function: '网络物理层',
+  description: 'COM-E CPU 模块的网络物理层芯片，用于实现 1000BASE-T 网络连接，支持 SGMII 接口。'
+});
+CREATE (cpu_power:Device {
+  name: 'cpu_power',
+  chip: 'ADM1278',
+  function: '电源监控',
+  description: 'SCM 模块的热插拔控制器和电源监控芯片，负责管理模块的电源接入和状态监测。'
+});
+CREATE (pca9548_scm:Switch {
+  name: 'pca9548_scm',
+  chip: 'PCA9548',
+  description: 'SCM 模块上的 I2C 多路复用器，用于扩展 I2C 总线，连接多个传感器和设备，通过I2C总线与BMC通信。'
+});
+CREATE (adm1278_scm:Device {
+  name: 'adm1278_scm',
+  chip: 'ADM1278',
+  function: '电源监控',
+  description: 'SCM 模块的热插拔控制器，负责管理电源接入和故障检测，，通过I2C总线获取电源状态监控。'
+});
+CREATE (tmp75_scm1:Device {
+  name: 'tmp75_scm1',
+  chip: 'TMP75',
+  function: 'SCM温度监测',
+  description: 'SCM 模块的温度传感器 #1，实时监测模块温度，提供温度数据给 BMC，通过I2C总线获取温度。'
+});
+CREATE (tmp75_scm2:Device {
+  name: 'tmp75_scm2',
+  chip: 'TMP75',
+  function: 'SCM温度监测',
+  description: 'SCM 模块的温度传感器 #2，辅助监测模块温度，确保系统散热正常，通过I2C总线获取温度。'
+});
+CREATE (eeprom_scm:Device {
+  name: 'eeprom_scm',
+  chip: '24C64',
+  function: '配置存储',
+  description: 'SCM 模块的库存信息(FRU) EEPROM，存储模块的型号、版本等信息，供系统识别，通过I2C总线通信。'
+});
+CREATE (eeprom_bcm54616_scm:Device {
+  name: 'eeprom_bcm54616_scm',
+  chip: '24C02',
+  description: 'BCM54616 PHY 的配置 EEPROM，存储网络物理层芯片的配置参数，通过I2C总线通信。'
+});
+CREATE (eeprom_bcm54616_rgmii:Device {
+  name: 'eeprom_bcm54616_rgmii',
+  chip: '24C02',
+  description: 'BCM54616 PHY 的配置 EEPROM，存储网络物理层芯片的配置参数，通过I2C总线通信。'
+});
+CREATE (eeprom_bcm54616_mdi:Device {
+  name: 'eeprom_bcm54616_mdi',
+  chip: '24C02',
+  description: 'BCM54616 PHY 的配置 EEPROM，存储网络物理层芯片的配置参数，通过I2C总线通信。'
+});
+CREATE (eeprom_bsm:Device {
+  name: 'eeprom_bsm',
+  chip: '24C64',
+  function: '配置存储',
+  description: 'BMC 存储模块的配置 EEPROM，存储 FRU 信息，支持设备识别和维护，通过I2C总线通信。'
+});
+CREATE (si53108:Device {
+  name: 'si53108',
+  chip: 'SI53108',
+  function: '时钟缓冲',
+  description: '时钟缓冲器，用于分配和缓冲系统时钟信号，确保各组件时钟同步，通过I2C总线通信。'
+});
+CREATE (tmp75_smb1:Device {
+  name: 'tmp75_smb1',
+  chip: 'TMP75',
+  function: '温度监测',
+  description: 'SMB 板温度传感器，监控SMB板左侧进风口温度，通过I2C总线获取温度。'
+});
+CREATE (tmp75_smb2:Device {
+  name: 'tmp75_smb2',
+  chip: 'TMP75',
+  function: '温度监测',
+  description: 'SMB 板温度传感器，监控GB出风口温度，通过I2C总线获取温度。'
+});
+CREATE (tmp75_smb3:Device {
+  name: 'tmp75_smb3',
+  chip: 'TMP75',
+  function: '温度监测',
+  description: 'SMB 板温度传感器，监控SMB板出风口温度，通过I2C总线获取温度。'
+});
+CREATE (tmp75_smb4:Device {
+  name: 'tmp75_smb4',
+  chip: 'TMP75',
+  function: '温度监测',
+  description: 'SMB 板温度传感器，监控SMB板右侧进风口温度，通过I2C总线获取温度。'
+});
+CREATE (tmp421_smb_intake1:Device {
+  name: 'tmp421_smb_intake1',
+  chip: 'TMP421',
+  function: '温度监测',
+  description: '系统进气温度传感器 1，监测设备前方进气温度，确保冷却系统有效，通过I2C总线获取温度。'
+});
+CREATE (tmp421_smb_intake2:Device {
+  name: 'tmp421_smb_intake2',
+  chip: 'TMP421',
+  function: '温度监测',
+  description: '系统进气温度传感器 2，辅助监测进气温度，提供更准确的环境温度数据，通过I2C总线获取温度。'
+});
+CREATE (gb_asic:Device {
+  name: 'gb_asic',
+  chip: 'Switching ASIC 具体型号不明',
+  function: '交换芯片',
+  description: '交换芯片内部负责高速数据转发的核心模块，提供I2C带外管理接口，具有温度监控、电压监控等接口。'
+});
+CREATE (tmp422_th3:Device {
+  name: 'tmp422_th3',
+  chip: 'TMP422',
+  function: '温度监测',
+  description: 'TH3 交换芯片的远程温度传感器，实时监测芯片温度，防止过热，通过I2C总线获取温度。'
+});
+CREATE (ocp_debug:Device {
+  name: 'ocp_debug',
+  chip: 'OCP Debug Card',
+  function: '调试接口',
+  description: 'OCP 调试卡，通过 USB 接口连接，用于系统硬件调试和故障诊断，提供I2C带外管理接口。'
+});
+CREATE (tca9555:Device {
+  name: 'tca9555',
+  chip: 'TCA9555',
+  function: 'I/O扩展',
+  description: '16 位 I/O 扩展器，用于扩展 SMB 的输入输出接口，支持更多外设控制，通过I2C总线与BMC通信。'
+});
+CREATE (dom_fpga2:Proxy {
+  name: 'dom_fpga2',
+  chip: 'DOM_FPGA',
+  description: 'DOM FPGA，位于 SMB，提供 QSFP 模块的 PCIe 访问接口，支持光模块状态监控和控制，BMC通过I2C总线读写FPGA寄存器实现控制。'
+});
+CREATE (pca9534:Device {
+  name: 'pca9534',
+  chip: 'PCA9534',
+  function: '板标识',
+  description: '8 位板标识芯片，用于识别 SMB 的型号和版本信息，供系统管理，通过I2C总线与BMC通信。'
+});
+CREATE (pca9535:Switch {
+  name: 'pca9535',
+  chip: 'PCA9535',
+  description: '16 位 I/O 扩展器，用于控制 RackMon 的 LED 指示灯，显示系统状态，通过I2C总线与BMC通信。'
+});
+CREATE (sys_led_red:Device {
+  name: 'sys_led_red',
+  chip: '三色LED',
+  function: '状态指示',
+  description: '系统状态指示灯（红色），用于显示系统故障或警告状态。'
+});
+CREATE (sys_led_green:Device {
+  name: 'sys_led_green',
+  chip: '三色LED',
+  function: '状态指示',
+  description: '系统状态指示灯（绿色），显示系统正常运行状态。'
+});
+CREATE (sys_led_blue:Device {
+  name: 'sys_led_blue',
+  chip: '三色LED',
+  function: '状态指示',
+  description: '系统状态指示灯（蓝色），显示 FRU 存在且无报警状态。'
+});
+CREATE (fan_led_red:Device {
+  name: 'fan_led_red',
+  chip: '三色LED',
+  function: '状态指示',
+  description: '风扇状态指示灯（红色），指示风扇故障或异常运行状态。'
+});
+CREATE (fan_led_green:Device {
+  name: 'fan_led_green',
+  chip: '三色LED',
+  function: '状态指示',
+  description: '风扇状态指示灯（绿色），显示风扇正常运转状态。'
+});
+CREATE (fan_led_blue:Device {
+  name: 'fan_led_blue',
+  chip: '三色LED',
+  function: '状态指示',
+  description: '风扇状态指示灯（蓝色），指示风扇存在且已接入系统。'
+});
+CREATE (psu_led_red:Device {
+  name: 'psu_led_red',
+  chip: '三色LED',
+  function: '状态指示',
+  description: '电源状态指示灯（红色），显示电源输入或输出故障状态。'
+});
+CREATE (psu_led_green:Device {
+  name: 'psu_led_green',
+  chip: '三色LED',
+  function: '状态指示',
+  description: '电源状态指示灯（绿色），指示电源输入和输出正常。'
+});
+CREATE (psu_led_blue:Device {
+  name: 'psu_led_blue',
+  chip: '三色LED',
+  function: '状态指示',
+  description: '电源状态指示灯（蓝色），显示电源已接入并存在。'
+});
+CREATE (smb_led_red:Device {
+  name: 'smb_led_red',
+  chip: '三色LED',
+  function: '状态指示',
+  description: 'SMB 状态指示灯（红色），指示 SMB 板存在故障或异常。'
+});
+CREATE (smb_led_green:Device {
+  name: 'smb_led_green',
+  chip: '三色LED',
+  function: '状态指示',
+  description: 'SMB 状态指示灯（绿色），显示 SMB 板正常工作状态。'
+});
+CREATE (smb_led_blue:Device {
+  name: 'smb_led_blue',
+  chip: '三色LED',
+  function: '状态指示',
+  description: 'SMB 状态指示灯（蓝色），指示 SMB 板存在且无报警。'
+});
+CREATE (eeprom_smb:Device {
+  name: 'eeprom_smb',
+  chip: '24C64',
+  function: '配置存储',
+  description: 'SMB 板的库存信息(FRU) EEPROM，存储主板的型号、版本等信息，供系统识别，通过I2C总线通信。'
+});
+CREATE (tpm:Device {
+  name: 'tpm',
+  chip: 'SLB9670VQ2.0',
+  function: '安全加密',
+  description: 'TPM 2.0 安全模块，用于系统安全加密和身份验证，支持硬件级安全功能，通过I2C总线通信。'
+});
+CREATE (pca9548_smb:Switch {
+  name: 'pca9548_smb',
+  chip: 'PCA9548',
+  description: 'SMB 板上的 I2C 多路复用器，连接多个外设和传感器，通过I2C总线与BMC通信。'
+});
+CREATE (psu1:Device {
+  name: 'psu1',
+  chip: 'DDM1500BH12A3F',
+  function: '电源供应',
+  description: '1500W AC 电源单元 #1，为系统提供 12V 直流电源，支持热插拔和冗余配置，支持PMBus协议，通过I2C总线通信。'
+});
+CREATE (eeprom_psu1:Device {
+  name: 'eeprom_psu1',
+  chip: '24C02',
+  function: '配置存储',
+  description: 'PSU1 的配置 EEPROM，存储电源单元的参数和状态信息，通过I2C总线供 BMC 读取。'
+});
+CREATE (pem1_thermal:Device {
+  name: 'pem1_thermal',
+  chip: '温度传感器',
+  function: '温度监测',
+  description: 'PEM1 电源扩展模块的热传感器，通过I2C总线获取模块温度，确保安全运行。'
+});
+CREATE (psu2:Device {
+  name: 'psu2',
+  chip: 'DDM1500BH12A3F',
+  function: '电源供应',
+  description: '1500W AC 电源单元 #2，与 PSU1 组成冗余电源系统，提高供电可靠性，支持PMBus协议，通过I2C总线通信。'
+});
+CREATE (eeprom_psu2:Device {
+  name: 'eeprom_psu2',
+  chip: '24C02',
+  function: '配置存储',
+  description: 'PSU2 的配置 EEPROM，存储电源单元的参数和状态信息，支持系统管理，通过I2C总线通信。'
+});
+CREATE (pem2_thermal:Device {
+  name: 'pem2_thermal',
+  chip: '温度传感器',
+  function: '温度监测',
+  description: 'PEM2 电源扩展模块的热传感器，通过I2C总线获取模块温度，支持热管理。'
+});
+CREATE (bcm54616s_mdi:Device {
+  name: 'bcm54616s_mdi',
+  chip: '24C02',
+  function: '配置存储',
+  description: 'BMC MDI PHY 的配置 EEPROM，存储网络物理层的配置参数，通过I2C总线通信。'
+});
+CREATE (bcm54616s_rgmii:Device {
+  name: 'bcm54616s_rgmii',
+  chip: '24C02',
+  function: '配置存储',
+  description: 'BMC RGMII PHY 的配置 EEPROM，存储网络物理层的配置参数，通过I2C总线通信。'
+});
+CREATE (eeprom_th3:Device {
+  name: 'eeprom_th3',
+  chip: '24C64',
+  function: '配置存储',
+  description: 'TH3 交换芯片的配置 EEPROM，存储芯片的初始化和配置参数，确保正常工作，通过I2C总线通信。'
+});
+CREATE (pwr_cpld:Proxy {
+  name: 'pwr_cpld',
+  chip: 'PWR_CPLD',
+  description: '系统电源控制 CPLD，实现远程电源循环（power cycle）功能，管理电源轨的上电顺序和故障处理，BMC通过I2C总线读写CPLD寄存器实现控制。'
+});
+CREATE (pem:Device {
+  name: 'pem',
+  chip: 'DC_PEM',
+  function: '电源扩展',
+  description: 'DC/DC 电源扩展模块，将 12V 输入转换为系统所需电源，支持热插拔和慢启动。'
+});
+CREATE (si5391:Device {
+  name: 'si5391',
+  chip: 'SI5391',
+  function: '时钟生成',
+  description: '156.25MHz 时钟发生器，为 TH3 交换芯片提供稳定的时钟信号，确保数据传输同步，提供I2C带外管理接口。'
+});
+
+CREATE (pca9548_fcm:Switch {
+  name: 'pca9548_fcm',
+  chip: 'PCA9548',
+  description: '风扇控制板上的 I2C 多路复用器，扩展 I2C 总线，连接风扇 CPLD 和温度传感器，通过 I2C 与 BMC 通信。'
+});
+CREATE (fan_cpld:Proxy {
+  name: 'fan_cpld',
+  chip: 'FAN_CPLD',
+  description: '风扇控制 CPLD，位于 FCM，负责风扇控制板的风扇 PWM 调速、状态监测、故障报警、电源信号监控和设备在位检测，通过 I2C 与 BMC 通信。'
+});
+CREATE (fan1:Device {
+  name: 'fan1',
+  chip: '9CRA0812P8G001',
+  function: '散热风扇',
+  description: '80mm 散热风扇 #1，支持 PWM 调速，为系统提供强制空气冷却，支持热插拔。'
+});
+CREATE (fan2:Device {
+  name: 'fan2',
+  chip: '9CRA0812P8G001',
+  function: '散热风扇',
+  description: '80mm 散热风扇 #2，支持 PWM 调速，为系统提供强制空气冷却，支持热插拔。'
+});
+CREATE (fan3:Device {
+  name: 'fan3',
+  chip: '9CRA0812P8G001',
+  function: '散热风扇',
+  description: '80mm 散热风扇 #3，支持 PWM 调速，为系统提供强制空气冷却，支持热插拔。'
+});
+CREATE (fan4:Device {
+  name: 'fan4',
+  chip: '9CRA0812P8G001',
+  function: '散热风扇',
+  description: '80mm 散热风扇 #4，支持 PWM 调速，为系统提供强制空气冷却，支持热插拔。'
+});
+CREATE (fan_efuse:Device {
+  name: 'fan_efuse',
+  chip: '电子保险丝',
+  function: '电源保护',
+  description: '风扇电源保护电子保险丝，用于保护风扇电路免受过流和短路损害，确保系统安全。'
+});
+CREATE (fcb_inv:Device {
+  name: 'fcb_inv',
+  chip: '24C02',
+  function: '库存信息',
+  description: '风扇控制板的库存信息 EEPROM，存储 FCB 的型号和版本信息，供系统识别，通过I2C总线通信。'
+});
+CREATE (tmp75_fcm1:Device {
+  name: 'tmp75_fcm1',
+  chip: 'TMP75',
+  function: '温度监测',
+  description: 'FCM 模块温度传感器 1，监测风扇控制板的左侧出风口的温度，确保风扇控制电路正常，通过I2C总线读取温度。'
+});
+CREATE (tmp75_fcm2:Device {
+  name: 'tmp75_fcm2',
+  chip: 'TMP75',
+  function: '温度监测',
+  description: 'FCM 模块温度传感器 2，辅助监测风扇控制板的右侧出风口的温度，支持热管理，通过I2C总线读取温度。'
+});
+CREATE (adm1278_fcm:Device {
+  name: 'adm1278_fcm',
+  chip: 'ADM1278',
+  function: '电源监控',
+  description: 'FCM 模块的热插拔控制器，管理风扇电源接入和故障检测，支持电源状态监控，提供I2C带外管理接口。'
+});
+CREATE (eeprom_fan1:Device {
+  name: 'eeprom_fan1',
+  chip: '24C64',
+  function: '配置存储',
+  description: '风扇 #1 的配置 EEPROM，存储风扇的参数和状态信息，供系统管理，通过I2C总线通信。'
+});
+CREATE (eeprom_fan2:Device {
+  name: 'eeprom_fan2',
+  chip: '24C64',
+  function: '配置存储',
+  description: '风扇 #2 的配置 EEPROM，存储风扇的参数和状态信息，供系统管理，通过I2C总线。'
+});
+CREATE (eeprom_fan3:Device {
+  name: 'eeprom_fan3',
+  chip: '24C64',
+  function: '配置存储',
+  description: '风扇 #3 的配置 EEPROM，存储风扇的参数和状态信息，供系统管理，通过I2C总线。'
+});
+CREATE (eeprom_fan4:Device {
+  name: 'eeprom_fan4',
+  chip: '24C64',
+  function: '配置存储',
+  description: '风扇 #4 的配置 EEPROM，存储风扇的参数和状态信息，供系统管理，通过I2C总线。'
+});
+CREATE (sys_cpld:Proxy {
+  name: 'sys_cpld',
+  chip: 'SYS_CPLD',
+  description: '系统控制 CPLD，位于 SMB，管理SMB板系统组件的电源轨监控、设备复位，支持中断处理和LED测试，BMC通过I2C总线读写CPLD寄存器实现控制。'
+});
+CREATE (th3:Device {
+  name: 'th3',
+  chip: 'BCM56980',
+  function: '交换芯片',
+  description: 'Tomahawk 3 12.8Tbps 交换 ASIC，作为系统数据平面核心，支持高速数据转发和路由功能。'
+});
+CREATE (bcm5389:Device {
+  name: 'bcm5389',
+  chip: 'BCM5389',
+  function: '网络交换',
+  description: 'OOB 以太网交换机，用于管理网络连接，连接 COM-e、BMC 和前端 OOB 端口，支持网络管理和监控。'
+});
+CREATE (bmc_phy:Device {
+  name: 'bmc_phy',
+  chip: 'BCM54616S',
+  function: '网络物理层',
+  description: 'BMC 的网络物理层芯片，用于实现 10/100/1000BASE-T 网络连接，支持 OOB 管理接口。'
+});
+CREATE (dom_fpga1:Proxy {
+  name: 'dom_fpga1',
+  chip: 'DOM_FPGA',
+  description: 'DOM FPGA，位于 SMB，提供 QSFP 模块的 PCIe 访问接口，支持多端口光模块的状态监控和控制，BMC通过I2C总线读写FPGA寄存器实现控制。'
+});
+CREATE (port_led:Device {
+  name: 'port_led',
+  chip: '多色LED',
+  function: '状态指示',
+  description: 'QSFP 端口状态指示灯，由 DOM FPGA 控制，显示端口连接状态、数据传输和故障信息。'
+});
+CREATE (uart_mux:Device {
+  name: 'uart_mux',
+  chip: 'UART多路复用器',
+  function: '串口切换',
+  description: 'UART 信号复用器，用于切换系统中的 UART 接口，支持 COM-e、BMC 和调试卡的串口通信。'
+});
+CREATE (spi_flash_bmc:Device {
+  name: 'spi_flash_bmc',
+  chip: 'W25Q128',
+  function: '固件存储',
+  description: 'BMC 的 SPI Flash 存储器，存储 BMC 固件和配置数据，支持固件升级和系统启动。'
+});
+CREATE (spi_flash_th3:Device {
+  name: 'spi_flash_th3',
+  chip: 'W25Q257',
+  function: '固件存储',
+  description: 'TH3 交换芯片的 SPI Flash，存储芯片固件和配置数据，支持启动和初始化。'
+});
+CREATE (cpu_interface:Device {
+  name: 'cpu_interface',
+  chip: 'LPC接口',
+  function: '总线接口',
+  description: 'CPU 的 LPC 总线接口，用于连接 BMC、OOB 交换机等设备，支持低速控制信号传输。'
+});
+CREATE (usb_hub:Device {
+  name: 'usb_hub',
+  chip: 'USB Hub',
+  function: 'USB扩展',
+  description: '3 端口 USB 集线器，位于 SMB，扩展 USB 接口，支持 OCP 调试卡和其他 USB 设备连接。'
+});
+CREATE (spi_mux:Device {
+  name: 'spi_mux',
+  chip: 'SPI多路复用器',
+  function: 'SPI切换',
+  description: 'SPI 信号复用器，用于切换不同的 SPI 设备，支持 BMC 对多个 SPI Flash 和 EEPROM 的访问。'
+});
+CREATE (flash_fpga1:Device {
+  name: 'flash_fpga1',
+  chip: 'W25Q128',
+  function: '配置存储',
+  description: 'DOM FPGA1 的配置 Flash，存储 FPGA 的配置数据，支持 FPGA 初始化和功能加载，通过SPI总线通信。'
+});
+CREATE (flash_fpga2:Device {
+  name: 'flash_fpga2',
+  chip: 'W25Q128',
+  function: '配置存储',
+  description: 'DOM FPGA2 的配置 Flash，存储 FPGA 的配置信息，确保 FPGA 正确初始化和运行，通过SPI总线通信。'
+});
+
+
+
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'com_e_ec'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x20',
+  bus_name: 'I2C_1', 
+  protocol: 'I2C'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'ir3595_serdes_i2c'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x2F',
+  bus_name: 'I2C_2', 
+  protocol: 'I2C'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'ir3595_serdes_pmbus'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x47',
+  bus_name: 'I2C_2', 
+  protocol: 'PMBus'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'ir3595_0p8v_i2c'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x35',
+  bus_name: 'I2C_2', 
+  protocol: 'I2C'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'ir3595_0p8v_pmbus'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x4D',
+  bus_name: 'I2C_2',
+  protocol: 'PMBus'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'isl68137'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x60',
+  bus_name: 'I2C_2', 
+  protocol: 'I2C'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'powr1220'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x3A',
+  bus_name: 'I2C_2', 
+  protocol: 'I2C'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (proxy:Proxy {name: 'scm_cpld'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x3e',
+  bus_name: 'I2C_3', 
+  protocol: 'I2C'
+}]->(proxy);
+MATCH (proxy:Proxy {name: 'scm_cpld'}), (device:Device {name: 'nvme_ssd'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的电源与复位管理、在位、告警状态监测、配置管理等，BMC通过读写scm_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy:Proxy {name: 'sys_cpld'}), (device:Device {name: 'nvme_ssd'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: 'controlled by proxy. functions supported can be found in ref_doc',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy:Proxy {name: 'scm_cpld'}), (device:Device {name: 'com_e_ec'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的电源与复位管理、在位、告警状态监测、配置管理等，BMC通过读写scm_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy:Proxy {name: 'scm_cpld'}), (device:Device {name: 'come_phy'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的电源与复位管理、在位、告警状态监测、配置管理等，BMC通过读写scm_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (switch:Switch {name: 'pca9548_scm'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x70',
+  bus_name: 'I2C_3', 
+  protocol: 'I2C'
+}]->(switch);
+MATCH (switch:Switch {name: 'pca9548_scm'}), (device:Device {name: 'adm1278_scm'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x01',
+  switch_bus_address: '0x10',
+  protocol: 'I2C' 
+}]->(device);
+MATCH (switch:Switch {name: 'pca9548_scm'}), (device:Device {name: 'tmp75_scm1'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x02',
+  switch_bus_address: '0x4c',
+  protocol: 'I2C' 
+}]->(device);
+MATCH (switch:Switch {name: 'pca9548_scm'}), (device:Device {name: 'tmp75_scm2'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x02',
+  switch_bus_address: '0x4d',
+  protocol: 'I2C' 
+}]->(device);
+MATCH (switch:Switch {name: 'pca9548_scm'}), (device:Device {name: 'eeprom_scm'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x08',
+  switch_bus_address: '0x52',
+  protocol: 'I2C' 
+}]->(device);
+MATCH (switch:Switch {name: 'pca9548_scm'}), (device:Device {name: 'eeprom_bcm54616_scm'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x10',
+  switch_bus_address: '0x50',
+  protocol: 'I2C' 
+}]->(device);
+
+MATCH (switch:Switch {name: 'pca9548_scm'}), (device:Device {name: 'eeprom_bsm'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x40',
+  switch_bus_address: '0x56',
+  protocol: 'I2C' 
+}]->(device);
+MATCH (switch:Switch {name: 'pca9548_scm'}), (device:Device {name: 'si53108'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x80',
+  switch_bus_address: '0x6c',
+  protocol: 'I2C' 
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'tmp75_smb1'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x48',
+  bus_name: 'I2C_4', 
+  protocol: 'I2C'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'tmp75_smb2'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x49',
+  bus_name: 'I2C_4', 
+  protocol: 'I2C'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'tmp75_smb3'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x4A',
+  bus_name: 'I2C_4', 
+  protocol: 'I2C'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'tmp75_smb4'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x4B',
+  bus_name: 'I2C_4', 
+  protocol: 'I2C'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'tmp421_smb_intake1'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x4C',
+  bus_name: 'I2C_4', 
+  protocol: 'I2C'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'tmp421_smb_intake2'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x4E',
+  bus_name: 'I2C_4', 
+  protocol: 'I2C'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'gb_asic'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x2A',
+  bus_name: 'I2C_4', 
+  protocol: 'I2C'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'tmp422_th3'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x4F',
+  bus_name: 'I2C_4', 
+  protocol: 'I2C'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'ocp_debug'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x54',
+  bus_name: 'I2C_5', 
+  protocol: 'I2C'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'tca9555'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x27',
+  bus_name: 'I2C_5', 
+  protocol: 'I2C'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (proxy:Proxy {name: 'dom_fpga2'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x60',
+  bus_name: 'I2C_6', 
+  protocol: 'I2C'
+}]->(proxy);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'pca9534'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x21',
+  bus_name: 'I2C_7', 
+  protocol: 'I2C'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (switch:Switch {name: 'pca9535'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x20',
+  bus_name: 'I2C_7', 
+  protocol: 'I2C'
+}]->(switch);
+MATCH (switch:Switch {name: 'pca9535'}), (device:Device {name: 'sys_led_red'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'IO Expander',
+  switch_bus_address: 'None',
+  protocol: 'IO Control',
+  channel_address: '0'
+}]->(device);
+MATCH (switch:Switch {name: 'pca9535'}), (device:Device {name: 'sys_led_green'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'IO Expander',
+  switch_bus_address: 'None',
+  protocol: 'IO Control',
+  channel_address: '1'
+}]->(device);
+MATCH (switch:Switch {name: 'pca9535'}), (device:Device {name: 'sys_led_blue'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'IO Expander',
+  switch_bus_address: 'None',
+  protocol: 'IO Control',
+  channel_address: '2'
+}]->(device);
+MATCH (switch:Switch {name: 'pca9535'}), (device:Device {name: 'fan_led_red'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'IO Expander',
+  switch_bus_address: 'None',
+  protocol: 'IO Control',
+  channel_address: '3'
+}]->(device);
+MATCH (switch:Switch {name: 'pca9535'}), (device:Device {name: 'fan_led_green'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'IO Expander',
+  switch_bus_address: 'None',
+  protocol: 'IO Control',
+  channel_address: '4'
+}]->(device);
+MATCH (switch:Switch {name: 'pca9535'}), (device:Device {name: 'fan_led_blue'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'IO Expander',
+  switch_bus_address: 'None',
+  protocol: 'IO Control',
+  channel_address: '5'
+}]->(device);
+MATCH (switch:Switch {name: 'pca9535'}), (device:Device {name: 'psu_led_red'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'IO Expander',
+  switch_bus_address: 'None',
+  protocol: 'IO Control',
+  channel_address: '8'
+}]->(device);
+MATCH (switch:Switch {name: 'pca9535'}), (device:Device {name: 'psu_led_green'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'IO Expander',
+  switch_bus_address: 'None',
+  protocol: 'IO Control',
+  channel_address: '9'
+}]->(device);
+MATCH (switch:Switch {name: 'pca9535'}), (device:Device {name: 'psu_led_blue'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'IO Expander',
+  switch_bus_address: 'None',
+  protocol: 'IO Control',
+  channel_address: '10'
+}]->(device);
+MATCH (switch:Switch {name: 'pca9535'}), (device:Device {name: 'scm_led_red'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'IO Expander',
+  switch_bus_address: 'None',
+  protocol: 'IO Control',
+  channel_address: '11'
+}]->(device);
+MATCH (switch:Switch {name: 'pca9535'}), (device:Device {name: 'scm_led_green'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'IO Expander',
+  switch_bus_address: 'None',
+  protocol: 'IO Control',
+  channel_address: '12'
+}]->(device);
+MATCH (switch:Switch {name: 'pca9535'}), (device:Device {name: 'scm_led_blue'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'IO Expander',
+  switch_bus_address: 'None',
+  protocol: 'IO Control',
+  channel_address: '13'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'eeprom_smb'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x51',
+  bus_name: 'I2C_7', 
+  protocol: 'I2C'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'tpm'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x20',
+  bus_name: 'I2C_8', 
+  protocol: 'I2C'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (switch:Switch {name: 'pca9548_smb'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x70',
+  bus_name: 'I2C_9', 
+  protocol: 'I2C'
+}]->(switch);
+MATCH (switch:Switch {name: 'pca9548_smb'}), (device:Device {name: 'psu1'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x01',
+  switch_bus_address: '0x58',
+  protocol: 'I2C'  
+}]->(device);
+MATCH (switch:Switch {name: 'pca9548_smb'}), (device:Device {name: 'eeprom_psu1'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x01',
+  switch_bus_address: '0x50',
+  protocol: 'I2C' 
+}]->(device);
+MATCH (switch:Switch {name: 'pca9548_smb'}), (device:Device {name: 'pem1_thermal'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x01',
+  switch_bus_address: '0x18',
+  protocol: 'I2C' 
+}]->(device);
+MATCH (switch:Switch {name: 'pca9548_smb'}), (device:Device {name: 'psu2'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x02',
+  switch_bus_address: '0x58',
+  protocol: 'I2C' 
+}]->(device);
+MATCH (switch:Switch {name: 'pca9548_smb'}), (device:Device {name: 'eeprom_psu2'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x02',
+  switch_bus_address: '0x50',
+  protocol: 'I2C' 
+}]->(device);
+MATCH (switch:Switch {name: 'pca9548_smb'}), (device:Device {name: 'pem2_thermal'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x02',
+  switch_bus_address: '0x18',
+  protocol: 'I2C' 
+}]->(device);
+MATCH (switch:Switch {name: 'pca9548_smb'}), (device:Device {name: 'eeprom_bcm54616_rgmii'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x04',
+  switch_bus_address: '0x50',
+  protocol: 'I2C' 
+}]->(device);
+MATCH (switch:Switch {name: 'pca9548_smb'}), (device:Device {name: 'eeprom_bcm54616_mdi'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x08',
+  switch_bus_address: '0x50',
+  protocol: 'I2C' 
+}]->(device);
+MATCH (switch:Switch {name: 'pca9548_smb'}), (device:Device {name: 'eeprom_th3'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x10',
+  switch_bus_address: '0x54',
+  protocol: 'I2C' 
+}]->(device);
+MATCH (proxy:Proxy {name: 'sys_cpld'}), (device:Device {name: 'eeprom_th3'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: 'controlled by proxy. functions supported can be found in ref_doc',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (switch:Switch {name: 'pca9548_smb'}), (proxy:Proxy {name: 'pwr_cpld'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x80',
+  switch_bus_address: '0x3e',
+  protocol: 'I2C' 
+}]->(proxy);
+MATCH (proxy:Proxy {name: 'pwr_cpld'}), (device:Device {name: 'psu1'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的电源开关控制、触发电源循环、运行频率设置和电源状态反馈等，BMC通过读写pwr_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy:Proxy {name: 'pwr_cpld'}), (device:Device {name: 'psu2'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的电源开关控制、触发电源循环、运行频率设置和电源状态反馈等，BMC通过读写pwr_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy:Proxy {name: 'pwr_cpld'}), (device:Device {name: 'gb_asic'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的电源开关控制、触发电源循环、运行频率设置和电源状态反馈等，BMC通过读写pwr_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'si5391'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x74',
+  bus_name: 'I2C_10', 
+  protocol: 'I2C'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (switch:Switch {name: 'pca9548_fcm'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x70',
+  bus_name: 'I2C_12', 
+  protocol: 'I2C'
+}]->(switch);
+MATCH (switch:Switch {name: 'pca9548_fcm'}), (proxy:Proxy {name: 'fan_cpld'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x01',
+  switch_bus_address: '0x3e',
+  protocol: 'I2C' 
+}]->(proxy);
+MATCH (proxy:Proxy {name: 'sys_cpld'}), (proxy:Proxy {name: 'fan_cpld'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的多组件复位控制、电源与状态监测、FPGA管理和PCIe链路控制、I/O 与中断管理、写保护控制等，BMC通过读写sys_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(proxy);
+MATCH (proxy:Proxy {name: 'fan_cpld'}), (device:Device {name: 'fan1'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的风扇调速、风扇状态检测、告警与中断检测、风扇EEPROM写保护控制等，BMC通过读写fan_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy:Proxy {name: 'fan_cpld'}), (device:Device {name: 'fan2'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的风扇调速、风扇状态检测、告警与中断检测、风扇EEPROM写保护控制等，BMC通过读写fan_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy:Proxy {name: 'fan_cpld'}), (device:Device {name: 'fan3'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的风扇调速、风扇状态检测、告警与中断检测、风扇EEPROM写保护控制等，BMC通过读写fan_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy:Proxy {name: 'fan_cpld'}), (device:Device {name: 'fan4'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的风扇调速、风扇状态检测、告警与中断检测、风扇EEPROM写保护控制等，BMC通过读写fan_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy:Proxy {name: 'fan_cpld'}), (device:Device {name: 'fan_efuse'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的风扇调速、风扇状态检测、告警与中断检测、风扇EEPROM写保护控制等，BMC通过读写fan_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy:Proxy {name: 'fan_cpld'}), (device:Device {name: 'eeprom_fan1'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的风扇调速、风扇状态检测、告警与中断检测、风扇EEPROM写保护控制等，BMC通过读写fan_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy:Proxy {name: 'fan_cpld'}), (device:Device {name: 'eeprom_fan2'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的风扇调速、风扇状态检测、告警与中断检测、风扇EEPROM写保护控制等，BMC通过读写fan_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy:Proxy {name: 'fan_cpld'}), (device:Device {name: 'eeprom_fan3'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的风扇调速、风扇状态检测、告警与中断检测、风扇EEPROM写保护控制等，BMC通过读写fan_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy:Proxy {name: 'fan_cpld'}), (device:Device {name: 'eeprom_fan4'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的风扇调速、风扇状态检测、告警与中断检测、风扇EEPROM写保护控制等，BMC通过读写fan_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (switch:Switch {name: 'pca9548_fcm'}), (device:Device {name: 'fcb_inv'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x02',
+  switch_bus_address: '0x51',
+  protocol: 'I2C' 
+}]->(device);
+MATCH (switch:Switch {name: 'pca9548_fcm'}), (device:Device {name: 'tmp75_fcm1'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x04',
+  switch_bus_address: '0x48',
+  protocol: 'I2C' 
+}]->(device);
+MATCH (switch:Switch {name: 'pca9548_fcm'}), (device:Device {name: 'tmp75_fcm2'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x04',
+  switch_bus_address: '0x49',
+  protocol: 'I2C' 
+}]->(device);
+MATCH (switch:Switch {name: 'pca9548_fcm'}), (device:Device {name: 'adm1278_fcm'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x08',
+  switch_bus_address: '0x10',
+  protocol: 'I2C'  
+}]->(device);
+MATCH (switch:Switch {name: 'pca9548_fcm'}), (device:Device {name: 'eeprom_fan1'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x10',
+  switch_bus_address: '0x52',
+  protocol: 'I2C' 
+}]->(device);
+MATCH (switch:Switch {name: 'pca9548_fcm'}), (device:Device {name: 'eeprom_fan2'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x20',
+  switch_bus_address: '0x52',
+  protocol: 'I2C' 
+}]->(device);
+MATCH (switch:Switch {name: 'pca9548_fcm'}), (device:Device {name: 'eeprom_fan3'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x40',
+  switch_bus_address: '0x52',
+  protocol: 'I2C'  
+}]->(device);
+MATCH (switch:Switch {name: 'pca9548_fcm'}), (device:Device {name: 'eeprom_fan4'})
+CREATE (switch)-[:SWITCH_ROUTE {
+  switch_type: 'I2C Switch',
+  channel_address: '0x80',
+  switch_bus_address: '0x52',
+  protocol: 'I2C' 
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (proxy:Proxy {name: 'sys_cpld'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x3E',
+  bus_name: 'I2C_13', 
+  protocol: 'I2C'
+}]->(proxy);
+MATCH (proxy:Proxy {name: 'sys_cpld'}), (device:Device {name: 'si5391'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的多组件复位控制、电源与状态监测、FPGA管理和PCIe链路控制、I/O 与中断管理、写保护控制等，BMC通过读写sys_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy:Proxy {name: 'sys_cpld'}), (device:Device {name: 'bmc_phy'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的多组件复位控制、电源与状态监测、FPGA管理和PCIe链路控制、I/O 与中断管理、写保护控制等，BMC通过读写sys_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy:Proxy {name: 'sys_cpld'}), (device:Device {name: 'bcm54616s_rgmii'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的多组件复位控制、电源与状态监测、FPGA管理和PCIe链路控制、I/O 与中断管理、写保护控制等，BMC通过读写sys_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy:Proxy {name: 'sys_cpld'}), (device:Device {name: 'bcm5389'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的多组件复位控制、电源与状态监测、FPGA管理和PCIe链路控制、I/O 与中断管理、写保护控制等，BMC通过读写sys_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy:Proxy {name: 'sys_cpld'}), (device:Device {name: 'th3'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的多组件复位控制、电源与状态监测、FPGA管理和PCIe链路控制、I/O 与中断管理、写保护控制等，BMC通过读写sys_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy:Proxy {name: 'sys_cpld'}), (device:Device {name: 'tpm'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的多组件复位控制、电源与状态监测、FPGA管理和PCIe链路控制、I/O 与中断管理、写保护控制等，BMC通过读写sys_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy:Proxy {name: 'sys_cpld'}), (device:Device {name: 'spi_flash_bmc'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的多组件复位控制、电源与状态监测、FPGA管理和PCIe链路控制、I/O 与中断管理、写保护控制等，BMC通过读写sys_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy:Proxy {name: 'sys_cpld'}), (device:Device {name: 'pca9548_smb'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的多组件复位控制、电源与状态监测、FPGA管理和PCIe链路控制、I/O 与中断管理、写保护控制等，BMC通过读写sys_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy1:Proxy {name: 'sys_cpld'}), (proxy2:Proxy {name: 'scm_cpld'})
+CREATE (proxy1)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的多组件复位控制、电源与状态监测、FPGA管理和PCIe链路控制、I/O 与中断管理、写保护控制等，BMC通过读写sys_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(proxy2);
+MATCH (proxy1:Proxy {name: 'sys_cpld'}), (proxy2:Proxy {name: 'fan_cpld'})
+CREATE (proxy1)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的多组件复位控制、电源与状态监测、FPGA管理和PCIe链路控制、I/O 与中断管理、写保护控制等，BMC通过读写sys_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(proxy2);
+MATCH (proxy:Proxy {name: 'sys_cpld'}), (device:Device {name: 'pca9548_fcm'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的多组件复位控制、电源与状态监测、FPGA管理和PCIe链路控制、I/O 与中断管理、写保护控制等，BMC通过读写sys_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy:Proxy {name: 'sys_cpld'}), (device:Device {name: 'pca9534'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的多组件复位控制、电源与状态监测、FPGA管理和PCIe链路控制、I/O 与中断管理、写保护控制等，BMC通过读写sys_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy:Proxy {name: 'sys_cpld'}), (device:Device {name: 'pca9548_smb'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的多组件复位控制、电源与状态监测、FPGA管理和PCIe链路控制、I/O 与中断管理、写保护控制等，BMC通过读写sys_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy1:Proxy {name: 'sys_cpld'}), (proxy2:Proxy {name: 'dom_fpga1'})
+CREATE (proxy1)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的多组件复位控制、电源与状态监测、FPGA管理和PCIe链路控制、I/O 与中断管理、写保护控制等，BMC通过读写sys_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(proxy2);
+
+MATCH (proxy1:Proxy {name: 'sys_cpld'}), (proxy2:Proxy {name: 'dom_fpga2'})
+CREATE (proxy1)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的多组件复位控制、电源与状态监测、FPGA管理和PCIe链路控制、I/O 与中断管理、写保护控制等，BMC通过读写sys_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(proxy2);
+MATCH (proxy:Proxy {name: 'sys_cpld'}), (device:Device {name: 'ocp_debug'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的多组件复位控制、电源与状态监测、FPGA管理和PCIe链路控制、I/O 与中断管理、写保护控制等，BMC通过读写sys_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (proxy:Proxy {name: 'sys_cpld'}), (device:Device {name: 'uart_mux'})
+CREATE (proxy)-[:REGISTER_PROXY {
+  control_type: '通过GPIO或者模拟总线实现下级设备的多组件复位控制、电源与状态监测、FPGA管理和PCIe链路控制、I/O 与中断管理、写保护控制等，BMC通过读写sys_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (proxy:Proxy {name: 'dom_fpga1'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x60',
+  bus_name: 'I2C_14', 
+  protocol: 'I2C'
+}]->(proxy);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'th3'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '通过SPI/PCIe控制',
+  bus_name: 'PCIe_3',
+  protocol: 'PCIe'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'bcm5389'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '通过LPC总线',
+  bus_name: 'LPC', 
+  protocol: 'LPC'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'bmc_phy'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x50',
+  bus_name: 'I2C_9_Channel3', 
+  protocol: 'I2C'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'uart_mux'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '通过UART_SEL信号',
+  bus_name: 'UART',
+  protocol: 'UART'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'spi_flash_bmc'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x0',
+  bus_name: 'SPI_0', 
+  protocol: 'SPI'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'spi_flash_th3'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '通过系统CPLD选通',
+  bus_name: 'SPI_1', 
+  protocol: 'SPI'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'cpu_interface'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '33.33MHz',
+  bus_name: 'LPC',
+  protocol: 'LPC'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'usb_hub'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '通过USB 2.0',
+  bus_name: 'USB_2',
+  protocol: 'USB'
+}]->(device);
+MATCH (proxy:Proxy {name: 'sys_cpld'}), (device:Device {name: 'usb_hub'})
+CREATE (proxy)-[:DIRECT_CONTROL {
+  control_type: '通过GPIO或者模拟总线实现下级设备的多组件复位控制、电源与状态监测、FPGA管理和PCIe链路控制、I/O 与中断管理、写保护控制等，BMC通过读写sys_cpld的寄存器实现外围设备的控制',
+  ref_doc: 'Wedge 400 Design Specification V0.3.pdf'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'spi_mux'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '通过SYS CPLD控制',
+  bus_name: 'SPI_MUX', 
+  protocol: 'SPI'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'flash_fpga1'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x0',
+  bus_name: 'SPI_4', 
+  protocol: 'SPI'
+}]->(device);
+MATCH (bmc:Master {name: 'bmc'}), (device:Device {name: 'flash_fpga2'})
+CREATE (bmc)-[:DIRECT_CONTROL {
+  access_address: '0x0',
+  bus_name: 'SPI_6', 
+  protocol: 'SPI'
+}]->(device);

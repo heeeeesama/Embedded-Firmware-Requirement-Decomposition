@@ -1,0 +1,464 @@
+# 角色定义
+你是一名资深的BMC固件开发与服务器硬件系统管理专家，精通BMC与基板各硬件组件的通信协议（如I2C、PMBus）、硬件监控逻辑、固件控制流程。
+
+# 任务目标
+基于你对BMC开发领域的专业认知，完成以下任务：
+1.  接收一个BMC相关的自然语言问题；
+2.  分析问题中涉及的核心硬件对象、监控目标或控制功能；
+3.  从给定的实体列表中，精准匹配与问题最相关的1个或多个entity的name；
+4.  匹配依据：entity的description是否包含问题所询问的硬件对象、功能场景、通信接口或监控目标，且匹配需严格贴合BMC开发与硬件管理的实际逻辑。
+
+# 输入数据格式
+本次输入包含两部分内容：
+## 第一部分：用户的BMC相关自然语言问题
+{question}
+
+## 第二部分：实体列表（所有候选实体）
+[
+  {
+    "name": "bmc",
+    "description": "基板管理控制器，位于 SMB，用于系统管理、硬件监控和远程管理，通过 I2C 和 UART 接口控制各组件，支持 JTAG 编程和固件存储。"
+  },
+  {
+    "name": "com_e_ec",
+    "description": "COM-Express 模块的嵌入式控制器，负责系统监控和电源管理功能。"
+  },
+  {
+    "name": "ir3595_serdes_i2c",
+    "description": "XP3R3V 和 Serdes 电压调节器，通过 I2C 接口与 BMC 通信，负责调节相关电源轨电压。"
+  },
+  {
+    "name": "ir3595_serdes_pmbus",
+    "description": "XP3R3V 和 Serdes 电压调节器，通过 PMBus 接口与 BMC 通信，支持电源监控和调节。"
+  },
+  {
+    "name": "ir3595_0p8v_i2c",
+    "description": "XP3R3V 和 0.8V 电压调节器，通过 I2C 接口控制，负责调节系统中的关键电压轨。"
+  },
+  {
+    "name": "ir3595_0p8v_pmbus",
+    "description": "XP3R3V 和 0.8V 电压调节器，通过 I2C 接口控制，通过 PMBus 协议实现电源管理和监控。"
+  },
+  {
+    "name": "isl68137",
+    "description": "TH3 交换芯片的核心电压控制器，负责提供稳定的核心电压，确保芯片正常工作，通过I2C总线与BMC通信。"
+  },
+  {
+    "name": "powr1220",
+    "description": "多通道电源监控集成电路，用于监测系统各电源轨的电压状态，提供电源故障检测和报警功能，通过I2C总线与BMC通信。"
+  },
+  {
+    "name": "scm_cpld",
+    "description": "系统控制模块的 CPLD，负责管理 SCM 的电源轨信号监控、复位序列和状态监控，通过 I2C 与 BMC 通信。"
+  },
+  {
+    "name": "lm75_scm",
+    "description": "SCM 模块的温度传感器，用于监测系统控制模块的温度，确保其在正常工作范围内，通过I2C总线获取温度。"
+  },
+  {
+    "name": "come_cpu",
+    "description": "COM-Express Broadwell-DE CPU 模块，作为系统主处理器，提供计算和控制功能，支持 PCIe、USB 等接口。"
+  },
+  {
+    "name": "nvme_ssd",
+    "description": "256GB NVMe 固态硬盘，安装在 SCM 模块上，用于系统存储和数据加载。"
+  },
+  {
+    "name": "come_phy",
+    "description": "COM-E CPU 模块的网络物理层芯片，用于实现 1000BASE-T 网络连接，支持 SGMII 接口。"
+  },
+  {
+    "name": "cpu_power",
+    "description": "SCM 模块的热插拔控制器和电源监控芯片，负责管理模块的电源接入和状态监测。"
+  },
+  {
+    "name": "pca9548_scm",
+    "description": "SCM 模块上的 I2C 多路复用器，用于扩展 I2C 总线，连接多个传感器和设备，通过I2C总线与BMC通信。"
+  },
+  {
+    "name": "adm1278_scm",
+    "description": "SCM 模块的热插拔控制器，负责管理电源接入和故障检测，，通过I2C总线获取电源状态监控。"
+  },
+  {
+    "name": "tmp75_scm1",
+    "description": "SCM 模块的温度传感器 #1，实时监测模块温度，提供温度数据给 BMC，通过I2C总线获取温度。"
+  },
+  {
+    "name": "tmp75_scm2",
+    "description": "SCM 模块的温度传感器 #2，辅助监测模块温度，确保系统散热正常，通过I2C总线获取温度。"
+  },
+  {
+    "name": "eeprom_scm",
+    "description": "SCM 模块的库存信息(FRU) EEPROM，存储模块的型号、版本等信息，供系统识别，通过I2C总线通信。"
+  },
+  {
+    "name": "eeprom_bcm54616_scm",
+    "description": "BCM54616 PHY 的配置 EEPROM，存储网络物理层芯片的配置参数，通过I2C总线通信。"
+  },
+  {
+    "name": "eeprom_bcm54616_rgmii",
+    "description": "BCM54616 PHY 的配置 EEPROM，存储网络物理层芯片的配置参数，通过I2C总线通信。"
+  },
+  {
+    "name": "eeprom_bcm54616_mdi",
+    "description": "BCM54616 PHY 的配置 EEPROM，存储网络物理层芯片的配置参数，通过I2C总线通信。"
+  },
+  {
+    "name": "eeprom_bsm",
+    "description": "BMC 存储模块的配置 EEPROM，存储 FRU 信息，支持设备识别和维护，通过I2C总线通信。"
+  },
+  {
+    "name": "si53108",
+    "description": "时钟缓冲器，用于分配和缓冲系统时钟信号，确保各组件时钟同步，通过I2C总线通信。"
+  },
+  {
+    "name": "tmp75_smb1",
+    "description": "SMB 板温度传感器，监控SMB板左侧进风口温度，通过I2C总线获取温度。"
+  },
+  {
+    "name": "tmp75_smb2",
+    "description": "SMB 板温度传感器，监控GB出风口温度，通过I2C总线获取温度。"
+  },
+  {
+    "name": "tmp75_smb3",
+    "description": "SMB 板温度传感器，监控SMB板出风口温度，通过I2C总线获取温度。"
+  },
+  {
+    "name": "tmp75_smb4",
+    "description": "SMB 板温度传感器，监控SMB板右侧进风口温度，通过I2C总线获取温度。"
+  },
+  {
+    "name": "tmp421_smb_intake1",
+    "description": "系统进气温度传感器 1，监测设备前方进气温度，确保冷却系统有效，通过I2C总线获取温度。"
+  },
+  {
+    "name": "tmp421_smb_intake2",
+    "description": "系统进气温度传感器 2，辅助监测进气温度，提供更准确的环境温度数据，通过I2C总线获取温度。"
+  },
+  {
+    "name": "gb_asic",
+    "description": "交换芯片内部负责高速数据转发的核心模块，提供I2C带外管理接口，具有温度监控、电压监控等接口。"
+  },
+  {
+    "name": "tmp422_th3",
+    "description": "TH3 交换芯片的远程温度传感器，实时监测芯片温度，防止过热，通过I2C总线获取温度。"
+  },
+  {
+    "name": "ocp_debug",
+    "description": "OCP 调试卡，通过 USB 接口连接，用于系统硬件调试和故障诊断，提供I2C带外管理接口。"
+  },
+  {
+    "name": "tca9555",
+    "description": "16 位 I/O 扩展器，用于扩展 SMB 的输入输出接口，支持更多外设控制，通过I2C总线与BMC通信。"
+  },
+  {
+    "name": "dom_fpga2",
+    "description": "DOM FPGA，位于 SMB，提供 QSFP 模块的 PCIe 访问接口，支持光模块状态监控和控制，BMC通过I2C总线读写FPGA寄存器实现控制。"
+  },
+  {
+    "name": "pca9534",
+    "description": "8 位板标识芯片，用于识别 SMB 的型号和版本信息，供系统管理，通过I2C总线与BMC通信。"
+  },
+  {
+    "name": "pca9535",
+    "description": "16 位 I/O 扩展器，用于控制 RackMon 的 LED 指示灯，显示系统状态，通过I2C总线与BMC通信。"
+  },
+  {
+    "name": "sys_led_red",
+    "description": "系统状态指示灯（红色），用于显示系统故障或警告状态。"
+  },
+  {
+    "name": "sys_led_green",
+    "description": "系统状态指示灯（绿色），显示系统正常运行状态。"
+  },
+  {
+    "name": "sys_led_blue",
+    "description": "系统状态指示灯（蓝色），显示 FRU 存在且无报警状态。"
+  },
+  {
+    "name": "fan_led_red",
+    "description": "风扇状态指示灯（红色），指示风扇故障或异常运行状态。"
+  },
+  {
+    "name": "fan_led_green",
+    "description": "风扇状态指示灯（绿色），显示风扇正常运转状态。"
+  },
+  {
+    "name": "fan_led_blue",
+    "description": "风扇状态指示灯（蓝色），指示风扇存在且已接入系统。"
+  },
+  {
+    "name": "psu_led_red",
+    "description": "电源状态指示灯（红色），显示电源输入或输出故障状态。"
+  },
+  {
+    "name": "psu_led_green",
+    "description": "电源状态指示灯（绿色），指示电源输入和输出正常。"
+  },
+  {
+    "name": "psu_led_blue",
+    "description": "电源状态指示灯（蓝色），显示电源已接入并存在。"
+  },
+  {
+    "name": "smb_led_red",
+    "description": "SMB 状态指示灯（红色），指示 SMB 板存在故障或异常。"
+  },
+  {
+    "name": "smb_led_green",
+    "description": "SMB 状态指示灯（绿色），显示 SMB 板正常工作状态。"
+  },
+  {
+    "name": "smb_led_blue",
+    "description": "SMB 状态指示灯（蓝色），指示 SMB 板存在且无报警。"
+  },
+  {
+    "name": "eeprom_smb",
+    "description": "SMB 板的库存信息(FRU) EEPROM，存储主板的型号、版本等信息，供系统识别，通过I2C总线通信。"
+  },
+  {
+    "name": "tpm",
+    "description": "TPM 2.0 安全模块，用于系统安全加密和身份验证，支持硬件级安全功能，通过I2C总线通信。"
+  },
+  {
+    "name": "pca9548_smb",
+    "description": "SMB 板上的 I2C 多路复用器，连接多个外设和传感器，通过I2C总线与BMC通信。"
+  },
+  {
+    "name": "psu1",
+    "description": "1500W AC 电源单元 #1，为系统提供 12V 直流电源，支持热插拔和冗余配置，支持PMBus协议，通过I2C总线通信。"
+  },
+  {
+    "name": "eeprom_psu1",
+    "description": "PSU1 的配置 EEPROM，存储电源单元的参数和状态信息，通过I2C总线供 BMC 读取。"
+  },
+  {
+    "name": "pem1_thermal",
+    "description": "PEM1 电源扩展模块的热传感器，通过I2C总线获取模块温度，确保安全运行。"
+  },
+  {
+    "name": "psu2",
+    "description": "1500W AC 电源单元 #2，与 PSU1 组成冗余电源系统，提高供电可靠性，支持PMBus协议，通过I2C总线通信。"
+  },
+  {
+    "name": "eeprom_psu2",
+    "description": "PSU2 的配置 EEPROM，存储电源单元的参数和状态信息，支持系统管理，通过I2C总线通信。"
+  },
+  {
+    "name": "pem2_thermal",
+    "description": "PEM2 电源扩展模块的热传感器，通过I2C总线获取模块温度，支持热管理。"
+  },
+  {
+    "name": "bcm54616s_mdi",
+    "description": "BMC MDI PHY 的配置 EEPROM，存储网络物理层的配置参数，通过I2C总线通信。"
+  },
+  {
+    "name": "bcm54616s_rgmii",
+    "description": "BMC RGMII PHY 的配置 EEPROM，存储网络物理层的配置参数，通过I2C总线通信。"
+  },
+  {
+    "name": "eeprom_th3",
+    "description": "TH3 交换芯片的配置 EEPROM，存储芯片的初始化和配置参数，确保正常工作，通过I2C总线通信。"
+  },
+  {
+    "name": "pwr_cpld",
+    "description": "系统电源控制 CPLD，实现远程电源循环（power cycle）功能，管理电源轨的上电顺序和故障处理，BMC通过I2C总线读写CPLD寄存器实现控制。"
+  },
+  {
+    "name": "pem",
+    "description": "DC/DC 电源扩展模块，将 12V 输入转换为系统所需电源，支持热插拔和慢启动。"
+  },
+  {
+    "name": "si5391",
+    "description": "156.25MHz 时钟发生器，为 TH3 交换芯片提供稳定的时钟信号，确保数据传输同步，提供I2C带外管理接口。"
+  },
+  {
+    "name": "pca9548_fcm",
+    "description": "风扇控制板上的 I2C 多路复用器，扩展 I2C 总线，连接风扇 CPLD 和温度传感器，通过 I2C 与 BMC 通信。"
+  },
+  {
+    "name": "fan_cpld",
+    "description": "风扇控制 CPLD，位于 FCM，负责风扇 PWM 调速、状态监测、故障报警和电源信号的监控，通过 I2C 与 BMC 通信。"
+  },
+  {
+    "name": "fan1",
+    "description": "80mm 散热风扇 #1，支持 PWM 调速，为系统提供强制空气冷却，支持热插拔。"
+  },
+  {
+    "name": "fan2",
+    "description": "80mm 散热风扇 #2，支持 PWM 调速，为系统提供强制空气冷却，支持热插拔。"
+  },
+  {
+    "name": "fan3",
+    "description": "80mm 散热风扇 #3，支持 PWM 调速，为系统提供强制空气冷却，支持热插拔。"
+  },
+  {
+    "name": "fan4",
+    "description": "80mm 散热风扇 #4，支持 PWM 调速，为系统提供强制空气冷却，支持热插拔。"
+  },
+  {
+    "name": "fan_efuse",
+    "description": "风扇电源保护电子保险丝，用于保护风扇电路免受过流和短路损害，确保系统安全。"
+  },
+  {
+    "name": "fcb_inv",
+    "description": "风扇控制板的库存信息 EEPROM，存储 FCB 的型号和版本信息，供系统识别，通过I2C总线通信。"
+  },
+  {
+    "name": "tmp75_fcm1",
+    "description": "FCM 模块温度传感器 1，监测风扇控制板的左侧出风口的温度，确保风扇控制电路正常，通过I2C总线读取温度。"
+  },
+  {
+    "name": "tmp75_fcm2",
+    "description": "FCM 模块温度传感器 2，辅助监测风扇控制板的右侧出风口的温度，支持热管理，通过I2C总线读取温度。"
+  },
+  {
+    "name": "adm1278_fcm",
+    "description": "FCM 模块的热插拔控制器，管理风扇电源接入和故障检测，支持电源状态监控，提供I2C带外管理接口。"
+  },
+  {
+    "name": "eeprom_fan1",
+    "description": "风扇 #1 的配置 EEPROM，存储风扇的参数和状态信息，供系统管理，通过I2C总线通信。"
+  },
+  {
+    "name": "eeprom_fan2",
+    "description": "风扇 #2 的配置 EEPROM，存储风扇的参数和状态信息，供系统管理，通过I2C总线。"
+  },
+  {
+    "name": "eeprom_fan3",
+    "description": "风扇 #3 的配置 EEPROM，存储风扇的参数和状态信息，供系统管理，通过I2C总线。"
+  },
+  {
+    "name": "eeprom_fan4",
+    "description": "风扇 #4 的配置 EEPROM，存储风扇的参数和状态信息，供系统管理，通过I2C总线。"
+  },
+  {
+    "name": "sys_cpld",
+    "description": "系统控制 CPLD，位于 SMB，管理系统组件的电源轨监控和复位序列，控制 FPGA 初始化和 CPU 复位，支持中断处理和 LED 测试，BMC通过I2C总线读写CPLD寄存器实现控制。"
+  },
+  {
+    "name": "th3",
+    "description": "Tomahawk 3 12.8Tbps 交换 ASIC，作为系统数据平面核心，支持高速数据转发和路由功能。"
+  },
+  {
+    "name": "bcm5389",
+    "description": "OOB 以太网交换机，用于管理网络连接，连接 COM-e、BMC 和前端 OOB 端口，支持网络管理和监控。"
+  },
+  {
+    "name": "bmc_phy",
+    "description": "BMC 的网络物理层芯片，用于实现 10/100/1000BASE-T 网络连接，支持 OOB 管理接口。"
+  },
+  {
+    "name": "dom_fpga1",
+    "description": "DOM FPGA，位于 SMB，提供 QSFP 模块的 PCIe 访问接口，支持多端口光模块的状态监控和控制，BMC通过I2C总线读写FPGA寄存器实现控制。"
+  },
+  {
+    "name": "port_led",
+    "description": "QSFP 端口状态指示灯，由 DOM FPGA 控制，显示端口连接状态、数据传输和故障信息。"
+  },
+  {
+    "name": "uart_mux",
+    "description": "UART 信号复用器，用于切换系统中的 UART 接口，支持 COM-e、BMC 和调试卡的串口通信。"
+  },
+  {
+    "name": "spi_flash_bmc",
+    "description": "BMC 的 SPI Flash 存储器，存储 BMC 固件和配置数据，支持固件升级和系统启动。"
+  },
+  {
+    "name": "spi_flash_th3",
+    "description": "TH3 交换芯片的 SPI Flash，存储芯片固件和配置数据，支持启动和初始化。"
+  },
+  {
+    "name": "cpu_interface",
+    "description": "CPU 的 LPC 总线接口，用于连接 BMC、OOB 交换机等设备，支持低速控制信号传输。"
+  },
+  {
+    "name": "usb_hub",
+    "description": "3 端口 USB 集线器，位于 SMB，扩展 USB 接口，支持 OCP 调试卡和其他 USB 设备连接。"
+  },
+  {
+    "name": "spi_mux",
+    "description": "SPI 信号复用器，用于切换不同的 SPI 设备，支持 BMC 对多个 SPI Flash 和 EEPROM 的访问。"
+  },
+  {
+    "name": "flash_fpga1",
+    "description": "DOM FPGA1 的配置 Flash，存储 FPGA 的配置数据，支持 FPGA 初始化和功能加载，通过SPI总线通信。"
+  },
+  {
+    "name": "flash_fpga2",
+    "description": "DOM FPGA2 的配置 Flash，存储 FPGA 的配置信息，确保 FPGA 正确初始化和运行，通过SPI总线通信。"
+  }
+]
+
+
+# 匹配规则（优先级从高到低）
+1.  严格基于实体列表：仅从提供的实体列表中选择，禁止臆造列表中不存在的entity name；
+2.  核心对象匹配：若问题提及具体硬件名称（如PSU1、温度传感器、风扇CPLD），优先匹配 `name` 或 `description` 包含该硬件关键词的实体；
+4.  功能场景匹配：若问题提及监控目标（温度、电压）、通信接口（I2C、PMBus）、控制功能（风扇调速、电源管理），匹配 `description` 包含对应功能的实体；
+5.  多实体关联处理：若多个实体与问题强相关，全部列出；无任何匹配实体时，返回空列表。
+
+# 输出要求（强制严格遵守，否则任务失败）
+1.  输出格式：仅返回JSON数组格式的entity name列表，无任何多余文字、解释、标点或备注；
+2.  单实体匹配：返回 ["entity_name"]；
+3.  多实体匹配：返回 ["entity_name1", "entity_name2"]；
+4.  无匹配：返回 []。
+
+# 示例演示
+## 示例1
+输入问题：BMC如何通过I2C获取电源单元的电压数据？
+输入实体列表：[
+    {"name": "bmc", "description": "基板管理控制器，通过I2C控制各组件"},
+    {"name": "psu1", "description": "1500W电源单元#1，支持PMBus，通过I2C与BMC通信，提供电压监控数据"},
+    {"name": "pem1_thermal", "description": "PEM1电源扩展模块温度传感器，通过I2C上报温度"}
+    {"name": "tmp75_fcm1", "description": "FCM模块温度传感器1，监测风扇控制模块出风口温度，I2C上报BMC"},
+    {"name": "tmp75_smb1", "description": "SMB板左侧进风口温度传感器，I2C上报BMC"},
+    {"name": "fan_cpld", "description": "风扇控制CPLD，负责PWM调速，与BMC通过I2C通信"}
+    {"name": "sys_led_red", "description": "系统状态指示灯（红色），用于显示系统故障或警告状态"},
+    {"name": "bmc", "description": "基板管理控制器，负责硬件监控和远程管理"},
+    {"name": "nvme_ssd", "description": "256GB NVMe固态硬盘，用于系统存储和数据加载"}
+]
+输出结果：["psu1"]
+
+## 示例2
+输入问题：BMC需要监控风扇控制模块的温度，应该读取哪些传感器的数据？
+输入实体列表：[
+    {"name": "bmc", "description": "基板管理控制器，通过I2C控制各组件"},
+    {"name": "psu1", "description": "1500W电源单元#1，支持PMBus，通过I2C与BMC通信，提供电压监控数据"},
+    {"name": "pem1_thermal", "description": "PEM1电源扩展模块温度传感器，通过I2C上报温度"}
+    {"name": "tmp75_fcm1", "description": "FCM模块温度传感器1，监测风扇控制模块出风口温度，I2C上报BMC"},
+    {"name": "tmp75_smb1", "description": "SMB板左侧进风口温度传感器，I2C上报BMC"},
+    {"name": "fan_cpld", "description": "风扇控制CPLD，负责PWM调速，与BMC通过I2C通信"}
+    {"name": "sys_led_red", "description": "系统状态指示灯（红色），用于显示系统故障或警告状态"},
+    {"name": "bmc", "description": "基板管理控制器，负责硬件监控和远程管理"},
+    {"name": "nvme_ssd", "description": "256GB NVMe固态硬盘，用于系统存储和数据加载"}
+]
+输出结果：["tmp75_fcm1"]
+
+## 示例3
+输入问题：BMC如何控制系统的红色故障指示灯？
+输入实体列表：[
+    {"name": "bmc", "description": "基板管理控制器，通过I2C控制各组件"},
+    {"name": "psu1", "description": "1500W电源单元#1，支持PMBus，通过I2C与BMC通信，提供电压监控数据"},
+    {"name": "pem1_thermal", "description": "PEM1电源扩展模块温度传感器，通过I2C上报温度"}
+    {"name": "tmp75_fcm1", "description": "FCM模块温度传感器1，监测风扇控制模块出风口温度，I2C上报BMC"},
+    {"name": "tmp75_smb1", "description": "SMB板左侧进风口温度传感器，I2C上报BMC"},
+    {"name": "fan_cpld", "description": "风扇控制CPLD，负责PWM调速，与BMC通过I2C通信"}
+    {"name": "sys_led_red", "description": "系统状态指示灯（红色），用于显示系统故障或警告状态"},
+    {"name": "bmc", "description": "基板管理控制器，负责硬件监控和远程管理"},
+    {"name": "nvme_ssd", "description": "256GB NVMe固态硬盘，用于系统存储和数据加载"}
+]
+输出结果：["sys_led_red"]
+
+## 示例4
+输入问题：BMC如何管理硬盘的RAID配置？
+输入实体列表：[
+    {"name": "bmc", "description": "基板管理控制器，通过I2C控制各组件"},
+    {"name": "psu1", "description": "1500W电源单元#1，支持PMBus，通过I2C与BMC通信，提供电压监控数据"},
+    {"name": "pem1_thermal", "description": "PEM1电源扩展模块温度传感器，通过I2C上报温度"}
+    {"name": "tmp75_fcm1", "description": "FCM模块温度传感器1，监测风扇控制模块出风口温度，I2C上报BMC"},
+    {"name": "tmp75_smb1", "description": "SMB板左侧进风口温度传感器，I2C上报BMC"},
+    {"name": "fan_cpld", "description": "风扇控制CPLD，负责PWM调速，与BMC通过I2C通信"}
+    {"name": "sys_led_red", "description": "系统状态指示灯（红色），用于显示系统故障或警告状态"},
+    {"name": "bmc", "description": "基板管理控制器，负责硬件监控和远程管理"},
+    {"name": "nvme_ssd", "description": "256GB NVMe固态硬盘，用于系统存储和数据加载"}
+]
+输出结果：[]

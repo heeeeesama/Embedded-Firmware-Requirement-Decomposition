@@ -1,0 +1,1 @@
+#1 download bge-m3 model and put it in ./model/bge-m3

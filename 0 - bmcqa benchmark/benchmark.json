@@ -1,0 +1,2872 @@
+[
+    {
+        "question": "在Wedge400C中，BMC怎样监控PSU1温度",
+        "qa_pairs": [
+            {
+                "question": "温度传感器的芯片型号",
+                "short_answers": [
+                    "集成于PSU"
+                ]
+            },
+            {
+                "question": "温度传感器的通信总线类型",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "温度传感器通信总线地址",
+                "short_answers": [
+                    "I2C-9连接I2C Switch 0x70h\nI2C Switch Channel 0x01\nI2C地址 0x58"
+                ]
+            },
+            {
+                "question": "获取温度信息的通信协议或要读取的寄存器",
+                "short_answers": [
+                    "根据型号确定"
+                ]
+            },
+            {
+                "question": "怎样将寄存器数据解析为正确的数值类型",
+                "short_answers": [
+                    "厂商自定义"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC怎样监控PSU2温度",
+        "qa_pairs": [
+            {
+                "question": "温度传感器的芯片型号",
+                "short_answers": [
+                    "集成于PSU"
+                ]
+            },
+            {
+                "question": "温度传感器的通信总线类型",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "温度传感器通信总线地址",
+                "short_answers": [
+                    "I2C-9连接I2C Switch 0x70h\nI2C Switch Channel 0x02\nI2C地址 0x58"
+                ]
+            },
+            {
+                "question": "获取温度信息的通信协议或要读取的寄存器",
+                "short_answers": [
+                    "根据型号确定"
+                ]
+            },
+            {
+                "question": "怎样将寄存器数据解析为正确的数值类型",
+                "short_answers": [
+                    "厂商自定义"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC怎样监控PSU1的电源输入口（PEM）温度",
+        "qa_pairs": [
+            {
+                "question": "温度传感器的芯片型号",
+                "short_answers": [
+                    "集成于PEM"
+                ]
+            },
+            {
+                "question": "温度传感器的通信总线类型",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "温度传感器通信总线地址",
+                "short_answers": [
+                    "I2C-9连接I2C Switch 0x70h\nI2C Switch Channel 0x01\nI2C地址 0x18"
+                ]
+            },
+            {
+                "question": "获取温度信息的通信协议或要读取的寄存器",
+                "short_answers": [
+                    "根据型号确定"
+                ]
+            },
+            {
+                "question": "怎样将寄存器数据解析为正确的数值类型",
+                "short_answers": [
+                    "厂商自定义"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC怎样监控PSU2的电源输入口（PEM）温度",
+        "qa_pairs": [
+            {
+                "question": "温度传感器的芯片型号",
+                "short_answers": [
+                    "集成于PEM"
+                ]
+            },
+            {
+                "question": "温度传感器的通信总线类型",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "温度传感器通信总线地址",
+                "short_answers": [
+                    "I2C-9连接I2C Switch 0x70h\nI2C Switch Channel 0x02\nI2C地址 0x18"
+                ]
+            },
+            {
+                "question": "获取温度信息的通信协议或要读取的寄存器",
+                "short_answers": [
+                    "根据型号确定"
+                ]
+            },
+            {
+                "question": "怎样将寄存器数据解析为正确的数值类型",
+                "short_answers": [
+                    "厂商自定义"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC怎样获取SCM温度监控",
+        "qa_pairs": [
+            {
+                "question": "温度传感器的芯片型号",
+                "short_answers": [
+                    "LM75"
+                ]
+            },
+            {
+                "question": "温度传感器的通信总线类型",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "温度传感器通信总线地址",
+                "short_answers": [
+                    "I2C_3 0x70switch channel2(0x02) 0x4C LM75#1 0x4D LM75#2"
+                ]
+            },
+            {
+                "question": "获取温度信息的通信协议或要读取的寄存器",
+                "short_answers": [
+                    "0x00h"
+                ]
+            },
+            {
+                "question": "怎样将寄存器数据解析为正确的数值类型",
+                "short_answers": [
+                    "读取2字节，仅用高9位\nraw_temp = (msb << 8 | lsb) >> 7"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC怎样获取GB出风口温度",
+        "qa_pairs": [
+            {
+                "question": "温度传感器的芯片型号",
+                "short_answers": [
+                    "LM75"
+                ]
+            },
+            {
+                "question": "温度传感器的通信总线类型",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "温度传感器通信总线地址",
+                "short_answers": [
+                    "I2C_4 0x49"
+                ]
+            },
+            {
+                "question": "获取温度信息的通信协议或要读取的寄存器",
+                "short_answers": [
+                    "0x00h"
+                ]
+            },
+            {
+                "question": "怎样将寄存器数据解析为正确的数值类型",
+                "short_answers": [
+                    "读取2字节，仅用高9位\nraw_temp = (msb << 8 | lsb) >> 7"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC怎样监控SMB板出风口温度",
+        "qa_pairs": [
+            {
+                "question": "温度传感器的芯片型号",
+                "short_answers": [
+                    "LM75"
+                ]
+            },
+            {
+                "question": "温度传感器的通信总线类型",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "温度传感器通信总线地址",
+                "short_answers": [
+                    "I2C_4 0x4A"
+                ]
+            },
+            {
+                "question": "获取温度信息的通信协议或要读取的寄存器",
+                "short_answers": [
+                    "0x00h"
+                ]
+            },
+            {
+                "question": "怎样将寄存器数据解析为正确的数值类型",
+                "short_answers": [
+                    "读取2字节，仅用高9位\nraw_temp = (msb << 8 | lsb) >> 7"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC怎样监控SMB板左侧进风口温度",
+        "qa_pairs": [
+            {
+                "question": "温度传感器的芯片型号",
+                "short_answers": [
+                    "LM75"
+                ]
+            },
+            {
+                "question": "温度传感器的通信总线类型",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "温度传感器通信总线地址",
+                "short_answers": [
+                    "I2C_4 0x48"
+                ]
+            },
+            {
+                "question": "获取温度信息的通信协议或要读取的寄存器",
+                "short_answers": [
+                    "0x00h"
+                ]
+            },
+            {
+                "question": "怎样将寄存器数据解析为正确的数值类型",
+                "short_answers": [
+                    "读取2字节，仅用高9位\nraw_temp = (msb << 8 | lsb) >> 7"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC怎样监控风扇板左侧出风口温度",
+        "qa_pairs": [
+            {
+                "question": "温度传感器的芯片型号",
+                "short_answers": [
+                    "LM75"
+                ]
+            },
+            {
+                "question": "温度传感器的通信总线类型",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "温度传感器通信总线地址",
+                "short_answers": [
+                    "I2C_12 0x70switch channel3(0x08) 0x48"
+                ]
+            },
+            {
+                "question": "获取温度信息的通信协议或要读取的寄存器",
+                "short_answers": [
+                    "0x00h"
+                ]
+            },
+            {
+                "question": "怎样将寄存器数据解析为正确的数值类型",
+                "short_answers": [
+                    "读取2字节，仅用高9位\nraw_temp = (msb << 8 | lsb) >> 7"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC怎样监控GB内部温度",
+        "qa_pairs": [
+            {
+                "question": "温度传感器的芯片型号",
+                "short_answers": [
+                    "GB集成温度传感器"
+                ]
+            },
+            {
+                "question": "温度传感器的通信总线类型",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "温度传感器通信总线地址",
+                "short_answers": [
+                    "I2C_4 0x2A"
+                ]
+            },
+            {
+                "question": "获取温度信息的通信协议或要读取的寄存器",
+                "short_answers": [
+                    "根据型号确定"
+                ]
+            },
+            {
+                "question": "怎样将寄存器数据解析为正确的数值类型",
+                "short_answers": [
+                    "厂商自定义"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC怎样监控SMB板右侧进风口温度",
+        "qa_pairs": [
+            {
+                "question": "温度传感器的芯片型号",
+                "short_answers": [
+                    "LM75"
+                ]
+            },
+            {
+                "question": "温度传感器的通信总线类型",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "温度传感器通信总线地址",
+                "short_answers": [
+                    "I2C_4 0x4B"
+                ]
+            },
+            {
+                "question": "获取温度信息的通信协议或要读取的寄存器",
+                "short_answers": [
+                    "0x00h"
+                ]
+            },
+            {
+                "question": "怎样将寄存器数据解析为正确的数值类型",
+                "short_answers": [
+                    "读取2字节，仅用高9位\nraw_temp = (msb << 8 | lsb) >> 7"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC怎样监控风扇板右侧出风口温度",
+        "qa_pairs": [
+            {
+                "question": "温度传感器的芯片型号",
+                "short_answers": [
+                    "LM75"
+                ]
+            },
+            {
+                "question": "温度传感器的通信总线类型",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "温度传感器通信总线地址",
+                "short_answers": [
+                    "I2C_12 0x70switch channel3(0x08) 0x49"
+                ]
+            },
+            {
+                "question": "获取温度信息的通信协议或要读取的寄存器",
+                "short_answers": [
+                    "0x00h"
+                ]
+            },
+            {
+                "question": "怎样将寄存器数据解析为正确的数值类型",
+                "short_answers": [
+                    "读取2字节，仅用高9位\nraw_temp = (msb << 8 | lsb) >> 7"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC怎样进行SMB板电源监控",
+        "qa_pairs": [
+            {
+                "question": "电压监控传感器型号",
+                "short_answers": [
+                    "POWER1220 "
+                ]
+            },
+            {
+                "question": "电压监控传感器的通信总线",
+                "short_answers": [
+                    "I2C_2"
+                ]
+            },
+            {
+                "question": "电压监控传感器的总线地址",
+                "short_answers": [
+                    "0x3A "
+                ]
+            },
+            {
+                "question": "电压监控传感器的通信协议或寄存器地址",
+                "short_answers": [
+                    "XP12R0 VMON1\nXP5R0 VMON2\nXP3R3_BMC VMON3\nXP2R5_BMC ADC1\nXP1R2_BMC VMON5\nXP3R3_FPGA VMON4\nXP1R8_FPGA VMON6\nXP1R0_FPGA ADC0\nXP1R2_VDDH ADC6\nXP1R8_IO VMON7\nXP1R8_ALG ADC5\nXP2R5_HBM VMON8\nXP1R2_HBM ADC7\nFLT_IFG_VDDCK_1P15 VMON12\nVDD_CORE VMON10\nXP0P94_VDDA VMON9\nXP0P75_PCIE VMON11\nXP3R3_LEFT ADC4\nXP3R3_RIGHT ADC3"
+                ]
+            },
+            {
+                "question": "数据的读取",
+                "short_answers": [
+                    "0x09 选择输入通道（SEL[3:0] bits）\n设置衰减器（ATTEN bit）\n读取ADC_VALUE_LOW寄存器（地址0x07） 的DONE位（bit 0）\n读取ADC_VALUE_HIGH（地址0x08）\nADC_VALUE_LOW（地址0x07）"
+                ]
+            },
+            {
+                "question": "数据的解析",
+                "short_answers": [
+                    "ADC值 = (ADC_VALUE_HIGH << 4) | (ADC_VALUE_LOW[7:4])，形成12位无符号整数\nADC代码（十进制） × 分辨率\nATTEN bit 0: 满量程2.048V（分辨率2mV/LSB）\nATTEN bit 1: 满量程6.144V（分辨率6mV/LSB）"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何查询 POWR1220 监控的电源轨状态",
+        "qa_pairs": [
+            {
+                "question": "POWR1220 的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "I2c_2 0x3A"
+                ]
+            },
+            {
+                "question": "电压监控传感器的通信协议或寄存器地址",
+                "short_answers": [
+                    "XP12R0 VMON1\nXP5R0 VMON2\nXP3R3_BMC VMON3\nXP2R5_BMC ADC1\nXP1R2_BMC VMON5\nXP3R3_FPGA VMON4\nXP1R8_FPGA VMON6\nXP1R0_FPGA ADC0\nXP1R2_VDDH ADC6\nXP1R8_IO VMON7\nXP1R8_ALG ADC5\nXP2R5_HBM VMON8\nXP1R2_HBM ADC7\nFLT_IFG_VDDCK_1P15 VMON12\nVDD_CORE VMON10\nXP0P94_VDDA VMON9\nXP0P75_PCIE VMON11\nXP3R3_LEFT ADC4\nXP3R3_RIGHT ADC3"
+                ]
+            },
+            {
+                "question": "读取 POWR1220 电源轨状态的寄存器是什么？",
+                "short_answers": [
+                    "读取 POWR1220 的电压监控寄存器\n0x09 选择输入通道（SEL[3:0] bits）\n设置衰减器（ATTEN bit）\n读取ADC_VALUE_LOW寄存器（地址0x07） 的DONE位（bit 0）\n读取ADC_VALUE_HIGH（地址0x08）\nADC_VALUE_LOW（地址0x07）"
+                ]
+            },
+            {
+                "question": "数据的解析",
+                "short_answers": [
+                    "ADC值 = (ADC_VALUE_HIGH << 4) | (ADC_VALUE_LOW[7:4])，形成12位无符号整数\nADC代码（十进制） × 分辨率\nATTEN bit 0: 满量程2.048V（分辨率2mV/LSB）\nATTEN bit 1: 满量程6.144V（分辨率6mV/LSB）"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何复位 POWR1220 芯片",
+        "qa_pairs": [
+            {
+                "question": "POWR1220的复位方式有哪些",
+                "short_answers": [
+                    " RESETb 信号、JTAG 或 I²C 接口进行复位操作"
+                ]
+            },
+            {
+                "question": "BMC怎样控制POWR1220复位",
+                "short_answers": [
+                    "BMC可通过I2C接口写入RESET寄存器（0x12）任意值"
+                ]
+            },
+            {
+                "question": "POWR1220 的复位控制方式及寄存器是什么？",
+                "short_answers": [
+                    "通过写入 POWR1220 的复位寄存器（如软件复位寄存器），特定 bit 位（如 bit7）写入 1 触发复位，复位后自动清零。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何获取风扇状态",
+        "qa_pairs": [
+            {
+                "question": "风扇状态监控的硬件通信拓扑",
+                "short_answers": [
+                    "Fan Control Module（FCM） Fan_CPLD   I2C_12 0x70 Channel1（0x01）访问 Fan CPLD（地址 0x3e），读写CPLD寄存器获取各风扇状态。"
+                ]
+            },
+            {
+                "question": "风扇状态监控涉及的芯片型号",
+                "short_answers": [
+                    "CPLD寄存器控制"
+                ]
+            },
+            {
+                "question": "风扇状态监控的通信总线类型和地址",
+                "short_answers": [
+                    "读写FAN CPLD的寄存器"
+                ]
+            },
+            {
+                "question": "获取风扇状态需要读取的寄存器地址",
+                "short_answers": [
+                    "Fan_CPLD寄存器 0x10*(i-1)+0x28，i表示风扇序号"
+                ]
+            },
+            {
+                "question": "风扇状态数据如何解析为正确的数值类型",
+                "short_answers": [
+                    "bit3/bit2/bit1：0 表示正常（alive），1 表示异常（bad）；\nbit0：0 表示风扇存在，1 表示不存在；"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何设置风扇转速",
+        "qa_pairs": [
+            {
+                "question": "风扇转速控制的硬件通信拓扑",
+                "short_answers": [
+                    "Fan Control Module（FCM） Fan_CPLD   I2C_12 0x70 Channel1（0x01）访问 Fan CPLD（地址 0x3e），读写CPLD寄存器获取各风扇状态。"
+                ]
+            },
+            {
+                "question": "风扇转速控制涉及的芯片型号",
+                "short_answers": [
+                    "CPLD寄存器控制"
+                ]
+            },
+            {
+                "question": "风扇转速控制的通信总线类型和地址",
+                "short_answers": [
+                    "读写FAN CPLD的寄存器"
+                ]
+            },
+            {
+                "question": "设置风扇转速需要写入的寄存器地址",
+                "short_answers": [
+                    "Fan_CPLD 寄存器 0x10*(i-1)+0x22，i表示风扇序号"
+                ]
+            },
+            {
+                "question": "PWM 值如何转换为实际风扇转速",
+                "short_answers": [
+                    "0-63等比例换算为100% duty cycle，前风扇满速13700RPM，后风扇满速13400RPM"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何获取风扇1的配置信息",
+        "qa_pairs": [
+            {
+                "question": "风扇配置信息存储的硬件通信拓扑",
+                "short_answers": [
+                    "Fan Control Module（FCM） Fan_CPLD   I2C_12 0x70: \nChannel2（0x02）访问0x51 FCB Inv（24C02）;\nChannel5（0x10）访问0x52 FAN#1（24C64）；\nChannel6（0x20）访问0x52 FAN#2（24C64）；\nChannel7（0x40）访问0x52 FAN#3（24C64）；\nChannel8（0x80）访问0x52 FAN#4（24C64）；"
+                ]
+            },
+            {
+                "question": "存储风扇配置信息的芯片型号",
+                "short_answers": [
+                    "24C02/24C64"
+                ]
+            },
+            {
+                "question": "访问风扇配置信息的通信总线类型和地址",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "读取风扇配置信息需要使用的寄存器或地址",
+                "short_answers": [
+                    "通过 I2C 读取 24c64（或24C02） EEPROM的内容"
+                ]
+            },
+            {
+                "question": "风扇配置信息如何解析",
+                "short_answers": [
+                    "按厂商定义的格式解析。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何获取风扇1故障状态",
+        "qa_pairs": [
+            {
+                "question": "风扇故障状态由谁管理",
+                "short_answers": [
+                    "fan_CPLD"
+                ]
+            },
+            {
+                "question": "fan_CPLD的硬件拓扑是怎样的",
+                "short_answers": [
+                    "BMC通过I2C连接I2C switch，switch连接fan_CPLD，fan_CPLD控制风扇"
+                ]
+            },
+            {
+                "question": "访问fan_CPLD的通信链路是怎样的",
+                "short_answers": [
+                    "I2C_12 0x70 switch channel1（0x01） 0x3e fan_CPLD"
+                ]
+            },
+            {
+                "question": "采用何种通信协议或读写哪个寄存器",
+                "short_answers": [
+                    "FAN1_PRESENT 0x28 FAN2_PRESENT 0x38 FAN3_PRESENT 0x48 FAN4_PRESENT 0x58"
+                ]
+            },
+            {
+                "question": "Fan CPLD 的风扇故障信号寄存器地址及位定义是什么？",
+                "short_answers": [
+                    "Fan CPLD  FANi_PRESENT\nbit3（FFANi_ALIVE）和 bit2（RFANi_ALIVE）用于指示风扇故障，0 表示风扇正常（alive），1 表示故障（bad）。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC 如何设置风扇的 PWM 占空比",
+        "qa_pairs": [
+            {
+                "question": "BMC 设置风扇 PWM 的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "BMC 通过 I2C_12 0x70 switch的 Channel1 访问 Fan CPLD（0x3e），Fan CPLD 生成 PWM 信号控制风扇。"
+                ]
+            },
+            {
+                "question": "控制风扇 PWM 的芯片型号及寄存器是什么？",
+                "short_answers": [
+                    "芯片为 Fan CPLD，对应寄存器为:\n0x22 FAN1_PWM\n0x32 FAN2_PWM\n0x42 FAN3_PWM\n0x52 FAN4_PWM"
+                ]
+            },
+            {
+                "question": "通信总线类型和地址是什么？",
+                "short_answers": [
+                    "I2C_12 Channel1 0x01 0x3e"
+                ]
+            },
+            {
+                "question": "PWM 占空比的寄存器位定义是什么？",
+                "short_answers": [
+                    "PWM 值为 5 位二进制（00_0000 至 11_1111），对应 0/63 至 63/63 的占空比"
+                ]
+            },
+            {
+                "question": "PWM 值如何解析为实际占空比？",
+                "short_answers": [
+                    "value/63 * 100%"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何获取 Fan CPLD 的温度告警状态",
+        "qa_pairs": [
+            {
+                "question": "BMC 设置风扇 PWM 的硬件通信拓扑是怎样的",
+                "short_answers": [
+                    "BMC 通过 I2C_12 0x70 switch的 Channel1 访问 Fan CPLD（0x3e），Fan CPLD 生成 PWM 信号控制风扇。"
+                ]
+            },
+            {
+                "question": "Fan CPLD 中温度告警信号的寄存器地址",
+                "short_answers": [
+                    "Fan CPLD  0x07 （LM75 Alert Status）"
+                ]
+            },
+            {
+                "question": "Fan CPLD 中温度告警信号的寄存器的数据怎样解析",
+                "short_answers": [
+                    "Fan CPLD   0x07  （LM75 Alert Status）的 bit1（LM75_2）和 bit0（LM75_1） 0 表示有告警，1 表示无告警。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC怎样从 FCB 的 FRU 中解析序列号信息",
+        "qa_pairs": [
+            {
+                "question": "FCB的FRU储存在什么地方",
+                "short_answers": [
+                    "FCB 的 FRU 信息存储在 FCB Inv EEPROM 中，该 EEPROM 通过 I2C 总线与 BMC 连接"
+                ]
+            },
+            {
+                "question": "BMC如何访问 FCB Inv EEPROM",
+                "short_answers": [
+                    "BMC 通过 I2C_12 总线上的 PCA9548 开关（地址 0x70）的 Channel2（0x02）访问 0x51。"
+                ]
+            },
+            {
+                "question": "存储 FCB FRU 信息的芯片型号是什么？",
+                "short_answers": [
+                    "24c02"
+                ]
+            },
+            {
+                "question": "访问 FCB FRU 存储器的通信总线类型和地址是什么？",
+                "short_answers": [
+                    "通信总线类型为 I2C，总线地址为 0x51（位于 I2C_12 总线的 Channel2）。"
+                ]
+            },
+            {
+                "question": "解析 FCB FRU 中序列号信息需读取的地址及协议是什么？",
+                "short_answers": [
+                    "使用 I2C 通信协议，序列号信息通常存储在 EEPROM 的特定地址段（如 0x10 至 0x2F），通过连续读取该地址段的字节获取。"
+                ]
+            },
+            {
+                "question": "如何从 FCB FRU 数据中解析出序列号信息？",
+                "short_answers": [
+                    "数据为厂商自定义格式"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC怎样通过PMBus获得当前PSU1的协议版本",
+        "qa_pairs": [
+            {
+                "question": "PSU1的通信总线",
+                "short_answers": [
+                    "I2C通过switch连接PSU、还有IO口连接sys_CPLD"
+                ]
+            },
+            {
+                "question": "PSU1的通信总线地址",
+                "short_answers": [
+                    "I2C_9 0x70switch channel1(0x01) 0x58"
+                ]
+            },
+            {
+                "question": "PSU1的通信协议",
+                "short_answers": [
+                    "PMBus"
+                ]
+            },
+            {
+                "question": "读取PSU1的静态信息的寄存器地址",
+                "short_answers": [
+                    "协议版本 PMBUS_REVISION 98h"
+                ]
+            },
+            {
+                "question": "寄存器中数据的解析方法",
+                "short_answers": [
+                    "“PMBUS_REVISION” 命令返回 1 字节数据， 其中 Bits [7:5] 表示 PMBus 规范第一部分的版本，Bits [3:0] 表示第二部分的版本"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC怎样通过PMBus获得当前PSU1的额定功率",
+        "qa_pairs": [
+            {
+                "question": "PSU1的通信总线",
+                "short_answers": [
+                    "I2C通过switch连接PSU、还有IO口连接sys_CPLD"
+                ]
+            },
+            {
+                "question": "PSU1的通信总线地址",
+                "short_answers": [
+                    "I2C_9 0x70switch channel1(0x01) 0x58"
+                ]
+            },
+            {
+                "question": "PSU1的通信协议",
+                "short_answers": [
+                    "PMBus"
+                ]
+            },
+            {
+                "question": "读取PSU1的静态信息的寄存器地址",
+                "short_answers": [
+                    "最大额定输出功率 A7h MFR_POUT_MAX\n最大额定输入功率 A3h MFR_PIN_MAX"
+                ]
+            },
+            {
+                "question": "寄存器中数据的解析方法",
+                "short_answers": [
+                    "数据格式通常为两字节，格式可能是线性数据格式或 DIRECT 格式，由厂商自定义"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC怎样通过PMBus获得当前PSU1的输入功率",
+        "qa_pairs": [
+            {
+                "question": "PSU1的通信总线",
+                "short_answers": [
+                    "I2C通过switch连接PSU、还有IO口连接sys_CPLD"
+                ]
+            },
+            {
+                "question": "PSU1的通信总线地址",
+                "short_answers": [
+                    "I2C_9 0x70switch channel1(0x01) 0x58"
+                ]
+            },
+            {
+                "question": "PSU1的通信协议",
+                "short_answers": [
+                    "PMBus"
+                ]
+            },
+            {
+                "question": "读取PSU1的静态信息的寄存器地址",
+                "short_answers": [
+                    "输入功率 97h READ_PIN"
+                ]
+            },
+            {
+                "question": "寄存器中数据的解析方法",
+                "short_answers": [
+                    "数据格式通常为两字节，格式可能是线性数据格式或 DIRECT 格式，由厂商自定义"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC怎样通过PMBus获得当前PSU1的输入电压",
+        "qa_pairs": [
+            {
+                "question": "PSU1的通信总线",
+                "short_answers": [
+                    "I2C通过switch连接PSU、还有IO口连接sys_CPLD"
+                ]
+            },
+            {
+                "question": "PSU1的通信总线地址",
+                "short_answers": [
+                    "I2C_9 0x70switch channel1(0x01) 0x58"
+                ]
+            },
+            {
+                "question": "PSU1的通信协议",
+                "short_answers": [
+                    "PMBus"
+                ]
+            },
+            {
+                "question": "读取PSU1的静态信息的寄存器地址",
+                "short_answers": [
+                    "输入电压 96h READ_VIN"
+                ]
+            },
+            {
+                "question": "寄存器中数据的解析方法",
+                "short_answers": [
+                    "数据格式通常为两字节，格式可能是线性数据格式或 DIRECT 格式，由厂商自定义"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC怎样通过PMBus获得当前PSU1的输出电流",
+        "qa_pairs": [
+            {
+                "question": "PSU1的通信总线",
+                "short_answers": [
+                    "I2C通过switch连接PSU、还有IO口连接sys_CPLD"
+                ]
+            },
+            {
+                "question": "PSU1的通信总线地址",
+                "short_answers": [
+                    "I2C_9 0x70switch channel1(0x01) 0x58"
+                ]
+            },
+            {
+                "question": "PSU1的通信协议",
+                "short_answers": [
+                    "PMBus"
+                ]
+            },
+            {
+                "question": "读取PSU1的静态信息的寄存器地址",
+                "short_answers": [
+                    "输出电流 8Ch READ_IOUT"
+                ]
+            },
+            {
+                "question": "寄存器中数据的解析方法",
+                "short_answers": [
+                    "数据格式通常为两字节，格式可能是线性数据格式或 DIRECT 格式，由厂商自定义"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC怎样通过PMBus获得当前PSU1的故障状态",
+        "qa_pairs": [
+            {
+                "question": "PSU1的通信总线",
+                "short_answers": [
+                    "PMBus:I2C_9 0x70switch channel1(0x01) 0x58\nIO:AC_OK信号连接至sys_CPLD，BMC通过I2C_13 0x3e连接sys_CPLD，BMC通过I2C读取sys_CPLD寄存器获取PSU AC_OK信息"
+                ]
+            },
+            {
+                "question": "PSU1的通信协议",
+                "short_answers": [
+                    "PMBus、寄存器读取"
+                ]
+            },
+            {
+                "question": "读取PSU1的状态信息的寄存器地址",
+                "short_answers": [
+                    "79h status_word 16bit对应16种不同错误"
+                ]
+            },
+            {
+                "question": "状态寄存器中不同的bit对应的故障",
+                "short_answers": [
+                    "PMBus spec Table 15\nSMB sys_CPLD 的 0x32 寄存器（SYSPLD_REG_SYSTEM_INT_Status_3）"
+                ]
+            },
+            {
+                "question": "不同bit对应的故障的具体故障原因",
+                "short_answers": [
+                    "PMBus Status_word:\n78h bit0：其他故障\n78h bit1：STATUS_CML 7Eh\n78h bit2：STATUS_TEMPERATURE 7Dh\n78h bit3：STATUS_INPUT 7Ch bit 4\n78h bit4：STATUS_IOUT 7Bh bit 7\n78h bit5：STATUS_VOUT 7Ah bit 7\n78h bit6：OFF\n78h bit7：BUSY\n\n79h bit0：未知错误\n79h bit1：STATUE_OTHER 7Fh\n79h bit2：STATUS_FAN_1_2 81h              \n          STATUS_FAN_3_4 82h\n79h bit3：POWER_GOOD#\n79h bit4：STATUS_MFR_SPECIFIC 80h\n79h bit5：STATUS_INPUT 7Ch\n79h bit6：STATUS_IOUT 7Bh\n79h bit7：STATUS_VOUT 7Ah\n\nSMB sys_CPLD 的 0x32 寄存器（SYSPLD_REG_SYSTEM_INT_Status_3）：\n\nbit0（PSU_PWROK_1）PSU1输出状态\nbit1（PSU_PWROK_2）PSU2 输出状态\nbit2（PSU_ACOK_1）PSU1输入状态\nbit3（PSU_ACOK_2）PSU2 输入状态\n（0 = 故障）"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何获取 PSU1 的输入电源状态",
+        "qa_pairs": [
+            {
+                "question": "PSU 输入电源状态监控的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "PMBus:I2C_9 0x70switch channel1(0x01) 0x58\nIO:AC_OK信号连接至sys_CPLD，BMC通过I2C_13 0x3e连接sys_CPLD"
+                ]
+            },
+            {
+                "question": "用于监测 PSU 输入电源状态的寄存器地址及位定义是什么？",
+                "short_answers": [
+                    "SMB sys_CPLD 的 0x32 寄存器（SYSPLD_REG_SYSTEM_INT_Status_3）\nbit2（PSU_ACOK_1）对应 PSU1 输入状态\nbit3（PSU_ACOK_2）对应 PSU2 输入状态；\n1 表示输入正常，0 表示输入异常。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何获取 PSU1 的输出电源状态",
+        "qa_pairs": [
+            {
+                "question": "PSU 输出电源状态监控的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "PMBus:I2C_9 0x70switch channel1(0x01) 0x58\nIO:AC_OK信号连接至sys_CPLD，BMC通过I2C_13 0x3e连接sys_CPLD"
+                ]
+            },
+            {
+                "question": "用于监测 PSU 输出电源状态的寄存器地址及位定义是什么？",
+                "short_answers": [
+                    "SMB sys_CPLD 的 0x32 寄存器（SYSPLD_REG_SYSTEM_INT_Status_3）\nbit0（PSU_PWROK_1）对应 PSU1 输出状态\nbit1（PSU_PWROK_2）对应 PSU2 输出状态；\n1 表示输出正常，0 表示输出异常。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何获得 PSU1 的开启与关闭",
+        "qa_pairs": [
+            {
+                "question": "PSU 开关控制的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "I2C_9 0x70switch channel8(0x80) 0x3e PWR_CPLD"
+                ]
+            },
+            {
+                "question": "控制 PSU 开关的寄存器地址及位定义是什么？",
+                "short_answers": [
+                    "PWR CPLD 的 0x10 寄存器（SYSTEM_MISC_1）\nbit0（CPLD_PSU1_ON）控制 PSU1\nbit1（CPLD_PSU2_ON）控制 PSU2\n1 为开启，0 为关闭"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC怎样设置 PSU1 的开启 / 关闭状态",
+        "qa_pairs": [
+            {
+                "question": "PSU 状态控制的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "PSU 的开启 / 关闭由 PWR CPLD 控制，PWR CPLD 通过 I2C 总线与 BMC 连接，BMC 通过 I2C_9 总线上的 PCA9548 开关（地址 0x70）的 Channel8（0x80）访问 PWR CPLD（地址 0x3e）。"
+                ]
+            },
+            {
+                "question": "控制 PSU 状态的芯片型号是什么？",
+                "short_answers": [
+                    "核心控制芯片为 PWR CPLD（电源控制复杂可编程逻辑器件）。"
+                ]
+            },
+            {
+                "question": "PSU 状态控制的通信总线类型和地址是什么？",
+                "short_answers": [
+                    "通信总线类型为 I2C，PWR CPLD 位于 I2C_9 总线，通过 PCA9548 开关 Channel8 访问，地址为 0x3e。"
+                ]
+            },
+            {
+                "question": "设置 PSU 开启 / 关闭需访问的寄存器及位定义是什么？",
+                "short_answers": [
+                    "PWR CPLD 的 0x10 寄存器（SYSTEM_MISC_1）\nbit0（CPLD_PSU1_ON）控制 PSU1\nbit1（CPLD_PSU2_ON）控制 PSU2\n1 为开启，0 为关闭"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何获取PSU1电源 good（PG）信号状态",
+        "qa_pairs": [
+            {
+                "question": "PSU电源的PG信号硬件拓扑是怎样的",
+                "short_answers": [
+                    "PSU的PG信号接到了PWR_CPLD，PWR_CPLD通过I2C链路连接到BMC"
+                ]
+            },
+            {
+                "question": "应该怎样获取PSU的PG信号的状态",
+                "short_answers": [
+                    "通过链路I2C_9 0x70switch channel8(0x80) 0x3e 读取PWR_CPLD寄存器"
+                ]
+            },
+            {
+                "question": "PWR_CPLD 中 PSU 的 PG 信号寄存器地址及位定义是什么？",
+                "short_answers": [
+                    "PWR_CPLD 的 0x11 寄存器（SYSTEM_MISC_2）\nbit3（CPLD_PSU2_PG）对应 PSU2 的 PG 状态\nbit2（CPLD_PSU1_PG）对应 PSU1 的 PG 状态\n1 表示正常，0 表示故障。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何查询 PWR CPLD 的版本信息",
+        "qa_pairs": [
+            {
+                "question": "PWR CPLD 的 I2C 通信地址及总线是什么？",
+                "short_answers": [
+                    "PWR CPLD 通过 I2c_9 总线的 PCA9548 开关（0x70）的 Channel8（0x80）访问，I2C 地址为 0x3e。"
+                ]
+            },
+            {
+                "question": "读取 PWR CPLD 版本的寄存器地址是什么？",
+                "short_answers": [
+                    "读取 PWR CPLD 的 0x01 寄存器（CPLD_VERSION），其中 bit5-0 表示版本号，bit6 表示是否为正式版。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何设置 PWR CPLD 的电源循环模式",
+        "qa_pairs": [
+            {
+                "question": "PWR CPLD 的 I2C 通信地址及总线是什么？",
+                "short_answers": [
+                    "PWR CPLD 通过 I2c_9 总线的 PCA9548 开关（0x70）的 Channel8（0x80）访问，I2C 地址为 0x3e。"
+                ]
+            },
+            {
+                "question": "控制 PWR CPLD 电源循环的寄存器及位定义是什么？",
+                "short_answers": [
+                    "通过 PWR CPLD 的 0x23 寄存器（TIMER_MISC）的 bit0（POWER_CYCLE_GO）设置，写入 1 时启动电源循环，0 时停止。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何获取SMB板电源轨的good（PG）信号状态",
+        "qa_pairs": [
+            {
+                "question": "SMB电源轨的PG信号硬件拓扑是怎样的",
+                "short_answers": [
+                    "电源轨受PWR1220监控，PWR1220的PG信号连接到sys_CPLD，BMC通过I2C链路访问sys_CPLD获取SMB电源轨PG状态"
+                ]
+            },
+            {
+                "question": "应该怎样获取电源轨的PG信号的状态",
+                "short_answers": [
+                    "I2C_13 0x3e sys_CPLD"
+                ]
+            },
+            {
+                "question": "SMB sys_CPLD 中电源轨的 PG 信号寄存器地址及位定义是什么？",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x43 寄存器（SYSPLD_REG_MISC_PWR_1）\nbit5（XP1R15V_BMC_PG）\nbit4（XP3R3V_BMC_PG）\nbit3（XP2R5V_BMC_PG）\nbit2（XP1R2V_BMC_PG）\nbit1（XP5R0V_PG）\nbit0（XP3R3V_1220_PG）\n0x44 寄存器（SYSPLD_REG_MISC_PWR_2）\nbit5（XP3R3V_Optical_Right_PG）\nbit4（XP3R3V_Optical_Left_PG）\nbit3（USB_OC_PG）\nbit2（XP1R0V_FPGA_PG）\nbit1（XP1R8V_FPGA_PG）\nbit0（XP3R3V_FPGA_PG）\n0x45 寄存器（SYSPLD_REG_MISC_PWR_3）\nbit5（IR35215_PVDD0P8_VRRDY）\nbit4（XP0R94V_VDDA_PG）\nbit3（NP_POWER_STABLE_CPLD）\nbit2（VDD_CORE_PG）\nbit1（XP0R75V_PCIE_PG）\nbit0（XP1R15V_VDDCK_PG）\n1 表示电源正常，0 表示故障"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何获取SMB板电源轨的XP1R15V_BMC_PG 的good（PG）信号状态",
+        "qa_pairs": [
+            {
+                "question": "SMB电源轨的PG信号硬件拓扑是怎样的",
+                "short_answers": [
+                    "电源轨受PWR1220监控，PWR1220的PG信号连接到sys_CPLD，BMC通过I2C链路访问sys_CPLD获取SMB电源轨PG状态"
+                ]
+            },
+            {
+                "question": "应该怎样获取电源轨的PG信号的状态",
+                "short_answers": [
+                    "I2C_13 0x3e sys_CPLD"
+                ]
+            },
+            {
+                "question": "SMB sys_CPLD 中XP1R15V_BMC_PG电源轨的 PG 信号寄存器地址及位定义是什么？",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x43 寄存器（SYSPLD_REG_MISC_PWR_1）\nbit5（XP1R15V_BMC_PG）\n1 表示电源正常，0 表示故障"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何获取SMB板电源轨的XP3R3V_BMC_PG 的good（PG）信号状态",
+        "qa_pairs": [
+            {
+                "question": "SMB电源轨的PG信号硬件拓扑是怎样的",
+                "short_answers": [
+                    "电源轨受PWR1220监控，PWR1220的PG信号连接到sys_CPLD，BMC通过I2C链路访问sys_CPLD获取SMB电源轨PG状态"
+                ]
+            },
+            {
+                "question": "应该怎样获取电源轨的PG信号的状态",
+                "short_answers": [
+                    "I2C_13 0x3e sys_CPLD"
+                ]
+            },
+            {
+                "question": "SMB sys_CPLD 中XP3R3V_BMC_PG电源轨的 PG 信号寄存器地址及位定义是什么？",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x43 寄存器（SYSPLD_REG_MISC_PWR_1）\nbit4（XP3R3V_BMC_PG）\n1 表示电源正常，0 表示故障"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何获取SCM板电源轨的good（PG）信号状态",
+        "qa_pairs": [
+            {
+                "question": "SCM板电源轨的PG信号硬件拓扑是怎样的",
+                "short_answers": [
+                    "电源轨受PWR1220监控，SCM板上电源轨的PG信号连接到scm_CPLD，BMC通过I2C链路访问sys_CPLD获取SMB电源轨PG状态"
+                ]
+            },
+            {
+                "question": "应该怎样获取SCM板电源轨的PG信号的状态",
+                "short_answers": [
+                    "I2C_3 0x3e"
+                ]
+            },
+            {
+                "question": "SCM scm_CPLD 中电源轨的 PG 信号寄存器地址及位定义是什么？",
+                "short_answers": [
+                    "SCM scm_CPLD\n0x30 SYSTEM_POWER_STUTS\nbit5（COM_PWROK）\nbit4（PWRGD_PCH_PWROK）\nbit3（XP12R0V_COME_PG）\nbit2（XP5R0V_COME_PG）\nbit1（XP1R8V_PG）\nbit0（XP3R3V_SSD_PG）\n1 表示电源正常，0 表示故障"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何获取SCM板COM_PWROK电源轨的good（PG）信号状态",
+        "qa_pairs": [
+            {
+                "question": "SCM板电源轨的PG信号硬件拓扑是怎样的",
+                "short_answers": [
+                    "电源轨受PWR1220监控，SCM板上电源轨的PG信号连接到scm_CPLD，BMC通过I2C链路访问sys_CPLD获取SMB电源轨PG状态"
+                ]
+            },
+            {
+                "question": "应该怎样获取SCM板电源轨的PG信号的状态",
+                "short_answers": [
+                    "I2C_3 0x3e"
+                ]
+            },
+            {
+                "question": "SCM scm_CPLD 中COM_PWROK电源轨的 PG 信号寄存器地址及位定义是什么？",
+                "short_answers": [
+                    "SCM scm_CPLD\n0x30 SYSTEM_POWER_STUTS\nbit5（COM_PWROK）\n1 表示电源正常，0 表示故障"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何获取FCB板电源轨的good（PG）信号状态",
+        "qa_pairs": [
+            {
+                "question": "FCB电源轨的PG信号硬件拓扑是怎样的",
+                "short_answers": [
+                    "电源轨受PWR1220监控，FCB板上电源轨的PG信号连接到fan_cpld，BMC通过I2C链路访问fan_cpld获取FCB电源轨PG状态"
+                ]
+            },
+            {
+                "question": "应该怎样获取FCB板电源轨的PG信号的状态",
+                "short_answers": [
+                    "I2C_12 0x70switch channel1(0x01) 0x3e fan_cpld"
+                ]
+            },
+            {
+                "question": "FCB fan_CPLD 中电源轨的 PG 信号寄存器地址及位定义是什么？",
+                "short_answers": [
+                    "FCB fan_CPLD\n0x13 FCB_Efuse_REG\nbit7（PG_FAN4）\nbit6（PG_FAN3）\nbit5（PG_FAN2）\nbit4（PG_FAN1）\n1 表示电源正常，0 表示故障"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何获取FCB板PG_FAN4电源轨的good（PG）信号状态",
+        "qa_pairs": [
+            {
+                "question": "FCB电源轨的PG信号硬件拓扑是怎样的",
+                "short_answers": [
+                    "电源轨受PWR1220监控，FCB板上电源轨的PG信号连接到fan_cpld，BMC通过I2C链路访问fan_cpld获取FCB电源轨PG状态"
+                ]
+            },
+            {
+                "question": "应该怎样获取FCB板电源轨的PG信号的状态",
+                "short_answers": [
+                    "I2C_12 0x70switch channel1(0x01) 0x3e fan_cpld"
+                ]
+            },
+            {
+                "question": "FCB fan_CPLD 中PG_FAN4电源轨的 PG 信号寄存器地址及位定义是什么？",
+                "short_answers": [
+                    "FCB fan_CPLD\n0x13 FCB_Efuse_REG\nbit7（PG_FAN4）\n1 表示电源正常，0 表示故障"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何控制电源循环（Power Cycle）",
+        "qa_pairs": [
+            {
+                "question": "power cycle是受谁控制的",
+                "short_answers": [
+                    "BMC通过读写pwr_CPLD的寄存器实现power cycle的控制"
+                ]
+            },
+            {
+                "question": "pwr_CPLD的硬件拓扑是怎样的",
+                "short_answers": [
+                    "BMC通过I2C总线连接I2C Switch，然后Switch连接pwr_CPLD，CPLD负责实现power cycle逻辑"
+                ]
+            },
+            {
+                "question": "pwr_CPLD的通信链路是怎样的",
+                "short_answers": [
+                    "通过链路I2C_9 0x70switch channel8(0x80) 0x3e 读取PWR_CPLD寄存器"
+                ]
+            },
+            {
+                "question": "采用何种通信协议或读写哪个寄存器",
+                "short_answers": [
+                    "PWR_CPLD 的 0x23 寄存器（TIMER_MISC）"
+                ]
+            },
+            {
+                "question": "PWR_CPLD 中控制电源循环的寄存器地址及位定义是什么？",
+                "short_answers": [
+                    "PWR_CPLD 的 0x23 寄存器（TIMER_MISC）\nbit0（POWER_CYCLE_GO）用于启动电源循环，写入 1 开始循环；\nbit1（TIMER_COUNTER_SETTING_UPDATE）用于更新定时器参数。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC 如何配置电源循环周期",
+        "qa_pairs": [
+            {
+                "question": "BMC 配置电源循环周期的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "BMC 通过 I2C_9 总线的 PCA9548 开关（地址 0x70）的 Channel8 访问 PWR_CPLD（地址 0x3e），PWR_CPLD 的定时器寄存器控制循环周期。"
+                ]
+            },
+            {
+                "question": "控制电源循环周期的寄存器是什么？",
+                "short_answers": [
+                    "PWR_CPLD 的 0x20 寄存器（TIMER_BASE_SETTING）用于设置周期基准（10ms/100ms/1s/10s），0x21 寄存器（TIMER_COUNTER_SETTING）设置计数次数。"
+                ]
+            },
+            {
+                "question": "通信总线类型和地址是什么？",
+                "short_answers": [
+                    "通信总线类型为 I2C，PWR_CPLD 通过 I2C_9 总线的 PCA9548 开关 Channel8（0x80）访问，地址为 0x3e。"
+                ]
+            },
+            {
+                "question": "周期参数如何解析？",
+                "short_answers": [
+                    "例如，0x20 寄存器设置为 0x01（10ms 基准），0x21 寄存器设置为 0x64（100 次），则总周期为 10ms×100=1s。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC怎样获得PSU1的预置配置信息",
+        "qa_pairs": [
+            {
+                "question": "PSU1预置配置信息芯片",
+                "short_answers": [
+                    "EEPROM或24C64"
+                ]
+            },
+            {
+                "question": "储存配置信息的EEPROM所在的通信总线",
+                "short_answers": [
+                    "I2C-9连接I2C Switch 0x70h\nI2C Switch Channel1（0x01）\nI2C地址 0x50"
+                ]
+            },
+            {
+                "question": "怎样读取EEPROM中存储的数据",
+                "short_answers": [
+                    "自定义消息格式"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何获取 SCM 的 FRU 信息",
+        "qa_pairs": [
+            {
+                "question": "SCM 的 FRU 信息存储的硬件通信拓扑",
+                "short_answers": [
+                    "SCM SCM_Inv EEPROM \nI2C_3 0x70 Channel4（0x08）0x52 "
+                ]
+            },
+            {
+                "question": "存储 SCM FRU 信息的芯片型号",
+                "short_answers": [
+                    "24C64"
+                ]
+            },
+            {
+                "question": "访问 SCM FRU 信息的通信总线类型和地址",
+                "short_answers": [
+                    "I2C_3 0x70 Channel4（0x08）0x52 "
+                ]
+            },
+            {
+                "question": "读取 SCM FRU 信息需要使用的通信协议",
+                "short_answers": [
+                    "I2C "
+                ]
+            },
+            {
+                "question": "SCM FRU 信息如何解析",
+                "short_answers": [
+                    "自定义消息格式"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何获取 BSM 的 FRU 信息",
+        "qa_pairs": [
+            {
+                "question": "BSM 的 FRU 信息存储的硬件通信拓扑",
+                "short_answers": [
+                    "I2C_3 0x70switch Channel7（0x40）0x56 "
+                ]
+            },
+            {
+                "question": "存储 BSM FRU 信息的芯片型号",
+                "short_answers": [
+                    "24C64"
+                ]
+            },
+            {
+                "question": "访问 BSM FRU 信息的通信总线类型和地址",
+                "short_answers": [
+                    "I2C_3 0x70switch Channel7（0x40）0x56 "
+                ]
+            },
+            {
+                "question": "读取 BSM FRU 信息需要使用的通信协议或地址",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "BSM FRU 信息如何解析",
+                "short_answers": [
+                    "自定义消息格式"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何监测风扇板的 FRU 状态",
+        "qa_pairs": [
+            {
+                "question": "风扇托盘 FRU 状态监测的硬件通信拓扑",
+                "short_answers": [
+                    "I2C_12 0x70switch channel2(0x02) 0x51 24c02"
+                ]
+            },
+            {
+                "question": "用于风扇托盘 FRU 芯片",
+                "short_answers": [
+                    "24c02"
+                ]
+            },
+            {
+                "question": "风扇托盘 FRU 状态监测的通信总线类型和地址",
+                "short_answers": [
+                    "I2C_12 0x70switch channel2(0x02) 0x51 24c02"
+                ]
+            },
+            {
+                "question": "获取风扇托盘 FRU 状态使用的通信协议",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "风扇托盘 FRU 状态数据如何解析",
+                "short_answers": [
+                    "自定义消息格式"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何获取 PSU1 的 FRU 信息",
+        "qa_pairs": [
+            {
+                "question": "PSU1 的 FRU 信息存储的硬件通信拓扑",
+                "short_answers": [
+                    "I2C_9 0x70switch channel1(0x01) 0x50"
+                ]
+            },
+            {
+                "question": "存储 PSU1 FRU 信息的芯片型号",
+                "short_answers": [
+                    "24c02。"
+                ]
+            },
+            {
+                "question": "PSU1 FRU 信息访问的通信总线类型和地址",
+                "short_answers": [
+                    "I2C_9 0x70switch channel1(0x01) 0x50"
+                ]
+            },
+            {
+                "question": "读取 PSU1 FRU 信息需要使用的协议或地址",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "PSU1 FRU 信息如何解析",
+                "short_answers": [
+                    "自定义消息格式"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何获取 PSU2 的 FRU 信息",
+        "qa_pairs": [
+            {
+                "question": "PSU 的 FRU 信息存储的硬件通信拓扑",
+                "short_answers": [
+                    "I2C_9 0x70switch channel2(0x02) 0x50"
+                ]
+            },
+            {
+                "question": "存储 PSU FRU 信息的芯片型号",
+                "short_answers": [
+                    "24c02。"
+                ]
+            },
+            {
+                "question": "PSU FRU 信息访问的通信总线类型和地址",
+                "short_answers": [
+                    "I2C_9 0x70switch channel2(0x02) 0x50"
+                ]
+            },
+            {
+                "question": "读取 PSU FRU 信息需要使用的协议或地址",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "PSU FRU 信息如何解析",
+                "short_answers": [
+                    "自定义消息格式"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何监测 SCM 的 FRU在位状态",
+        "qa_pairs": [
+            {
+                "question": "SCM 的 FRU 信息存储的硬件通信拓扑",
+                "short_answers": [
+                    "I2C_3 0x70switch channel4(0x80) 0x52"
+                ]
+            },
+            {
+                "question": "存储 SCM FRU 信息的芯片型号",
+                "short_answers": [
+                    "24C64"
+                ]
+            },
+            {
+                "question": "SCM FRU 信息访问的通信总线类型和地址",
+                "short_answers": [
+                    "I2C_3 0x70switch channel4(0x80) 0x52"
+                ]
+            },
+            {
+                "question": "读取 SCM FRU 信息需要使用的协议或地址",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "SCM FRU 信息如何解析",
+                "short_answers": [
+                    "自定义消息格式"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC怎样从 SMB 的 FRU 中解析型号信息",
+        "qa_pairs": [
+            {
+                "question": "SMB 的 FRU 信息存储的硬件通信拓扑",
+                "short_answers": [
+                    "I2C_7 0x51"
+                ]
+            },
+            {
+                "question": "存储 SMB FRU 信息的芯片型号",
+                "short_answers": [
+                    "24C64"
+                ]
+            },
+            {
+                "question": "SMB FRU 信息访问的通信总线类型和地址",
+                "short_answers": [
+                    "I2C_7 0x51"
+                ]
+            },
+            {
+                "question": "读取 SMB FRU 信息需要使用的协议或地址",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "SMB FRU 信息如何解析",
+                "short_answers": [
+                    "自定义消息格式"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何控制系统信息 LED（SIM）",
+        "qa_pairs": [
+            {
+                "question": "系统信息 LED 的硬件通信拓扑",
+                "short_answers": [
+                    "I2C_7 0x20"
+                ]
+            },
+            {
+                "question": "控制系统信息 LED 的芯片型号",
+                "short_answers": [
+                    "PCA9535"
+                ]
+            },
+            {
+                "question": "系统信息 LED 的通信总线类型和地址",
+                "short_answers": [
+                    "I2C_7 0x20"
+                ]
+            },
+            {
+                "question": "控制系统信息 LED 需要访问的寄存器及位映射",
+                "short_answers": [
+                    "PCA9535 的输出寄存器：\n位 0：SYS_RED_L（系统红色 LED，0 为亮，1 为灭）\n位 1：SYS_GRN_L（系统绿色 LED，0 为亮，1 为灭）\n位 2：SYS_BLU_L（系统蓝色 LED，0 为亮，1 为灭）\n位 3：FAN_RED_L（风扇红色 LED，0 为亮，1 为灭）\n位 4：FAN_GRN_L（风扇绿色 LED，0 为亮，1 为灭）\n位 5：FAN_BLU_L（风扇蓝色 LED，0 为亮，1 为灭）\n位 8：PSU_RED_L（PSU 红色 LED，0 为亮，1 为灭）\n位 9：PSU_GRN_L（PSU 绿色 LED，0 为亮，1 为灭）\n位 10：PSU_BLU_L（PSU 蓝色 LED，0 为亮，1 为灭）\n位 11：SCM_RED_L（SCM 红色 LED，0 为亮，1 为灭）\n位 12：SCM_GRN_L（SCM 绿色 LED，0 为亮，1 为灭）\n位 13：SCM_BLU_L（SCM 蓝色 LED，0 为亮，1 为灭）"
+                ]
+            },
+            {
+                "question": "系统信息 LED 的颜色和状态如何对应？",
+                "short_answers": [
+                    "蓝色：所有 FRU 存在且无告警\n琥珀色（红 + 绿）：存在 FRU 缺失或告警\n蓝 / 琥珀色闪烁（0.5 秒交替）：固件升级中\n琥珀色闪烁：需技术人员干预"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何查询 SMB sys_CPLD 的中断状态",
+        "qa_pairs": [
+            {
+                "question": "BMC怎样访问SMB sys_CPLD",
+                "short_answers": [
+                    "I2c_13 0x3e"
+                ]
+            },
+            {
+                "question": "SMB sys_CPLD中断状态的寄存器地址",
+                "short_answers": [
+                    "读取 SYS CPLD 的0x30 SYSPLD_REG_SYSTEM_INT_Status_1、0x31 SYSPLD_REG_SYSTEM_INT_ Status_2、0x32 SYSPLD_REG_SYSTEM_INT_ Status_3"
+                ]
+            },
+            {
+                "question": "SMB sys_CPLD中断状态的寄存器中的数据怎么解析",
+                "short_answers": [
+                    "0x30 SYSPLD_REG_SYSTEM_INT_Status_1\nbit7 PSU_ALERT_2_L Status SCM_CPLD Interrupt Status\nbit6 PSU_ALERT_1_L Status FCB_CPLD Interrupt Status\nbit5 SCM_CPLD_Int Status SCM_CPLD Interupt Status\nbit4 FCB_CPLD_Int Status FCB_CPLD Interupt Status\nbit3 TEMP_SENSOR_CPLD_ALERT4 Status Thermal sensor int_4 Status\nbit2 TEMP_SENSOR_CPLD_ALERT3 Status Thermal sensor int_3 Status\nbit1 TEMP_SENSOR_CPLD_ALERT2 Status Thermal sensor int_2 Status\nbit0 TEMP_SENSOR_CPLD_ALERT1 Status Thermal sensor int_1 Status\n\n0x31 SYSPLD_REG_SYSTEM_INT_ Status_2\nbit7 PSU_PRNST_2_N Status PSU 2 present interrupts Status\nbit6 PSU_PRNST_1_N Status PSU 1 present interrupts Status\nbit5 SCM_PRESET Status SCM present interrupts Status\nbit4 DEBUG_PRESENT_N_Status DEBUG card present interrupts Status\nbit3 Reserved PCIE Wake interrupt Status\nbit2 SMB_TPM_INT_N Status TPM I2C INTR Status\nbit1 Reserved \nbit0 TPM_PP Status TPM PP interrupt Status\n\n0x32 SYSPLD_REG_SYSTEM_INT_ Status_3\nbit7 FAULT_R_XP5R0V_USB Status USB XP5R0V fault interrupts Status\nbit6 XP5R0V_PG Status  XP5R0V power good interrupts Status\nbit5 BMC_POWER_OK Status  BMC all power rails power ok interrupts Status\nbit4 Reserved \nbit3 PSU_ACOK_2 Status  PSU2 AC Input power ok interrupts Status\nbit2 PSU_ACOK_1 Status  PSU1 AC Input power ok interrupts Status\nbit1 PSU_PWROK_2 Status  PSU2 DC output power ok interrupts Status\nbit0 PSU_PWROK_1 Status  PSU1 DC output power ok interrupts Status\n0表示有中断，1表示无中断"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何屏蔽 SCM sys_CPLD 的中断",
+        "qa_pairs": [
+            {
+                "question": "SCM sys_CPLD 的中断信号是从哪来的",
+                "short_answers": [
+                    "SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "BMC与SMB sys_CPLD的通信总线是怎样的",
+                "short_answers": [
+                    "I2c_13 0x3e"
+                ]
+            },
+            {
+                "question": "SMB sys_CPLD中断状态的寄存器地址",
+                "short_answers": [
+                    "读取 SYS CPLD 的0x20 SYSPLD_REG_SYSTEM_INT_Mask_1、0x21 SYSPLD_REG_SYSTEM_INT_Mask_2、0x22 SYSPLD_REG_SYSTEM_INT_Mask_3"
+                ]
+            },
+            {
+                "question": "如何屏蔽 SCM sys_CPLD 的中断",
+                "short_answers": [
+                    "0x20 SYSPLD_REG_SYSTEM_INT_Mask_1 \nbit5 SCM_CPLD_Int Status SCM_CPLD Interupt Status\n1表示屏蔽，0表示不屏蔽"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何屏蔽 FCB CPLD 的中断",
+        "qa_pairs": [
+            {
+                "question": "FCB CPLD 的中断信号是从哪来的",
+                "short_answers": [
+                    "SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "BMC与SMB sys_CPLD的通信总线是怎样的",
+                "short_answers": [
+                    "I2c_13 0x3e"
+                ]
+            },
+            {
+                "question": "SMB sys_CPLD中断状态的寄存器地址",
+                "short_answers": [
+                    "读取 SYS CPLD 的0x20 SYSPLD_REG_SYSTEM_INT_Mask_1、0x21 SYSPLD_REG_SYSTEM_INT_Mask_2、0x22 SYSPLD_REG_SYSTEM_INT_Mask_3"
+                ]
+            },
+            {
+                "question": "如何屏蔽 FCB CPLD 的中断",
+                "short_answers": [
+                    "0x20 SYSPLD_REG_SYSTEM_INT_Mask_1 \nbit4 FCB_CPLD_Int Status FCB_CPLD Interupt Status\n1表示屏蔽，0表示不屏蔽"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何屏蔽 PSU1 ACOK中断",
+        "qa_pairs": [
+            {
+                "question": "PSU1 ACOK 的中断信号是从哪来的",
+                "short_answers": [
+                    "SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "BMC与SMB sys_CPLD的通信总线是怎样的",
+                "short_answers": [
+                    "I2c_13 0x3e"
+                ]
+            },
+            {
+                "question": "SMB sys_CPLD中断状态的寄存器地址",
+                "short_answers": [
+                    "读取 SYS CPLD 的0x20 SYSPLD_REG_SYSTEM_INT_Mask_1、0x21 SYSPLD_REG_SYSTEM_INT_Mask_2、0x22 SYSPLD_REG_SYSTEM_INT_Mask_3"
+                ]
+            },
+            {
+                "question": "如何屏蔽 PSU1 ACOK 的中断",
+                "short_answers": [
+                    "0x32 SYSPLD_REG_SYSTEM_INT_ Status_3\nbit2 PSU_ACOK_1 Status  PSU1 AC Input power ok interrupts Status\n0表示有中断，1表示无中断"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何屏蔽 PSU1 PWROK 中断",
+        "qa_pairs": [
+            {
+                "question": "FCB CPLD 的中断信号是从哪来的",
+                "short_answers": [
+                    "SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "BMC与SMB sys_CPLD的通信总线是怎样的",
+                "short_answers": [
+                    "I2c_13 0x3e"
+                ]
+            },
+            {
+                "question": "SMB sys_CPLD中断状态的寄存器地址",
+                "short_answers": [
+                    "读取 SYS CPLD 的0x20 SYSPLD_REG_SYSTEM_INT_Mask_1、0x21 SYSPLD_REG_SYSTEM_INT_Mask_2、0x22 SYSPLD_REG_SYSTEM_INT_Mask_3"
+                ]
+            },
+            {
+                "question": "如何屏蔽 PSU1 PWROK 的中断",
+                "short_answers": [
+                    "0x32 SYSPLD_REG_SYSTEM_INT_ Status_3\nbit0 PSU_PWROK_1 Status  PSU1 DC output power ok interrupts Status\n0表示有中断，1表示无中断"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何获取SMB板设备在位（present）信号",
+        "qa_pairs": [
+            {
+                "question": "SMB板设备的在位信号由谁采集",
+                "short_answers": [
+                    "sys_CPLD"
+                ]
+            },
+            {
+                "question": "在位信号的硬件拓扑是怎样的",
+                "short_answers": [
+                    "在位信号接到sys_CPLD的IO口，BMC通过I2C访问sys_CPLD的指定寄存器获得设备在位信息"
+                ]
+            },
+            {
+                "question": "在位信号的通信拓扑是怎样的",
+                "short_answers": [
+                    "I2C_13 0x3e sys_CPLD"
+                ]
+            },
+            {
+                "question": "应该采用何种通信协议或读取哪个寄存器",
+                "short_answers": [
+                    "I2C 0x31 SYSPLD_REG_SYSTEM_INT_ Status _2"
+                ]
+            },
+            {
+                "question": "如何从寄存器中的数据解析在位信息",
+                "short_answers": [
+                    "SMB sys_CPLD 0x31 寄存器（SYSPLD_REG_SYSTEM_INT_Status_2）\nbit5（SCM_PRESET Status）表示 SCM 在位（0 为存在，1 为不存在）\nbit7（PSU_PRNST_2_N Status）和 bit6（PSU_PRNST_1_N Status）表示 PSU2 和 PSU1 在位（0 为存在，1 为不存在）"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何获取FCB板设备在位（present）信号",
+        "qa_pairs": [
+            {
+                "question": "FCB板设备的在位信号由谁采集",
+                "short_answers": [
+                    "fan_CPLD"
+                ]
+            },
+            {
+                "question": "在位信号的硬件拓扑是怎样的",
+                "short_answers": [
+                    "在位信号接到fan_CPLD的IO口，BMC通过I2C访问fan_CPLD的指定寄存器获得设备在位信息"
+                ]
+            },
+            {
+                "question": "在位信号的通信拓扑是怎样的",
+                "short_answers": [
+                    "I2C_12 0x70switch channel1(0x01) 0x3e fan_cpld"
+                ]
+            },
+            {
+                "question": "应该采用何种通信协议或读取哪个寄存器",
+                "short_answers": [
+                    "I2C 读取FANi_PRESENT寄存器，i表示fan序号，地址分别为0x28 FAN1_PRESENT、0x38 FAN2_PRESENT、0x48 FAN3_PRESENT、0x58 FAN4_PRESENT"
+                ]
+            },
+            {
+                "question": "Fan CPLD 中风扇的在位信号寄存器地址及位定义是什么？",
+                "short_answers": [
+                    "fan_CPLD 寄存器（FANi_PRESENT）\nbit0（FANi_PRESENT）用于指示风扇在位状态，0 表示风扇存在，1 表示不存在。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何查询 SCM CPLD 的电源状态",
+        "qa_pairs": [
+            {
+                "question": "SCM CPLD 的 I2C 通信地址及总线是什么？",
+                "short_answers": [
+                    "SCM CPLD 通过 I2C 总线与 BMC 通信，地址为 0x3e（需通过对应 I2C 开关通道访问）。"
+                ]
+            },
+            {
+                "question": "读取 SCM CPLD 电源状态的寄存器地址是什么？",
+                "short_answers": [
+                    "读取 SCM CPLD 的 0x30 寄存器（SYSTEM_POWER_STUTS），bit5（COM_PWROK）、bit3（XP12R0V_COME_PG）等分别表示不同电源轨的状态，1 表示正常。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何控制 SCM 的复位",
+        "qa_pairs": [
+            {
+                "question": "SCM CPLD 中控制复位的寄存器及位定义是什么？",
+                "short_answers": [
+                    "通过 SCM CPLD 的 0x10 寄存器（SCM_RST_CTRL）的 bit0（SYS_RESET_N）控制，写入 0 触发 COMe 复位，1 表示正常。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何屏蔽 SCM 的特定中断信号",
+        "qa_pairs": [
+            {
+                "question": "SCM CPLD 的中断屏蔽寄存器地址及位定义是什么？",
+                "short_answers": [
+                    "SCM CPLD 的 0x28 寄存器（SYSTEM_INTERRUPT_MASK）为中断屏蔽寄存器，bit5（BCM54616S_INT_N_MASK）、bit4（LM75B_INT_N_MASK）等分别对应不同中断源的屏蔽；1 表示屏蔽该中断，0 表示不屏蔽。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何获取 SCM 电源轨的使能状态",
+        "qa_pairs": [
+            {
+                "question": "SCM CPLD 中电源使能信号的寄存器地址及位定义是什么？",
+                "short_answers": [
+                    "SCM CPLD 的 0x31 寄存器（SYSTEM_POWER_ENABLE）用于存储电源使能状态，bit3（XP12R0V_COME_EN）、bit2（XP5R0V_COME_EN）、bit1（XP1R8V_EN）、bit0（XP3R3V_SSD_EN）分别对应不同电源轨的使能；1 表示使能（电源开启），0 表示禁用（电源关闭）。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何控制 SCM I2C 缓冲器的使能状态",
+        "qa_pairs": [
+            {
+                "question": "SCM CPLD 中 I2C 缓冲器使能信号的寄存器地址及位定义是什么？",
+                "short_answers": [
+                    "SCM CPLD 的 0x32 寄存器（SYSTEM_ISO_1）的 bit3（I2C1_BUF_EN）用于控制 I2C 缓冲器使能；0 表示使能，1 表示禁用。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何设置SCM板上的设备复位",
+        "qa_pairs": [
+            {
+                "question": "SCM板设备的复位由谁控制",
+                "short_answers": [
+                    "SCM sys_CPLD"
+                ]
+            },
+            {
+                "question": "SCM sys_CPLD的硬件拓扑是怎样的",
+                "short_answers": [
+                    "BMC通过I2C总线直连SCM sys_CPLD，CPLD的IO口连接各个设备的复位接口"
+                ]
+            },
+            {
+                "question": "BMC通过何种通信链路控制复位信号",
+                "short_answers": [
+                    "I2C_3 0x3e SCM sys_CPLD"
+                ]
+            },
+            {
+                "question": "设置复位信号的通信协议或寄存器是什么",
+                "short_answers": [
+                    "SCM sys_CPLD\n0x10 SCM_RST_CTRL\nbit4（ISO_SMB_CB_RESET_N）system pcie reset\nbit3（NVME_SSD_PERST）M.2 reset\nbit2（PCA9548_RST_N）PCA9548 reset\nbit1（CPLD_COM_PHY_RST_N）BCM54616S reset\nbit0（SYS_RESET_N）COMe reset"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何获取 DOM FPGA 的复位状态",
+        "qa_pairs": [
+            {
+                "question": "设备的复位由谁控制",
+                "short_answers": [
+                    "SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "sys_CPLD的硬件拓扑是怎样的",
+                "short_answers": [
+                    "BMC通过I2C总线直连SMB sys_CPLD，CPLD的IO口连接各个设备的复位接口"
+                ]
+            },
+            {
+                "question": "BMC通过何种通信链路控制复位信号",
+                "short_answers": [
+                    "I2C_13 0x3e SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "设置复位信号的通信协议或寄存器是什么",
+                "short_answers": [
+                    "0x07 SYSPLD_REG_SYSTEM_RST_3"
+                ]
+            },
+            {
+                "question": "SMB sys_CPLD 中 DOM FPGA 复位信号的寄存器地址及位定义是什么？",
+                "short_answers": [
+                    "0x07 SYSPLD_REG_SYSTEM_RST_3\nbit1 DOM_FPGA2_RST_IN DOM_FPGA2_RST.\nbit0 DOM_FPGA1_RST_IN DOM_FPGA1_RST. "
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何设置SCM sys_CPLD的复位",
+        "qa_pairs": [
+            {
+                "question": "设备的复位由谁控制",
+                "short_answers": [
+                    "SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "sys_CPLD的硬件拓扑是怎样的",
+                "short_answers": [
+                    "BMC通过I2C总线直连SMB sys_CPLD，CPLD的IO口连接各个设备的复位接口"
+                ]
+            },
+            {
+                "question": "BMC通过何种通信链路控制复位信号",
+                "short_answers": [
+                    "I2C_13 0x3e SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "设置复位信号的通信协议或寄存器是什么",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x06 SYSPLD_REG_SYSTEM_RST_2"
+                ]
+            },
+            {
+                "question": "寄存器中的各位表示什么信息",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x06 SYSPLD_REG_SYSTEM_RST_2\nbit5 SCM_CPLD_RESET R/W 1 SCM CPLD reset."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何设置FCM sys_CPLD的复位",
+        "qa_pairs": [
+            {
+                "question": "设备的复位由谁控制",
+                "short_answers": [
+                    "SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "sys_CPLD的硬件拓扑是怎样的",
+                "short_answers": [
+                    "BMC通过I2C总线直连SMB sys_CPLD，CPLD的IO口连接各个设备的复位接口"
+                ]
+            },
+            {
+                "question": "BMC通过何种通信链路控制复位信号",
+                "short_answers": [
+                    "I2C_13 0x3e SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "设置复位信号的通信协议或寄存器是什么",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x06 SYSPLD_REG_SYSTEM_RST_2"
+                ]
+            },
+            {
+                "question": "寄存器中的各位表示什么信息",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x06 SYSPLD_REG_SYSTEM_RST_2\nbit4 FCM_CPLD_RST R/W 1 FCB board reset. "
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何设置SMB板上的IO扩展芯片PCA9548的复位",
+        "qa_pairs": [
+            {
+                "question": "设备的复位由谁控制",
+                "short_answers": [
+                    "SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "sys_CPLD的硬件拓扑是怎样的",
+                "short_answers": [
+                    "BMC通过I2C总线直连SMB sys_CPLD，CPLD的IO口连接各个设备的复位接口"
+                ]
+            },
+            {
+                "question": "BMC通过何种通信链路控制复位信号",
+                "short_answers": [
+                    "I2C_13 0x3e SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "设置复位信号的通信协议或寄存器是什么",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x06 SYSPLD_REG_SYSTEM_RST_2"
+                ]
+            },
+            {
+                "question": "寄存器中的各位表示什么信息",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x06 SYSPLD_REG_SYSTEM_RST_2\nbit0 PCA9548A_2_RESET_N R/W 1 SMB board 9548 reset. BMC I2C bus 9. "
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何设置TPM模块的复位",
+        "qa_pairs": [
+            {
+                "question": "设备的复位由谁控制",
+                "short_answers": [
+                    "SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "sys_CPLD的硬件拓扑是怎样的",
+                "short_answers": [
+                    "BMC通过I2C总线直连SMB sys_CPLD，CPLD的IO口连接各个设备的复位接口"
+                ]
+            },
+            {
+                "question": "BMC通过何种通信链路控制复位信号",
+                "short_answers": [
+                    "I2C_13 0x3e SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "设置复位信号的通信协议或寄存器是什么",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x06 SYSPLD_REG_SYSTEM_RST_2"
+                ]
+            },
+            {
+                "question": "寄存器中的各位表示什么信息",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x06 SYSPLD_REG_SYSTEM_RST_2\nbit6 TPM_RST_N R/W 1 TPM module reset."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何设置SMB板上的设备复位",
+        "qa_pairs": [
+            {
+                "question": "设备的复位由谁控制",
+                "short_answers": [
+                    "SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "sys_CPLD的硬件拓扑是怎样的",
+                "short_answers": [
+                    "BMC通过I2C总线直连SMB sys_CPLD，CPLD的IO口连接各个设备的复位接口"
+                ]
+            },
+            {
+                "question": "BMC通过何种通信链路控制复位信号",
+                "short_answers": [
+                    "I2C_13 0x3e SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "设置复位信号的通信协议或寄存器是什么",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x05 SYSPLD_REG_SYSTEM_RST_1\n0x06 SYSPLD_REG_SYSTEM_RST_2\n0x07 SYSPLD_REG_SYSTEM_RST_3"
+                ]
+            },
+            {
+                "question": "寄存器中的各位表示什么信息",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x05 SYSPLD_REG_SYSTEM_RST_1\nbit7（SI5391B_RST_N） clock buffer reset\nbit6（USBHUB_RST_N） USB bridge reset\nbit5（BMC_LPCRST_N） BMC_LPC reset\nbit4（BMC_PHY_2_RST_N ）OOB front panel Phy reset\nbit3（BMC_PHY_1_RST_N） OOB RGMII Phy reset\nbit2（BCM5389_RESETB_N） OOB switch reset\nbit1 Reserved\nbit0 （MAC_RESET_N） GB reset\n\n0x06 SYSPLD_REG_SYSTEM_RST_2\nbit7 FT232_RESET_N R/W 1 FT232_RESET. \nbit6 TPM_RST_N R/W 1 TPM module reset.\nbit5 SCM_CPLD_RESET R/W 1 SCM CPLD reset.\nbit4 FCM_CPLD_RST R/W 1 FCB board reset. \nbit3 FCM_PCA9548_RST R/W 1 FCB board 9548 reset. BMC I2C bus 9.\nbit2 PCA9534_RST_N R/W 1 SMB board 9548 reset. BMC I2C bus 14. \nbit1 PCA9535_RST_N R/W 1 SMB board 9548 reset. BMC I2C bus 10.\nbit0 PCA9548A_2_RESET_N R/W 1 SMB board 9548 reset. BMC I2C bus 9. \n\n0x07 SYSPLD_REG_SYSTEM_RST_3\nbit1 DOM_FPGA2_RST_IN R/W 1 DOM_FPGA2_RST.\nbit0 DOM_FPGA1_RST_IN R/W 1 DOM_FPGA1_RST. "
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何控制 SPI Flash 的写保护状态",
+        "qa_pairs": [
+            {
+                "question": "SPI Flash的写保护由谁控制",
+                "short_answers": [
+                    "SMB sys_CPLD "
+                ]
+            },
+            {
+                "question": "BMC怎样访问SMB sys_CPLD",
+                "short_answers": [
+                    "I2C_13 0x3e SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "SPI Flash的写保护控制寄存器地址是什么",
+                "short_answers": [
+                    "SMB sys_CPLD 的 0x40 寄存器（SYSPLD_REG_MISC_BMC）"
+                ]
+            },
+            {
+                "question": "SMB sys_CPLD 中 SPI Flash 写保护的寄存器位定义是什么",
+                "short_answers": [
+                    "SMB sys_CPLD 的 0x40 寄存器（SYSPLD_REG_MISC_BMC）\nbit7 CPLD_GB_QSPI_WP_N R/W 1 GB PCIE FW E2PROM WP\nbit6 CPLD_BMC_SPI_1_WP_N\nbit5 CPLD_BMC_PHY1_WP R/W 1 PHY1 E2 WP\nbit4 CPLD_BMC_SPI_2_WP_N\nbit3 CPLD_BMC_PHY2_WP R/W 1 PHY1 E2 WP\nbit2 SCM_SPI_WP_N R/W 1 COME BIOS WP\nbit1 FPGA1_SPI_WP_N R/W 1 FPGA SPI E2PROM WP\nbit0 FPGA2_SPI_WP_N R/W 1 FPGA SPI E2PROM WP；1 表示写保护使能，0 表示禁用。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC 如何设置 GB 芯片的核心频率",
+        "qa_pairs": [
+            {
+                "question": "BMC 设置 GB 频率的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "BMC 通过 I2C 总线访问 PWR_CPLD 的 GB 频率寄存器，PWR_CPLD 控制 GB 芯片的频率配置。"
+                ]
+            },
+            {
+                "question": "控制 GB 频率的寄存器是什么？",
+                "short_answers": [
+                    "PWR_CPLD 的 0x25 寄存器（GB_FREQ_SET）用于设置 GB 核心频率。"
+                ]
+            },
+            {
+                "question": "通信总线类型和地址是什么？",
+                "short_answers": [
+                    "I2C_9 0x70 switch Channel8（0x80）0x3e"
+                ]
+            },
+            {
+                "question": "频率设置值的范围及含义是什么？",
+                "short_answers": [
+                    "寄存器值为 8 位二进制,默认值 0x35 "
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC 如何设置 QSFP 端口 LED 的测试模式",
+        "qa_pairs": [
+            {
+                "question": "BMC 控制 LED 测试模式的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "BMC 通过 I2C_13 总线访问 SMB sys_CPLD，其 0x39 寄存器控制 LED 测试模式，进而切换 LED 控制逻辑。"
+                ]
+            },
+            {
+                "question": "控制测试模式的寄存器是什么？",
+                "short_answers": [
+                    "SMB sys_CPLD 的 0x39 寄存器（SYSPLD_REG_PORT_LED_TEST）"
+                ]
+            },
+            {
+                "question": "通信总线类型和地址是什么？",
+                "short_answers": [
+                    "通信总线类型为 I2C，SMB sys_CPLD 位于 I2C_13 总线，地址为 0x3e。"
+                ]
+            },
+            {
+                "question": "测试模式下颜色控制的位定义是什么？",
+                "short_answers": [
+                    "0x39 寄存器（SYSPLD_REG_PORT_LED_TEST），bit3 为 1 时进入手动测试模式。bit2（LED_Green）、bit1（LED_Blue）、bit0（LED_Red）为 1 时对应颜色点亮，0 时熄灭。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC 如何设置 GB PCIe firmware EEPROM 的写保护状态",
+        "qa_pairs": [
+            {
+                "question": "BMC 控制 EEPROM 写保护的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "BMC 通过 I2C 总线访问 SMB sys_CPLD，CPLD 连接至 EEPROM 的写保护引脚。"
+                ]
+            },
+            {
+                "question": "控制写保护的寄存器及位定义是什么？",
+                "short_answers": [
+                    "SMB sys_CPLD 的 0x40 寄存器（SYSPLD_REG_MISC_BMC）"
+                ]
+            },
+            {
+                "question": "通信总线类型和地址是什么？",
+                "short_answers": [
+                    "I2C_13  0x3e"
+                ]
+            },
+            {
+                "question": "写保护指令如何解析？",
+                "short_answers": [
+                    "0x40 SYSPLD_REG_MISC_BMC bit7 CPLD_GB_QSPI_WP_N 向目标位写入 1 时，使能对应 EEPROM 的写保护（禁止写入）；写入 0 时，解析为禁用写保护（允许写入）。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC 如何配置时钟芯片 SI5391B 的复位",
+        "qa_pairs": [
+            {
+                "question": "BMC 控制 SI5391B 复位的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "BMC 通过 I2C_10 总线与 SI5391B（地址 0x74）通信，同时可通过 SMB sys_CPLD 的复位寄存器间接控制。"
+                ]
+            },
+            {
+                "question": "控制 SI5391B 复位的寄存器是什么？",
+                "short_answers": [
+                    "SMB sys_CPLD 的 0x05 寄存器（SYSPLD_REG_SYSTEM_RST_1），或SI5391 I2C 0x001C寄存器"
+                ]
+            },
+            {
+                "question": "通信总线类型和地址是什么？",
+                "short_answers": [
+                    "软复位：I2C_10 总线，SI5391B 地址 0x74，寄存器0x001C；通过 CPLD 复位：I2C_13 总线，SMB sys_CPLD 地址 0x3e，0x05 寄存器（SYSPLD_REG_SYSTEM_RST_1）"
+                ]
+            },
+            {
+                "question": "复位指令是什么",
+                "short_answers": [
+                    "通过 CPLD 时，写入 bit7 为 0 解析为触发 SI5391B 复位；写入 1 解析为释放复位，芯片重新锁定时钟。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC怎样为NVME SSD设备复位",
+        "qa_pairs": [
+            {
+                "question": "BMC 控制NVME SSD设备复位的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "BMC 通过 I2C 总线访问SCM sys_CPLD，CPLD连接NVME 设备的 PERST 引脚。"
+                ]
+            },
+            {
+                "question": "控制 PCIe 设备复位的寄存器及位定义是什么？",
+                "short_answers": [
+                    "SCM CPLD 的 0x10 寄存器（SCM_RST_CTRL）的 bit3（NVME_SSD_PERST）用于控制 NVMe SSD 复位，位值为 0 时触发复位。"
+                ]
+            },
+            {
+                "question": "通信总线类型和地址是什么？",
+                "short_answers": [
+                    "I2C_3 0x3e"
+                ]
+            },
+            {
+                "question": "复位指令如何解析？",
+                "short_answers": [
+                    "向目标位写入 0 时，触发设备复位；写入 1 时，释放复位"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC 如何设置 USB 端口的使能状态",
+        "qa_pairs": [
+            {
+                "question": "BMC 控制 USB 端口使能的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "BMC 通过 I2C_13 总线与 SMB sys_CPLD（地址 0x3e）通信，CPLD 连接至 USB hub 的使能引脚。"
+                ]
+            },
+            {
+                "question": "控制 USB 端口使能的寄存器及位定义是什么？",
+                "short_answers": [
+                    "SMB sys_CPLD 的 0x41 寄存器（SYSPLD_REG_MISC_1）的 bit0-2（USB_EN1-3）控制各 USB 端口使能，位值为 1 时使能。"
+                ]
+            },
+            {
+                "question": "通信总线类型和地址是什么？",
+                "short_answers": [
+                    "I2C_13 0x3e"
+                ]
+            },
+            {
+                "question": "使能指令如何解析？",
+                "short_answers": [
+                    "SMB sys_CPLD 0x41 寄存器（SYSPLD_REG_MISC_1） \nbit2 USB_EN3\nbit1 USB_EN2\nbit0 USB_EN1\n位值为 1 时使能。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC 如何配置 SCM 的电源使能",
+        "qa_pairs": [
+            {
+                "question": "BMC 控制 SCM 电源使能的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "BMC 通过 I2C 总线访问 SMB sys_CPLD，sys_CPLD 连接至 SCM 的电源控制电路。"
+                ]
+            },
+            {
+                "question": "控制 SCM 电源使能的寄存器及位定义是什么？",
+                "short_answers": [
+                    "SMB sys_CPLD 的 0x42 寄存器（SYSPLD_REG_MISC_2）"
+                ]
+            },
+            {
+                "question": "通信总线类型和地址是什么？",
+                "short_answers": [
+                    "I2C_13 0x3e"
+                ]
+            },
+            {
+                "question": "使能指令如何解析？",
+                "short_answers": [
+                    "SMB sys_CPLD 的 0x42 寄存器（SYSPLD_REG_MISC_2）\nbit2 为 1 时，开启 SCM 的电源供应；写入 0 时，关闭 SCM 电源"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC 如何清除 SCM CPLD 的中断状态",
+        "qa_pairs": [
+            {
+                "question": "BMC 清除 SCM CPLD 中断的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "BMC 通过 I2C 总线访问 SCM CPLD，读取其中断寄存器实现中断状态的清除。"
+                ]
+            },
+            {
+                "question": "用于清除中断状态的寄存器及位定义是什么？",
+                "short_answers": [
+                    "SCM CPLD 的 0x21 寄存器（SYSTEM_INTERRUPT）为中断报告寄存器，采用读清除（RC）机制，读取该寄存器可清除对应中断位。"
+                ]
+            },
+            {
+                "question": "通信总线类型和地址是什么？",
+                "short_answers": [
+                    "I2C_3 0x3e"
+                ]
+            },
+            {
+                "question": "中断清除指令如何解析？",
+                "short_answers": [
+                    "对 SCM CPLD 的 0x21 寄存器执行读取操作时，自动清除当前所有已触发的中断状态（寄存器位由 0 变为 1）。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC 如何使能 SCM 上 M.2 SSD 的电源",
+        "qa_pairs": [
+            {
+                "question": "BMC 使能 M.2 SSD 电源的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "BMC 通过 I2C 总线访问 SCM CPLD，SCM CPLD 控制 M.2 SSD 的电源使能信号。"
+                ]
+            },
+            {
+                "question": "控制 M.2 SSD 电源使能的寄存器及位定义是什么？",
+                "short_answers": [
+                    "SCM CPLD 的 0x31 寄存器（SYSTEM_POWER_ENABLE）"
+                ]
+            },
+            {
+                "question": "通信总线类型和地址是什么？",
+                "short_answers": [
+                    "I2C_3 0x3e。"
+                ]
+            },
+            {
+                "question": "使能指令如何解析？",
+                "short_answers": [
+                    "向 SCM CPLD 的 0x31 寄存器 bit0 写入 1 时，开启 M.2 SSD 的 3.3V 供电；写入 0 时，关闭供电。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC 如何触发 PCIe 链路的重新训练",
+        "qa_pairs": [
+            {
+                "question": "什么情况下会触发PCIe链路的重新训练？",
+                "short_answers": [
+                    " PCIe 链路复位触发重新训练"
+                ]
+            },
+            {
+                "question": "控制 PCIe 复位的寄存器是什么？",
+                "short_answers": [
+                    "SCM CPLD 的 0x10 寄存器（SCM_RST_CTRL）的 bit4（ISO_SMB_CB_RESET_N），写入 0 时触发 PCIe 复位（重新训练）。"
+                ]
+            },
+            {
+                "question": "通信总线类型和地址是什么？",
+                "short_answers": [
+                    "I2C_3 0x3e"
+                ]
+            },
+            {
+                "question": "触发指令如何解析？",
+                "short_answers": [
+                    "SCM CPLD 的 0x10 寄存器（SCM_RST_CTRL）\n bit4（ISO_SMB_CB_RESET_N），写入 0 时触发 PCIe 复位（重新训练）。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC 如何复位 DOM FPGA",
+        "qa_pairs": [
+            {
+                "question": "BMC 复位 DOM FPGA 的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "BMC 通过 I2C_13 总线访问 SMB sys_CPLD（地址 0x3e），sys_CPLD 的复位寄存器连接至 DOM FPGA 的复位引脚。"
+                ]
+            },
+            {
+                "question": "控制 DOM FPGA 复位的寄存器及位定义是什么？",
+                "short_answers": [
+                    "SMB sys_CPLD 的 0x07 寄存器（SYSPLD_REG_SYSTEM_RST_3）的 bit1（DOM_FPGA2_RST_IN）和 bit0（DOM_FPGA1_RST_IN），写入 0 时触发复位（低有效）。"
+                ]
+            },
+            {
+                "question": "通信总线类型和地址是什么？",
+                "short_answers": [
+                    "I2C_13 0x3e"
+                ]
+            },
+            {
+                "question": "复位指令如何解析？",
+                "short_answers": [
+                    "SMB sys_CPLD 的 0x07 寄存器（SYSPLD_REG_SYSTEM_RST_3）的\nbit1（DOM_FPGA2_RST_IN）\nbit0（DOM_FPGA1_RST_IN）\n写入 0 时触发复位（低有效）。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC 如何配置自身 UART 接口的波特率",
+        "qa_pairs": [
+            {
+                "question": "BMC芯片是什么操作系统",
+                "short_answers": [
+                    "arm核，linux系统，运行C/C++程序"
+                ]
+            },
+            {
+                "question": "BMC 配置 UART 波特率的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "BMC 的 UART 接口波特率由内部寄存器控制，无需外部硬件干预"
+                ]
+            },
+            {
+                "question": "控制 UART 波特率的寄存器是什么？",
+                "short_answers": [
+                    "BMC（AST2520）的 UART 控制寄存器中的波特率除数寄存器（DLH 和 DLL）用于设置波特率。"
+                ]
+            },
+            {
+                "question": "波特率参数如何解析？",
+                "short_answers": [
+                    "根据目标波特率（如 115200）计算除数（= 系统时钟 / (16× 波特率)），分别写入 DLH（高 8 位）和 DLL（低 8 位）。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何切换 PCA9548 的 I2C 通道",
+        "qa_pairs": [
+            {
+                "question": "PCA9548 的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "PCA9548 作为 I2C 多路开关，通过 I2C 总线与 BMC 连接，不同位置的 PCA9548 分布在 I2c_3（0x70）、I2c_9（0x70）、I2c_12（0x70）等总线，用于扩展 I2C 通道。"
+                ]
+            },
+            {
+                "question": "控制 PCA9548 通道切换的寄存器及位定义是什么？",
+                "short_answers": [
+                    "通过写入 PCA9548 的控制寄存器（0x00），每一位对应一个通道（如 bit0 对应 Channel1，bit1 对应 Channel2），写入对应位为 1 时导通该通道。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何查询 PCA9548 当前导通的通道",
+        "qa_pairs": [
+            {
+                "question": "查询 PCA9548 通道状态的寄存器是什么？",
+                "short_answers": [
+                    "读取 PCA9548 的控制寄存器（0x00），寄存器值的二进制位表示当前导通的通道（如 0x01 表示 Channel1 导通，0x02 表示 Channel2 导通）。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何配置 PCA9535 的 GPIO 引脚方向",
+        "qa_pairs": [
+            {
+                "question": "PCA9535 的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "PCA9535 作为 I2C IO 扩展器，位于 I2c_7 总线（地址 0x20），用于控制 LED 等外设，BMC 通过 I2C 总线读写其寄存器配置引脚方向。"
+                ]
+            },
+            {
+                "question": "控制 PCA9535 引脚方向的寄存器是什么？",
+                "short_answers": [
+                    "通过写入配置寄存器（0x00 为输入方向寄存器，0x01 为输出方向寄存器），位值为 1 表示输入，0 表示输出。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何查询 PCA9535 的 GPIO 引脚电平",
+        "qa_pairs": [
+            {
+                "question": "读取 PCA9535 引脚电平的寄存器是什么？",
+                "short_answers": [
+                    "读取输入端口寄存器（0x00），对应位的电平状态（1 为高电平，0 为低电平）反映当前引脚状态。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC 如何配置热插拔控制器 ADM1278 的启动电流限制",
+        "qa_pairs": [
+            {
+                "question": "BMC 配置 ADM1278 电流限制的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "BMC 通过 I2C_3 总线的 PCA9548 开关（地址 0x70）的 Channel1（0x01）访问 ADM1278（地址 0x10），配置其电流限制寄存器。"
+                ]
+            },
+            {
+                "question": "控制电流限制的寄存器是什么？",
+                "short_answers": [
+                    "0xF6 STRT_UP_IOUT_LIM "
+                ]
+            },
+            {
+                "question": "通信总线类型和地址是什么？",
+                "short_answers": [
+                    "通信总线类型为 I2C，ADM1278 位于 I2C_3 总线 Channel1，地址为 0x10。"
+                ]
+            },
+            {
+                "question": "电流限制参数如何解析？",
+                "short_answers": [
+                    "写入数据格式为12位值（0x0000–0x000F）写入值 N（0–15），对应电流限制为 (ISET × (N+1)/16)"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC如何查询 LED 的当前控制模式",
+        "qa_pairs": [
+            {
+                "question": "LED 控制模式的寄存器及位定义是什么？",
+                "short_answers": [
+                    "通过读取 SMB sys_CPLD 的 0x39 寄存器（SYSPLD_REG_PORT_LED_TEST）的 bit3，1 表示手动测试模式，0 表示 FPGA 自动控制模式。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC 如何设置电源轨 XP3R3V_BMC 的使能状态",
+        "qa_pairs": [
+            {
+                "question": "设置 XP3R3V_BMC 使能的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "XP3R3V_BMC 的使能由 PWR1220 芯片控制，BMC 通过 I2C_2 总线与 PWR1220 通信，PWR1220 连接至电源控制电路实现使能切换。"
+                ]
+            },
+            {
+                "question": "控制 XP3R3V_BMC 使能的芯片型号及寄存器是什么？",
+                "short_answers": [
+                    "涉及芯片为 PWR1220，通过其使能控制寄存器（对应 XP3R3V_BMC 的使能位）进行设置。"
+                ]
+            },
+            {
+                "question": "通信总线类型和地址是什么？",
+                "short_answers": [
+                    "通信总线类型为 I2C，PWR1220 位于 I2C_2 总线，地址为 0x3A。"
+                ]
+            },
+            {
+                "question": "写入使能状态的寄存器位定义是什么？",
+                "short_answers": [
+                    "PWR1220 中对应 XP3R3V_BMC 的使能位为 1 时表示使能（电源开启），0 时表示禁用（电源关闭）。"
+                ]
+            },
+            {
+                "question": "使能状态数据如何解析？",
+                "short_answers": [
+                    "写入值为 1 时，解析为开启 XP3R3V_BMC 供电；写入 0 时，解析为关闭供电，需确保依赖的 XP5R0V 电源轨正常。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC 如何配置热插拔控制器 ADM1278 的告警",
+        "qa_pairs": [
+            {
+                "question": "BMC 配置 ADM1278 告警的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "BMC 通过 I2C 总线访问 ADM1278（如位于 I2C_3 总线 Channel1，地址 0x10），直接写入阈值寄存器。"
+                ]
+            },
+            {
+                "question": "控制告警使能的寄存器是什么？",
+                "short_answers": [
+                    "ALERT1_CONFIG 寄存器（地址：0xD5） 和ALERT2_CONFIG 寄存器（地址：0xD6）"
+                ]
+            },
+            {
+                "question": "通信总线类型和地址是什么？",
+                "short_answers": [
+                    "通信总线类型为 I2C，ADM1278 位于对应 I2C 总线（如 I2C_3），通过 PCA9548 开关 Channel1（0x01）访问，地址为 0x10。"
+                ]
+            },
+            {
+                "question": "如何配置告警寄存器如何解析？",
+                "short_answers": [
+                    "这些寄存器为16位可读写，默认复位值均为 0x0000（所有告警禁用）。写入数据为位掩码（bitmask），每个位对应特定告警源：\n位定义（以ALERT1_CONFIG为例，ALERT2_CONFIG结构相同）：\nBit 15: FET_HEALTH_FAULT_EN1（FET健康故障使能）\nBit 14: IOUT_OC_FAULT_EN1（过流故障使能）\nBit 13: VIN_OV_FAULT_EN1（输入过压故障使能）\nBit 12: VIN_UV_FAULT_EN1（输入欠压故障使能）\nBit 11: CML_ERROR_EN1（通信错误使能）\nBit 10: IOUT_OC_WARN_EN1（过流警告使能）\nBit 9: HYSTERETIC_EN1（迟滞输出使能）\nBit 8: VIN_OV_WARN_EN1（输入过压警告使能）\nBit 7: VIN_UV_WARN_EN1（输入欠压警告使能）\nBit 6: VOUT_OV_WARN_EN1（输出过压警告使能）\nBit 5: VOUT_UV_WARN_EN1（输出欠压警告使能）\nBit 4: HS_INLIM_EN1（热插拔限流状态使能）\nBit 3: PIN_OP_WARN_EN1（输入过功警告使能）\nBit 2: OT_FAULT_EN1（过热故障使能）\nBit 1: OT_WARN_EN1（过热警告使能）"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC 如何使能热插拔控制器 ADM1278 的过流故障告警",
+        "qa_pairs": [
+            {
+                "question": "BMC 配置 ADM1278 告警的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "BMC 通过 I2C 总线访问 ADM1278（如位于 I2C_3 总线 Channel1，地址 0x10），直接写入阈值寄存器。"
+                ]
+            },
+            {
+                "question": "控制告警阈值的寄存器是什么？",
+                "short_answers": [
+                    "ALERT1_CONFIG 寄存器（地址：0xD5） 和ALERT2_CONFIG 寄存器（地址：0xD6）"
+                ]
+            },
+            {
+                "question": "通信总线类型和地址是什么？",
+                "short_answers": [
+                    "通信总线类型为 I2C，ADM1278 位于对应 I2C 总线（如 I2C_3），通过 PCA9548 开关 Channel1（0x01）访问，地址为 0x10。"
+                ]
+            },
+            {
+                "question": "如何配置告警寄存器如何解析？",
+                "short_answers": [
+                    "这些寄存器为16位可读写，默认复位值均为 0x0000（所有告警禁用）。写入数据为位掩码（bitmask），每个位对应特定告警源：\n位定义（以ALERT1_CONFIG为例，ALERT2_CONFIG结构相同）：\nBit 14: IOUT_OC_FAULT_EN1（过流故障使能）\n"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC 如何使能热插拔控制器 ADM1278 的过流告警",
+        "qa_pairs": [
+            {
+                "question": "BMC 配置 ADM1278 告警的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "BMC 通过 I2C 总线访问 ADM1278（如位于 I2C_3 总线 Channel1，地址 0x10），直接写入阈值寄存器。"
+                ]
+            },
+            {
+                "question": "控制告警阈值的寄存器是什么？",
+                "short_answers": [
+                    "ALERT1_CONFIG 寄存器（地址：0xD5） 和ALERT2_CONFIG 寄存器（地址：0xD6）"
+                ]
+            },
+            {
+                "question": "通信总线类型和地址是什么？",
+                "short_answers": [
+                    "通信总线类型为 I2C，ADM1278 位于对应 I2C 总线（如 I2C_3），通过 PCA9548 开关 Channel1（0x01）访问，地址为 0x10。"
+                ]
+            },
+            {
+                "question": "如何配置告警寄存器如何解析？",
+                "short_answers": [
+                    "这些寄存器为16位可读写，默认复位值均为 0x0000（所有告警禁用）。写入数据为位掩码（bitmask），每个位对应特定告警源：\n位定义（以ALERT1_CONFIG为例，ALERT2_CONFIG结构相同）：\nBit 10: IOUT_OC_WARN_EN1（过流警告使能）"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC 如何设置 I2C 开关 PCA9548 的通道",
+        "qa_pairs": [
+            {
+                "question": "BMC 控制 PCA9548 通道切换的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "BMC 通过对应 I2C 总线（如 I2C_3、I2C_9、I2C_12）直接访问 PCA9548（地址 0x70），写入通道控制值。"
+                ]
+            },
+            {
+                "question": "控制 PCA9548 通道的寄存器是什么？",
+                "short_answers": [
+                    "PCA9548 的 0x00 寄存器为通道控制寄存器，每一位对应一个通道（bit0 对应 Channel1，bit1 对应 Channel2 等）。"
+                ]
+            },
+            {
+                "question": "通信总线类型和地址是什么？",
+                "short_answers": [
+                    "通信总线类型为 I2C，PCA9548 在不同总线（如 I2C_3、I2C_9、I2C_12）的地址均为 0x70。"
+                ]
+            },
+            {
+                "question": "通道配置值如何解析？",
+                "short_answers": [
+                    "写入值为 0x01 时，解析为导通 Channel1；写入 0x02 时导通 Channel2，依此类推（支持单通道或多通道同时导通）。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC 如何使能热插拔控制器 ADM1278 的功能",
+        "qa_pairs": [
+            {
+                "question": "BMC 使能 ADM1278 的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "BMC 通过 I2C 总线访问 ADM1278，直接对其使能寄存器进行配置。"
+                ]
+            },
+            {
+                "question": "控制 ADM1278 使能的寄存器及位定义是什么？",
+                "short_answers": [
+                    "OPERATION 寄存器（地址：0x01）"
+                ]
+            },
+            {
+                "question": "通信总线类型和地址是什么？",
+                "short_answers": [
+                    "通信总线类型为 I2C，ADM1278 位于 I2C_3 总线，通过 PCA9548 开关 Channel1（0x01）访问，地址为 0x10。"
+                ]
+            },
+            {
+                "question": "使能指令如何解析？",
+                "short_answers": [
+                    "此寄存器为8位可读写，默认复位值 0x80（使能状态）。关键位为Bit 7（ON位）：\nBit 7（ON）： 控制热插拔输出状态。\n0：禁用输出（GATE引脚拉低）。\n1：启用输出（允许GATE驱动外部FET）。"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC 如何使能POWR1220的output通道",
+        "qa_pairs": [
+            {
+                "question": "BMC与PWR1220的通信链路是怎样的",
+                "short_answers": [
+                    "BMC 通过 I2C_2 总线与 PWR1220 芯片（地址 0x3A）通信，PWR1220 控制 XP1R8V_FPGA 电源轨的使能信号，该电源轨为 DOM FPGA 提供 1.8V 供电。"
+                ]
+            },
+            {
+                "question": "PWR1220的通道使能的寄存器是什么",
+                "short_answers": [
+                    "0x0E gp_output1 R/W GPOUT[8:1] 0 0 0 1 0 0 0 0\n0x0F gp_output2 R/W GPOUT[16:9] 0 0 0 0 0 0 0 0\n0x10 gp_output3 R/W GPOUT[20:17] X X X X 0 0 0 0"
+                ]
+            },
+            {
+                "question": "PWR1220的通道使能的寄存器的位定义是什么",
+                "short_answers": [
+                    "GP_OUTPUT1（地址 0x0E）控制通道：OUT5–OUT12（8个通道）\nGP_OUTPUT2（地址 0x0F）控制通道：OUT13–OUT20（8个通道）\nGP_OUTPUT3（地址 0x10）控制通道：HVOUT1–HVOUT4（高4位）"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC 如何配置热插拔控制器 ADM1278 的过热故障告警",
+        "qa_pairs": [
+            {
+                "question": "BMC 配置 ADM1278 的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "BMC 通过 I2C 总线访问 ADM1278（如位于 I2C_3 总线 Channel1，地址 0x10），直接写入阈值寄存器。"
+                ]
+            },
+            {
+                "question": "控制告警使能的寄存器是什么？",
+                "short_answers": [
+                    "ALERT1_CONFIG 寄存器（地址：0xD5） 和ALERT2_CONFIG 寄存器（地址：0xD6）"
+                ]
+            },
+            {
+                "question": "通信总线类型和地址是什么？",
+                "short_answers": [
+                    "通信总线类型为 I2C，ADM1278 位于对应 I2C 总线（如 I2C_3），通过 PCA9548 开关 Channel1（0x01）访问，地址为 0x10。"
+                ]
+            },
+            {
+                "question": "如何配置过热故障告警寄存器如何解析？",
+                "short_answers": [
+                    "这些寄存器为16位可读写，默认复位值均为 0x0000（所有告警禁用）。写入数据为位掩码（bitmask），每个位对应特定告警源：\n位定义（以ALERT1_CONFIG为例，ALERT2_CONFIG结构相同）：\nBit 2: OT_FAULT_EN1（过热故障使能）\n"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "在Wedge400C中，BMC 如何配置热插拔控制器 ADM1278 的过热告警",
+        "qa_pairs": [
+            {
+                "question": "BMC 配置 ADM1278 的硬件通信拓扑是怎样的？",
+                "short_answers": [
+                    "BMC 通过 I2C 总线访问 ADM1278（如位于 I2C_3 总线 Channel1，地址 0x10），直接写入阈值寄存器。"
+                ]
+            },
+            {
+                "question": "控制告警使能的寄存器是什么？",
+                "short_answers": [
+                    "ALERT1_CONFIG 寄存器（地址：0xD5） 和ALERT2_CONFIG 寄存器（地址：0xD6）"
+                ]
+            },
+            {
+                "question": "通信总线类型和地址是什么？",
+                "short_answers": [
+                    "通信总线类型为 I2C，ADM1278 位于对应 I2C 总线（如 I2C_3），通过 PCA9548 开关 Channel1（0x01）访问，地址为 0x10。"
+                ]
+            },
+            {
+                "question": "如何配置过热告警寄存器如何解析？",
+                "short_answers": [
+                    "这些寄存器为16位可读写，默认复位值均为 0x0000（所有告警禁用）。写入数据为位掩码（bitmask），每个位对应特定告警源：\n位定义（以ALERT1_CONFIG为例，ALERT2_CONFIG结构相同）：\nBit 1: OT_WARN_EN1（过热警告使能）"
+                ]
+            }
+        ]
+    }
+]

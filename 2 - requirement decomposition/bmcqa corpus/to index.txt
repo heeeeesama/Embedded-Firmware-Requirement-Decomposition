@@ -1,0 +1,1 @@
+python -m flashrag.retriever.index_builder --retrieval_method bge-m3 --model_path D:/Code/DeepNote/model/bge-m3 --corpus_path bmcqa_flashrag.jsonl --save_dir indexes/ --use_fp16 --max_length 512 --batch_size 1 --pooling_method mean --faiss_type Flat 

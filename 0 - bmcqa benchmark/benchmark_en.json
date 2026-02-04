@@ -1,0 +1,2867 @@
+[
+    {
+        "question": "In Wedge400C, how does BMC monitor PSU1 temperature",
+        "qa_pairs": [
+            {
+                "question": "Temperature sensor chip model",
+                "short_answers": [
+                    "Integrated in PSU"
+                ]
+            },
+            {
+                "question": "Temperature sensor communication bus type",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "Temperature sensor communication bus address",
+                "short_answers": [
+                    "I2C-9 connected to I2C Switch 0x70h\nI2C Switch Channel 0x01\nI2C address 0x58"
+                ]
+            },
+            {
+                "question": "Communication protocol or registers to read for obtaining temperature information",
+                "short_answers": [
+                    "Determined by model"
+                ]
+            },
+            {
+                "question": "How to parse register data into correct numeric type",
+                "short_answers": [
+                    "Vendor-defined"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC monitor PSU2 temperature",
+        "qa_pairs": [
+            {
+                "question": "Temperature sensor chip model",
+                "short_answers": [
+                    "Integrated in PSU"
+                ]
+            },
+            {
+                "question": "Temperature sensor communication bus type",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "Temperature sensor communication bus address",
+                "short_answers": [
+                    "I2C-9 connected to I2C Switch 0x70h\nI2C Switch Channel 0x02\nI2C address 0x58"
+                ]
+            },
+            {
+                "question": "Communication protocol or registers to read for obtaining temperature information",
+                "short_answers": [
+                    "Determined by model"
+                ]
+            },
+            {
+                "question": "How to parse register data into correct numeric type",
+                "short_answers": [
+                    "Vendor-defined"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC monitor PSU1 power inlet (PEM) temperature",
+        "qa_pairs": [
+            {
+                "question": "Temperature sensor chip model",
+                "short_answers": [
+                    "Integrated in PEM"
+                ]
+            },
+            {
+                "question": "Temperature sensor communication bus type",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "Temperature sensor communication bus address",
+                "short_answers": [
+                    "I2C-9 connected to I2C Switch 0x70h\nI2C Switch Channel 0x01\nI2C address 0x18"
+                ]
+            },
+            {
+                "question": "Communication protocol or registers to read for obtaining temperature information",
+                "short_answers": [
+                    "Determined by model"
+                ]
+            },
+            {
+                "question": "How to parse register data into correct numeric type",
+                "short_answers": [
+                    "Vendor-defined"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC monitor PSU2 power inlet (PEM) temperature",
+        "qa_pairs": [
+            {
+                "question": "Temperature sensor chip model",
+                "short_answers": [
+                    "Integrated in PEM"
+                ]
+            },
+            {
+                "question": "Temperature sensor communication bus type",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "Temperature sensor communication bus address",
+                "short_answers": [
+                    "I2C-9 connected to I2C Switch 0x70h\nI2C Switch Channel 0x02\nI2C address 0x18"
+                ]
+            },
+            {
+                "question": "Communication protocol or registers to read for obtaining temperature information",
+                "short_answers": [
+                    "Determined by model"
+                ]
+            },
+            {
+                "question": "How to parse register data into correct numeric type",
+                "short_answers": [
+                    "Vendor-defined"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain SCM temperature monitoring",
+        "qa_pairs": [
+            {
+                "question": "Temperature sensor chip model",
+                "short_answers": [
+                    "LM75"
+                ]
+            },
+            {
+                "question": "Temperature sensor communication bus type",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "Temperature sensor communication bus address",
+                "short_answers": [
+                    "I2C_3 0x70switch channel2(0x02) 0x4C LM75#1 0x4D LM75#2"
+                ]
+            },
+            {
+                "question": "Communication protocol or registers to read for obtaining temperature information",
+                "short_answers": [
+                    "0x00h"
+                ]
+            },
+            {
+                "question": "How to parse register data into correct numeric type",
+                "short_answers": [
+                    "Read 2 bytes, use only the high 9 bits\nraw_temp = (msb << 8 | lsb) >> 7"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain GB outlet temperature",
+        "qa_pairs": [
+            {
+                "question": "Temperature sensor chip model",
+                "short_answers": [
+                    "LM75"
+                ]
+            },
+            {
+                "question": "Temperature sensor communication bus type",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "Temperature sensor communication bus address",
+                "short_answers": [
+                    "I2C_4 0x49"
+                ]
+            },
+            {
+                "question": "Communication protocol or registers to read for obtaining temperature information",
+                "short_answers": [
+                    "0x00h"
+                ]
+            },
+            {
+                "question": "How to parse register data into correct numeric type",
+                "short_answers": [
+                    "Read 2 bytes, use only the high 9 bits\nraw_temp = (msb << 8 | lsb) >> 7"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC monitor SMB board outlet temperature",
+        "qa_pairs": [
+            {
+                "question": "Temperature sensor chip model",
+                "short_answers": [
+                    "LM75"
+                ]
+            },
+            {
+                "question": "Temperature sensor communication bus type",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "Temperature sensor communication bus address",
+                "short_answers": [
+                    "I2C_4 0x4A"
+                ]
+            },
+            {
+                "question": "Communication protocol or registers to read for obtaining temperature information",
+                "short_answers": [
+                    "0x00h"
+                ]
+            },
+            {
+                "question": "How to parse register data into correct numeric type",
+                "short_answers": [
+                    "Read 2 bytes, use only the high 9 bits\nraw_temp = (msb << 8 | lsb) >> 7"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC monitor SMB board left inlet temperature",
+        "qa_pairs": [
+            {
+                "question": "Temperature sensor chip model",
+                "short_answers": [
+                    "LM75"
+                ]
+            },
+            {
+                "question": "Temperature sensor communication bus type",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "Temperature sensor communication bus address",
+                "short_answers": [
+                    "I2C_4 0x48"
+                ]
+            },
+            {
+                "question": "Communication protocol or registers to read for obtaining temperature information",
+                "short_answers": [
+                    "0x00h"
+                ]
+            },
+            {
+                "question": "How to parse register data into correct numeric type",
+                "short_answers": [
+                    "Read 2 bytes, use only the high 9 bits\nraw_temp = (msb << 8 | lsb) >> 7"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC monitor fan board left outlet temperature",
+        "qa_pairs": [
+            {
+                "question": "Temperature sensor chip model",
+                "short_answers": [
+                    "LM75"
+                ]
+            },
+            {
+                "question": "Temperature sensor communication bus type",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "Temperature sensor communication bus address",
+                "short_answers": [
+                    "I2C_12 0x70switch channel3(0x08) 0x48"
+                ]
+            },
+            {
+                "question": "Communication protocol or registers to read for obtaining temperature information",
+                "short_answers": [
+                    "0x00h"
+                ]
+            },
+            {
+                "question": "How to parse register data into correct numeric type",
+                "short_answers": [
+                    "Read 2 bytes, use only the high 9 bits\nraw_temp = (msb << 8 | lsb) >> 7"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC monitor GB internal temperature",
+        "qa_pairs": [
+            {
+                "question": "Temperature sensor chip model",
+                "short_answers": [
+                    "GB integrated temperature sensor"
+                ]
+            },
+            {
+                "question": "Temperature sensor communication bus type",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "Temperature sensor communication bus address",
+                "short_answers": [
+                    "I2C_4 0x2A"
+                ]
+            },
+            {
+                "question": "Communication protocol or registers to read for obtaining temperature information",
+                "short_answers": [
+                    "Determined by model"
+                ]
+            },
+            {
+                "question": "How to parse register data into correct numeric type",
+                "short_answers": [
+                    "Vendor-defined"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC monitor SMB board right inlet temperature",
+        "qa_pairs": [
+            {
+                "question": "Temperature sensor chip model",
+                "short_answers": [
+                    "LM75"
+                ]
+            },
+            {
+                "question": "Temperature sensor communication bus type",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "Temperature sensor communication bus address",
+                "short_answers": [
+                    "I2C_4 0x4B"
+                ]
+            },
+            {
+                "question": "Communication protocol or registers to read for obtaining temperature information",
+                "short_answers": [
+                    "0x00h"
+                ]
+            },
+            {
+                "question": "How to parse register data into correct numeric type",
+                "short_answers": [
+                    "Read 2 bytes, use only the high 9 bits\nraw_temp = (msb << 8 | lsb) >> 7"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC monitor fan board right outlet temperature",
+        "qa_pairs": [
+            {
+                "question": "Temperature sensor chip model",
+                "short_answers": [
+                    "LM75"
+                ]
+            },
+            {
+                "question": "Temperature sensor communication bus type",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "Temperature sensor communication bus address",
+                "short_answers": [
+                    "I2C_12 0x70switch channel3(0x08) 0x49"
+                ]
+            },
+            {
+                "question": "Communication protocol or registers to read for obtaining temperature information",
+                "short_answers": [
+                    "0x00h"
+                ]
+            },
+            {
+                "question": "How to parse register data into correct numeric type",
+                "short_answers": [
+                    "Read 2 bytes, use only the high 9 bits\nraw_temp = (msb << 8 | lsb) >> 7"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC perform SMB board power monitoring",
+        "qa_pairs": [
+            {
+                "question": "Voltage monitoring sensor model",
+                "short_answers": [
+                    "POWER1220 "
+                ]
+            },
+            {
+                "question": "Voltage monitoring sensor communication bus",
+                "short_answers": [
+                    "I2C_2"
+                ]
+            },
+            {
+                "question": "Voltage monitoring sensor bus address",
+                "short_answers": [
+                    "0x3A "
+                ]
+            },
+            {
+                "question": "Voltage monitoring sensor communication protocol or register addresses",
+                "short_answers": [
+                    "XP12R0 VMON1\nXP5R0 VMON2\nXP3R3_BMC VMON3\nXP2R5_BMC ADC1\nXP1R2_BMC VMON5\nXP3R3_FPGA VMON4\nXP1R8_FPGA VMON6\nXP1R0_FPGA ADC0\nXP1R2_VDDH ADC6\nXP1R8_IO VMON7\nXP1R8_ALG ADC5\nXP2R5_HBM VMON8\nXP1R2_HBM ADC7\nFLT_IFG_VDDCK_1P15 VMON12\nVDD_CORE VMON10\nXP0P94_VDDA VMON9\nXP0P75_PCIE VMON11\nXP3R3_LEFT ADC4\nXP3R3_RIGHT ADC3"
+                ]
+            },
+            {
+                "question": "Data reading",
+                "short_answers": [
+                    "0x09 select input channel (SEL[3:0] bits)\nSet attenuator (ATTEN bit)\nRead the DONE bit (bit 0) of the ADC_VALUE_LOW register (address 0x07)\nRead ADC_VALUE_HIGH (address 0x08)\nADC_VALUE_LOW (address 0x07)"
+                ]
+            },
+            {
+                "question": "Data parsing",
+                "short_answers": [
+                    "ADC value = (ADC_VALUE_HIGH << 4) | (ADC_VALUE_LOW[7:4]), forming a 12-bit unsigned integer\nADC code (decimal) × resolution\nATTEN bit 0: Full-scale 2.048V (resolution 2mV/LSB)\nATTEN bit 1: Full-scale 6.144V (resolution 6mV/LSB)"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC query the power rail status monitored by POWR1220",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology of POWR1220?",
+                "short_answers": [
+                    "I2c_2 0x3A"
+                ]
+            },
+            {
+                "question": "Voltage monitoring sensor communication protocol or register addresses",
+                "short_answers": [
+                    "XP12R0 VMON1\nXP5R0 VMON2\nXP3R3_BMC VMON3\nXP2R5_BMC ADC1\nXP1R2_BMC VMON5\nXP3R3_FPGA VMON4\nXP1R8_FPGA VMON6\nXP1R0_FPGA ADC0\nXP1R2_VDDH ADC6\nXP1R8_IO VMON7\nXP1R8_ALG ADC5\nXP2R5_HBM VMON8\nXP1R2_HBM ADC7\nFLT_IFG_VDDCK_1P15 VMON12\nVDD_CORE VMON10\nXP0P94_VDDA VMON9\nXP0P75_PCIE VMON11\nXP3R3_LEFT ADC4\nXP3R3_RIGHT ADC3"
+                ]
+            },
+            {
+                "question": "What are the registers for reading POWR1220 power rail status?",
+                "short_answers": [
+                    "Read POWR1220 voltage monitoring registers\n0x09 select input channel (SEL[3:0] bits)\nSet attenuator (ATTEN bit)\nRead the DONE bit (bit 0) of the ADC_VALUE_LOW register (address 0x07)\nRead ADC_VALUE_HIGH (address 0x08)\nADC_VALUE_LOW (address 0x07)"
+                ]
+            },
+            {
+                "question": "Data parsing",
+                "short_answers": [
+                    "ADC value = (ADC_VALUE_HIGH << 4) | (ADC_VALUE_LOW[7:4]), forming a 12-bit unsigned integer\nADC code (decimal) × resolution\nATTEN bit 0: Full-scale 2.048V (resolution 2mV/LSB)\nATTEN bit 1: Full-scale 6.144V (resolution 6mV/LSB)"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC reset the POWR1220 chip",
+        "qa_pairs": [
+            {
+                "question": "What are the reset methods for POWR1220",
+                "short_answers": [
+                    " RESETb signal, JTAG, or I²C interface for reset operations"
+                ]
+            },
+            {
+                "question": "How does BMC control POWR1220 reset",
+                "short_answers": [
+                    "BMC can write any value to the RESET register (0x12) via the I2C interface"
+                ]
+            },
+            {
+                "question": "What is the reset control method and register for POWR1220?",
+                "short_answers": [
+                    "By writing to the reset register of POWR1220 (e.g., software reset register), setting a specific bit (e.g., bit7) to 1 triggers a reset, which automatically clears after reset."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain fan status",
+        "qa_pairs": [
+            {
+                "question": "Hardware communication topology for fan status monitoring",
+                "short_answers": [
+                    "Fan Control Module (FCM) Fan_CPLD   I2C_12 0x70 Channel1 (0x01) accesses Fan CPLD (address 0x3e), reads/writes CPLD registers to obtain each fan status."
+                ]
+            },
+            {
+                "question": "Chip models involved in fan status monitoring",
+                "short_answers": [
+                    "CPLD register control"
+                ]
+            },
+            {
+                "question": "Communication bus type and address for fan status monitoring",
+                "short_answers": [
+                    "Read/write FAN CPLD registers"
+                ]
+            },
+            {
+                "question": "Register addresses to read for obtaining fan status",
+                "short_answers": [
+                    "Fan_CPLD register 0x10*(i-1)+0x28, where i represents the fan number"
+                ]
+            },
+            {
+                "question": "How to parse fan status data into correct numeric type",
+                "short_answers": [
+                    "bit3/bit2/bit1: 0 indicates normal (alive), 1 indicates abnormal (bad);\nbit0: 0 indicates fan present, 1 indicates not present;"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC set fan speed",
+        "qa_pairs": [
+            {
+                "question": "Hardware communication topology for fan speed control",
+                "short_answers": [
+                    "Fan Control Module (FCM) Fan_CPLD   I2C_12 0x70 Channel1 (0x01) accesses Fan CPLD (address 0x3e), reads/writes CPLD registers to obtain each fan status."
+                ]
+            },
+            {
+                "question": "Chip models involved in fan speed control",
+                "short_answers": [
+                    "CPLD register control"
+                ]
+            },
+            {
+                "question": "Communication bus type and address for fan speed control",
+                "short_answers": [
+                    "Read/write FAN CPLD registers"
+                ]
+            },
+            {
+                "question": "Register addresses to write for setting fan speed",
+                "short_answers": [
+                    "Fan_CPLD register 0x10*(i-1)+0x22, where i represents the fan number"
+                ]
+            },
+            {
+                "question": "How to convert PWM value to actual fan speed",
+                "short_answers": [
+                    "0-63 maps proportionally to 100% duty cycle, front fan full speed 13700RPM, rear fan full speed 13400RPM"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain fan 1 configuration information",
+        "qa_pairs": [
+            {
+                "question": "Hardware communication topology for storing fan configuration information",
+                "short_answers": [
+                    "Fan Control Module (FCM) Fan_CPLD   I2C_12 0x70: \nChannel2 (0x02) accesses 0x51 FCB Inv (24C02);\nChannel5 (0x10) accesses 0x52 FAN#1 (24C64);\nChannel6 (0x20) accesses 0x52 FAN#2 (24C64);\nChannel7 (0x40) accesses 0x52 FAN#3 (24C64);\nChannel8 (0x80) accesses 0x52 FAN#4 (24C64);"
+                ]
+            },
+            {
+                "question": "Chip models storing fan configuration information",
+                "short_answers": [
+                    "24C02/24C64"
+                ]
+            },
+            {
+                "question": "Communication bus type and address for accessing fan configuration information",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "Registers or addresses to use for reading fan configuration information",
+                "short_answers": [
+                    "Read the content of the 24c64 (or 24C02) EEPROM via I2C"
+                ]
+            },
+            {
+                "question": "How to parse fan configuration information",
+                "short_answers": [
+                    "Parse according to vendor-defined format."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain fan 1 fault status",
+        "qa_pairs": [
+            {
+                "question": "Who manages the fan fault status",
+                "short_answers": [
+                    "fan_CPLD"
+                ]
+            },
+            {
+                "question": "What is the hardware topology of the fan_CPLD",
+                "short_answers": [
+                    "BMC connects to I2C switch via I2C, switch connects to fan_CPLD, fan_CPLD controls fans"
+                ]
+            },
+            {
+                "question": "What is the communication link to access fan_CPLD",
+                "short_answers": [
+                    "I2C_12 0x70 switch channel1 (0x01) 0x3e fan_CPLD"
+                ]
+            },
+            {
+                "question": "Which communication protocol or which register to read/write",
+                "short_answers": [
+                    "FAN1_PRESENT 0x28 FAN2_PRESENT 0x38 FAN3_PRESENT 0x48 FAN4_PRESENT 0x58"
+                ]
+            },
+            {
+                "question": "What are the Fan CPLD's fan fault signal register address and bit definition?",
+                "short_answers": [
+                    "Fan CPLD  FANi_PRESENT\nbit3 (FFANi_ALIVE) and bit2 (RFANi_ALIVE) are used to indicate fan faults, 0 indicates fan normal (alive), 1 indicates fault (bad)."
+                ]
+            }
+        ]
+    },{
+        "question": "In Wedge400C, how does BMC set the fan PWM duty cycle",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for BMC to set fan PWM?",
+                "short_answers": [
+                    "BMC accesses Fan CPLD (0x3e) via Channel1 of I2C_12 0x70 switch. Fan CPLD generates PWM signals to control the fans."
+                ]
+            },
+            {
+                "question": "What are the chip model and register for controlling fan PWM?",
+                "short_answers": [
+                    "The chip is Fan CPLD, corresponding registers are:\n0x22 FAN1_PWM\n0x32 FAN2_PWM\n0x42 FAN3_PWM\n0x52 FAN4_PWM"
+                ]
+            },
+            {
+                "question": "What is the communication bus type and address?",
+                "short_answers": [
+                    "I2C_12 Channel1 0x01 0x3e"
+                ]
+            },
+            {
+                "question": "What is the register bit definition for the PWM duty cycle?",
+                "short_answers": [
+                    "PWM value is a 5-bit binary (00_0000 to 11_1111), corresponding to duty cycles from 0/63 to 63/63."
+                ]
+            },
+            {
+                "question": "How is the PWM value parsed into the actual duty cycle?",
+                "short_answers": [
+                    "value/63 * 100%"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the temperature alarm status of the Fan CPLD",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for BMC to set fan PWM?",
+                "short_answers": [
+                    "BMC accesses Fan CPLD (0x3e) via Channel1 of I2C_12 0x70 switch. Fan CPLD generates PWM signals to control the fans."
+                ]
+            },
+            {
+                "question": "Register address for temperature alarm signals in Fan CPLD",
+                "short_answers": [
+                    "Fan CPLD 0x07 (LM75 Alert Status)"
+                ]
+            },
+            {
+                "question": "How is the data in the Fan CPLD temperature alarm signal register parsed?",
+                "short_answers": [
+                    "For Fan CPLD 0x07 (LM75 Alert Status), bit1 (LM75_2) and bit0 (LM75_1): 0 indicates alarm present, 1 indicates no alarm."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC parse the serial number information from the FCB's FRU",
+        "qa_pairs": [
+            {
+                "question": "Where is the FCB's FRU stored?",
+                "short_answers": [
+                    "FCB's FRU information is stored in the FCB Inv EEPROM, which is connected to the BMC via the I2C bus."
+                ]
+            },
+            {
+                "question": "How does BMC access the FCB Inv EEPROM?",
+                "short_answers": [
+                    "BMC accesses address 0x51 via Channel2 (0x02) of the PCA9548 switch (address 0x70) on the I2C_12 bus."
+                ]
+            },
+            {
+                "question": "What is the chip model storing the FCB FRU information?",
+                "short_answers": [
+                    "24c02"
+                ]
+            },
+            {
+                "question": "What is the communication bus type and address for accessing the FCB FRU memory?",
+                "short_answers": [
+                    "Communication bus type is I2C, bus address is 0x51 (located on Channel2 of the I2C_12 bus)."
+                ]
+            },
+            {
+                "question": "What are the addresses and protocol to read for parsing the serial number information in the FCB FRU?",
+                "short_answers": [
+                    "Use the I2C communication protocol. Serial number information is typically stored in a specific address segment of the EEPROM (e.g., 0x10 to 0x2F) and obtained by continuously reading bytes from that segment."
+                ]
+            },
+            {
+                "question": "How to parse the serial number information from the FCB FRU data?",
+                "short_answers": [
+                    "The data is in a vendor-defined format."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the current PSU1 protocol version via PMBus",
+        "qa_pairs": [
+            {
+                "question": "Communication bus of PSU1",
+                "short_answers": [
+                    "I2C connects to PSU via a switch, and also GPIO connects to sys_CPLD."
+                ]
+            },
+            {
+                "question": "Communication bus address of PSU1",
+                "short_answers": [
+                    "I2C_9 0x70switch channel1(0x01) 0x58"
+                ]
+            },
+            {
+                "question": "Communication protocol of PSU1",
+                "short_answers": [
+                    "PMBus"
+                ]
+            },
+            {
+                "question": "Register address for reading PSU1's static information",
+                "short_answers": [
+                    "Protocol version PMBUS_REVISION 98h"
+                ]
+            },
+            {
+                "question": "Method for parsing data in the register",
+                "short_answers": [
+                    "The \"PMBUS_REVISION\" command returns 1 byte of data. Bits [7:5] represent the version of Part 1 of the PMBus specification, and Bits [3:0] represent the version of Part 2."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the current PSU1 rated power via PMBus",
+        "qa_pairs": [
+            {
+                "question": "Communication bus of PSU1",
+                "short_answers": [
+                    "I2C connects to PSU via a switch, and also GPIO connects to sys_CPLD."
+                ]
+            },
+            {
+                "question": "Communication bus address of PSU1",
+                "short_answers": [
+                    "I2C_9 0x70switch channel1(0x01) 0x58"
+                ]
+            },
+            {
+                "question": "Communication protocol of PSU1",
+                "short_answers": [
+                    "PMBus"
+                ]
+            },
+            {
+                "question": "Register address for reading PSU1's static information",
+                "short_answers": [
+                    "Maximum rated output power A7h MFR_POUT_MAX\nMaximum rated input power A3h MFR_PIN_MAX"
+                ]
+            },
+            {
+                "question": "Method for parsing data in the register",
+                "short_answers": [
+                    "Data format is typically two bytes, which may be linear data format or DIRECT format, defined by the vendor."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the current PSU1 input power via PMBus",
+        "qa_pairs": [
+            {
+                "question": "Communication bus of PSU1",
+                "short_answers": [
+                    "I2C connects to PSU via a switch, and also GPIO connects to sys_CPLD."
+                ]
+            },
+            {
+                "question": "Communication bus address of PSU1",
+                "short_answers": [
+                    "I2C_9 0x70switch channel1(0x01) 0x58"
+                ]
+            },
+            {
+                "question": "Communication protocol of PSU1",
+                "short_answers": [
+                    "PMBus"
+                ]
+            },
+            {
+                "question": "Register address for reading PSU1's static information",
+                "short_answers": [
+                    "Input power 97h READ_PIN"
+                ]
+            },
+            {
+                "question": "Method for parsing data in the register",
+                "short_answers": [
+                    "Data format is typically two bytes, which may be linear data format or DIRECT format, defined by the vendor."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the current PSU1 input voltage via PMBus",
+        "qa_pairs": [
+            {
+                "question": "Communication bus of PSU1",
+                "short_answers": [
+                    "I2C connects to PSU via a switch, and also GPIO connects to sys_CPLD."
+                ]
+            },
+            {
+                "question": "Communication bus address of PSU1",
+                "short_answers": [
+                    "I2C_9 0x70switch channel1(0x01) 0x58"
+                ]
+            },
+            {
+                "question": "Communication protocol of PSU1",
+                "short_answers": [
+                    "PMBus"
+                ]
+            },
+            {
+                "question": "Register address for reading PSU1's static information",
+                "short_answers": [
+                    "Input voltage 96h READ_VIN"
+                ]
+            },
+            {
+                "question": "Method for parsing data in the register",
+                "short_answers": [
+                    "Data format is typically two bytes, which may be linear data format or DIRECT format, defined by the vendor."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the current PSU1 output current via PMBus",
+        "qa_pairs": [
+            {
+                "question": "Communication bus of PSU1",
+                "short_answers": [
+                    "I2C connects to PSU via a switch, and also GPIO connects to sys_CPLD."
+                ]
+            },
+            {
+                "question": "Communication bus address of PSU1",
+                "short_answers": [
+                    "I2C_9 0x70switch channel1(0x01) 0x58"
+                ]
+            },
+            {
+                "question": "Communication protocol of PSU1",
+                "short_answers": [
+                    "PMBus"
+                ]
+            },
+            {
+                "question": "Register address for reading PSU1's static information",
+                "short_answers": [
+                    "Output current 8Ch READ_IOUT"
+                ]
+            },
+            {
+                "question": "Method for parsing data in the register",
+                "short_answers": [
+                    "Data format is typically two bytes, which may be linear data format or DIRECT format, defined by the vendor."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the current PSU1 fault status via PMBus",
+        "qa_pairs": [
+            {
+                "question": "Communication bus of PSU1",
+                "short_answers": [
+                    "PMBus: I2C_9 0x70switch channel1(0x01) 0x58\nIO: The AC_OK signal is connected to sys_CPLD. BMC connects to sys_CPLD via I2C_13 0x3e. BMC obtains PSU AC_OK information by reading sys_CPLD registers via I2C."
+                ]
+            },
+            {
+                "question": "Communication protocol of PSU1",
+                "short_answers": [
+                    "PMBus, register reading"
+                ]
+            },
+            {
+                "question": "Register address for reading PSU1's status information",
+                "short_answers": [
+                    "79h status_word, 16 bits correspond to 16 different errors."
+                ]
+            },
+            {
+                "question": "Faults corresponding to different bits in the status register",
+                "short_answers": [
+                    "PMBus spec Table 15\nSMB sys_CPLD's 0x32 register (SYSPLD_REG_SYSTEM_INT_Status_3)"
+                ]
+            },
+            {
+                "question": "Specific fault causes corresponding to different bits",
+                "short_answers": [
+                    "PMBus Status_word:\n78h bit0: Other fault\n78h bit1: STATUS_CML 7Eh\n78h bit2: STATUS_TEMPERATURE 7Dh\n78h bit3: STATUS_INPUT 7Ch bit 4\n78h bit4: STATUS_IOUT 7Bh bit 7\n78h bit5: STATUS_VOUT 7Ah bit 7\n78h bit6: OFF\n78h bit7: BUSY\n\n79h bit0: Unknown error\n79h bit1: STATUE_OTHER 7Fh\n79h bit2: STATUS_FAN_1_2 81h\n          STATUS_FAN_3_4 82h\n79h bit3: POWER_GOOD#\n79h bit4: STATUS_MFR_SPECIFIC 80h\n79h bit5: STATUS_INPUT 7Ch\n79h bit6: STATUS_IOUT 7Bh\n79h bit7: STATUS_VOUT 7Ah\n\nSMB sys_CPLD's 0x32 register (SYSPLD_REG_SYSTEM_INT_Status_3):\n\nbit0 (PSU_PWROK_1) PSU1 output status\nbit1 (PSU_PWROK_2) PSU2 output status\nbit2 (PSU_ACOK_1) PSU1 input status\nbit3 (PSU_ACOK_2) PSU2 input status\n(0 = fault)"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the input power status of PSU1",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for monitoring PSU input power status?",
+                "short_answers": [
+                    "PMBus: I2C_9 0x70switch channel1(0x01) 0x58\nIO: The AC_OK signal is connected to sys_CPLD. BMC connects to sys_CPLD via I2C_13 0x3e."
+                ]
+            },
+            {
+                "question": "What are the register address and bit definitions for monitoring PSU input power status?",
+                "short_answers": [
+                    "SMB sys_CPLD's 0x32 register (SYSPLD_REG_SYSTEM_INT_Status_3)\nbit2 (PSU_ACOK_1) corresponds to PSU1 input status\nbit3 (PSU_ACOK_2) corresponds to PSU2 input status;\n1 indicates normal input, 0 indicates abnormal input."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the output power status of PSU1",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for monitoring PSU output power status?",
+                "short_answers": [
+                    "PMBus: I2C_9 0x70switch channel1(0x01) 0x58\nIO: The AC_OK signal is connected to sys_CPLD. BMC connects to sys_CPLD via I2C_13 0x3e."
+                ]
+            },
+            {
+                "question": "What are the register address and bit definitions for monitoring PSU output power status?",
+                "short_answers": [
+                    "SMB sys_CPLD's 0x32 register (SYSPLD_REG_SYSTEM_INT_Status_3)\nbit0 (PSU_PWROK_1) corresponds to PSU1 output status\nbit1 (PSU_PWROK_2) corresponds to PSU2 output status;\n1 indicates normal output, 0 indicates abnormal output."
+                ]
+            }
+        ]
+    },{
+        "question": "In Wedge400C, how does BMC obtain the ON/OFF state of PSU1",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for PSU switch control?",
+                "short_answers": [
+                    "I2C_9 0x70switch channel8(0x80) 0x3e PWR_CPLD"
+                ]
+            },
+            {
+                "question": "What is the register address and bit definition for controlling the PSU switch?",
+                "short_answers": [
+                    "PWR CPLD's 0x10 register (SYSTEM_MISC_1)\nbit0 (CPLD_PSU1_ON) controls PSU1\nbit1 (CPLD_PSU2_ON) controls PSU2\n1 is ON, 0 is OFF"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC set the ON/OFF state of PSU1",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for PSU status control?",
+                "short_answers": [
+                    "PSU ON/OFF is controlled by the PWR CPLD. The PWR CPLD is connected to the BMC via the I2C bus. The BMC accesses the PWR CPLD (address 0x3e) via Channel8 (0x80) of the PCA9548 switch (address 0x70) on the I2C_9 bus."
+                ]
+            },
+            {
+                "question": "What is the chip model controlling the PSU status?",
+                "short_answers": [
+                    "The core control chip is the PWR CPLD (Power Control Complex Programmable Logic Device)."
+                ]
+            },
+            {
+                "question": "What is the communication bus type and address for PSU status control?",
+                "short_answers": [
+                    "Communication bus type is I2C. The PWR CPLD is located on the I2C_9 bus, accessed via Channel8 of the PCA9548 switch, with address 0x3e."
+                ]
+            },
+            {
+                "question": "What is the register and bit definition to access for setting PSU ON/OFF?",
+                "short_answers": [
+                    "PWR CPLD's 0x10 register (SYSTEM_MISC_1)\nbit0 (CPLD_PSU1_ON) controls PSU1\nbit1 (CPLD_PSU2_ON) controls PSU2\n1 is ON, 0 is OFF"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the PSU1 power good (PG) signal status",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware topology of the PSU's PG signal?",
+                "short_answers": [
+                    "The PSU's PG signal is connected to the PWR_CPLD, and the PWR_CPLD is connected to the BMC via an I2C link."
+                ]
+            },
+            {
+                "question": "How should the status of the PSU's PG signal be obtained?",
+                "short_answers": [
+                    "Read the PWR_CPLD register via the link I2C_9 0x70switch channel8(0x80) 0x3e."
+                ]
+            },
+            {
+                "question": "What is the PSU PG signal register address and bit definition in the PWR_CPLD?",
+                "short_answers": [
+                    "PWR_CPLD's 0x11 register (SYSTEM_MISC_2)\nbit3 (CPLD_PSU2_PG) corresponds to PSU2 PG status\nbit2 (CPLD_PSU1_PG) corresponds to PSU1 PG status\n1 indicates normal, 0 indicates fault."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC query the version information of the PWR CPLD",
+        "qa_pairs": [
+            {
+                "question": "What are the I2C communication address and bus for the PWR CPLD?",
+                "short_answers": [
+                    "The PWR CPLD is accessed via Channel8 (0x80) of the PCA9548 switch (0x70) on the I2c_9 bus, with an I2C address of 0x3e."
+                ]
+            },
+            {
+                "question": "What is the register address for reading the PWR CPLD version?",
+                "short_answers": [
+                    "Read the 0x01 register (CPLD_VERSION) of the PWR CPLD, where bits 5-0 represent the version number, and bit6 indicates if it is a formal release."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC set the power cycle mode of the PWR CPLD",
+        "qa_pairs": [
+            {
+                "question": "What are the I2C communication address and bus for the PWR CPLD?",
+                "short_answers": [
+                    "The PWR CPLD is accessed via Channel8 (0x80) of the PCA9548 switch (0x70) on the I2c_9 bus, with an I2C address of 0x3e."
+                ]
+            },
+            {
+                "question": "What are the register and bit definition for controlling the PWR CPLD power cycle?",
+                "short_answers": [
+                    "Set via bit0 (POWER_CYCLE_GO) of the PWR CPLD's 0x23 register (TIMER_MISC). Writing 1 initiates a power cycle, 0 stops it."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the good (PG) signal status of the SMB board power rails",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware topology of the SMB power rail PG signals?",
+                "short_answers": [
+                    "The power rails are monitored by the PWR1220. The PG signals from the PWR1220 are connected to the sys_CPLD. The BMC accesses the sys_CPLD via an I2C link to obtain the SMB power rail PG status."
+                ]
+            },
+            {
+                "question": "How should the status of the power rail PG signals be obtained?",
+                "short_answers": [
+                    "I2C_13 0x3e sys_CPLD"
+                ]
+            },
+            {
+                "question": "What are the PG signal register addresses and bit definitions for the power rails in the SMB sys_CPLD?",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x43 register (SYSPLD_REG_MISC_PWR_1)\nbit5 (XP1R15V_BMC_PG)\nbit4 (XP3R3V_BMC_PG)\nbit3 (XP2R5V_BMC_PG)\nbit2 (XP1R2V_BMC_PG)\nbit1 (XP5R0V_PG)\nbit0 (XP3R3V_1220_PG)\n0x44 register (SYSPLD_REG_MISC_PWR_2)\nbit5 (XP3R3V_Optical_Right_PG)\nbit4 (XP3R3V_Optical_Left_PG)\nbit3 (USB_OC_PG)\nbit2 (XP1R0V_FPGA_PG)\nbit1 (XP1R8V_FPGA_PG)\nbit0 (XP3R3V_FPGA_PG)\n0x45 register (SYSPLD_REG_MISC_PWR_3)\nbit5 (IR35215_PVDD0P8_VRRDY)\nbit4 (XP0R94V_VDDA_PG)\nbit3 (NP_POWER_STABLE_CPLD)\nbit2 (VDD_CORE_PG)\nbit1 (XP0R75V_PCIE_PG)\nbit0 (XP1R15V_VDDCK_PG)\n1 indicates power normal, 0 indicates fault"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the good (PG) signal status of the XP1R15V_BMC_PG power rail on the SMB board",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware topology of the SMB power rail PG signals?",
+                "short_answers": [
+                    "The power rails are monitored by the PWR1220. The PG signals from the PWR1220 are connected to the sys_CPLD. The BMC accesses the sys_CPLD via an I2C link to obtain the SMB power rail PG status."
+                ]
+            },
+            {
+                "question": "How should the status of the power rail PG signals be obtained?",
+                "short_answers": [
+                    "I2C_13 0x3e sys_CPLD"
+                ]
+            },
+            {
+                "question": "What are the PG signal register address and bit definition for the XP1R15V_BMC_PG power rail in the SMB sys_CPLD?",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x43 register (SYSPLD_REG_MISC_PWR_1)\nbit5 (XP1R15V_BMC_PG)\n1 indicates power normal, 0 indicates fault"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the good (PG) signal status of the XP3R3V_BMC_PG power rail on the SMB board",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware topology of the SMB power rail PG signals?",
+                "short_answers": [
+                    "The power rails are monitored by the PWR1220. The PG signals from the PWR1220 are connected to the sys_CPLD. The BMC accesses the sys_CPLD via an I2C link to obtain the SMB power rail PG status."
+                ]
+            },
+            {
+                "question": "How should the status of the power rail PG signals be obtained?",
+                "short_answers": [
+                    "I2C_13 0x3e sys_CPLD"
+                ]
+            },
+            {
+                "question": "What are the PG signal register address and bit definition for the XP3R3V_BMC_PG power rail in the SMB sys_CPLD?",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x43 register (SYSPLD_REG_MISC_PWR_1)\nbit4 (XP3R3V_BMC_PG)\n1 indicates power normal, 0 indicates fault"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the good (PG) signal status of the SCM board power rails",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware topology of the SCM board power rail PG signals?",
+                "short_answers": [
+                    "The power rails are monitored by the PWR1220. The PG signals of the SCM board power rails are connected to the scm_CPLD. The BMC accesses the sys_CPLD via an I2C link to obtain the SMB power rail PG status."
+                ]
+            },
+            {
+                "question": "How should the PG signal status of the SCM board power rails be obtained?",
+                "short_answers": [
+                    "I2C_3 0x3e"
+                ]
+            },
+            {
+                "question": "What are the PG signal register addresses and bit definitions for the power rails in the SCM scm_CPLD?",
+                "short_answers": [
+                    "SCM scm_CPLD\n0x30 SYSTEM_POWER_STUTS\nbit5 (COM_PWROK)\nbit4 (PWRGD_PCH_PWROK)\nbit3 (XP12R0V_COME_PG)\nbit2 (XP5R0V_COME_PG)\nbit1 (XP1R8V_PG)\nbit0 (XP3R3V_SSD_PG)\n1 indicates power normal, 0 indicates fault"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the good (PG) signal status of the COM_PWROK power rail on the SCM board",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware topology of the SCM board power rail PG signals?",
+                "short_answers": [
+                    "The power rails are monitored by the PWR1220. The PG signals of the SCM board power rails are connected to the scm_CPLD. The BMC accesses the sys_CPLD via an I2C link to obtain the SMB power rail PG status."
+                ]
+            },
+            {
+                "question": "How should the PG signal status of the SCM board power rails be obtained?",
+                "short_answers": [
+                    "I2C_3 0x3e"
+                ]
+            },
+            {
+                "question": "What are the PG signal register address and bit definition for the COM_PWROK power rail in the SCM scm_CPLD?",
+                "short_answers": [
+                    "SCM scm_CPLD\n0x30 SYSTEM_POWER_STUTS\nbit5 (COM_PWROK)\n1 indicates power normal, 0 indicates fault"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the good (PG) signal status of the FCB board power rails",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware topology of the FCB power rail PG signals?",
+                "short_answers": [
+                    "The power rails are monitored by the PWR1220. The PG signals of the FCB board power rails are connected to the fan_cpld. The BMC accesses the fan_cpld via an I2C link to obtain the FCB power rail PG status."
+                ]
+            },
+            {
+                "question": "How should the PG signal status of the FCB board power rails be obtained?",
+                "short_answers": [
+                    "I2C_12 0x70switch channel1(0x01) 0x3e fan_cpld"
+                ]
+            },
+            {
+                "question": "What are the PG signal register addresses and bit definitions for the power rails in the FCB fan_CPLD?",
+                "short_answers": [
+                    "FCB fan_CPLD\n0x13 FCB_Efuse_REG\nbit7 (PG_FAN4)\nbit6 (PG_FAN3)\nbit5 (PG_FAN2)\nbit4 (PG_FAN1)\n1 indicates power normal, 0 indicates fault"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the good (PG) signal status of the PG_FAN4 power rail on the FCB board",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware topology of the FCB power rail PG signals?",
+                "short_answers": [
+                    "The power rails are monitored by the PWR1220. The PG signals of the FCB board power rails are connected to the fan_cpld. The BMC accesses the fan_cpld via an I2C link to obtain the FCB power rail PG status."
+                ]
+            },
+            {
+                "question": "How should the PG signal status of the FCB board power rails be obtained?",
+                "short_answers": [
+                    "I2C_12 0x70switch channel1(0x01) 0x3e fan_cpld"
+                ]
+            },
+            {
+                "question": "What are the PG signal register address and bit definition for the PG_FAN4 power rail in the FCB fan_CPLD?",
+                "short_answers": [
+                    "FCB fan_CPLD\n0x13 FCB_Efuse_REG\nbit7 (PG_FAN4)\n1 indicates power normal, 0 indicates fault"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC control power cycle",
+        "qa_pairs": [
+            {
+                "question": "Who controls the power cycle?",
+                "short_answers": [
+                    "BMC controls the power cycle by reading/writing registers in the pwr_CPLD."
+                ]
+            },
+            {
+                "question": "What is the hardware topology of the pwr_CPLD?",
+                "short_answers": [
+                    "BMC connects to an I2C Switch via the I2C bus, then the Switch connects to the pwr_CPLD. The CPLD is responsible for implementing the power cycle logic."
+                ]
+            },
+            {
+                "question": "What is the communication link of the pwr_CPLD?",
+                "short_answers": [
+                    "Read the PWR_CPLD register via the link I2C_9 0x70switch channel8(0x80) 0x3e."
+                ]
+            },
+            {
+                "question": "What communication protocol is used or which register is read/written?",
+                "short_answers": [
+                    "PWR_CPLD's 0x23 register (TIMER_MISC)"
+                ]
+            },
+            {
+                "question": "What is the register address and bit definition for controlling the power cycle in the PWR_CPLD?",
+                "short_answers": [
+                    "PWR_CPLD's 0x23 register (TIMER_MISC)\nbit0 (POWER_CYCLE_GO) is used to initiate the power cycle. Write 1 to start the cycle;\nbit1 (TIMER_COUNTER_SETTING_UPDATE) is used to update timer parameters."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC configure the power cycle period",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for BMC to configure the power cycle period?",
+                "short_answers": [
+                    "BMC accesses the PWR_CPLD (address 0x3e) via Channel8 of the PCA9548 switch (address 0x70) on the I2C_9 bus. The timer registers of the PWR_CPLD control the cycle period."
+                ]
+            },
+            {
+                "question": "What are the registers controlling the power cycle period?",
+                "short_answers": [
+                    "The PWR_CPLD's 0x20 register (TIMER_BASE_SETTING) sets the period base (10ms/100ms/1s/10s), and the 0x21 register (TIMER_COUNTER_SETTING) sets the count."
+                ]
+            },
+            {
+                "question": "What is the communication bus type and address?",
+                "short_answers": [
+                    "Communication bus type is I2C. The PWR_CPLD is accessed via Channel8 (0x80) of the PCA9548 switch on the I2C_9 bus, with address 0x3e."
+                ]
+            },
+            {
+                "question": "How is the period parameter parsed?",
+                "short_answers": [
+                    "For example, if the 0x20 register is set to 0x01 (10ms base) and the 0x21 register is set to 0x64 (100 counts), the total period is 10ms × 100 = 1s."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the preset configuration information for PSU1",
+        "qa_pairs": [
+            {
+                "question": "Chip for PSU1 preset configuration information",
+                "short_answers": [
+                    "EEPROM or 24C64"
+                ]
+            },
+            {
+                "question": "Communication bus of the EEPROM storing configuration information",
+                "short_answers": [
+                    "I2C-9 connected to I2C Switch 0x70h\nI2C Switch Channel1 (0x01)\nI2C address 0x50"
+                ]
+            },
+            {
+                "question": "How to read the data stored in the EEPROM",
+                "short_answers": [
+                    "Custom message format"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the FRU information of the SCM",
+        "qa_pairs": [
+            {
+                "question": "Hardware communication topology for storing SCM FRU information",
+                "short_answers": [
+                    "SCM SCM_Inv EEPROM \nI2C_3 0x70 Channel4 (0x08) 0x52 "
+                ]
+            },
+            {
+                "question": "Chip model storing SCM FRU information",
+                "short_answers": [
+                    "24C64"
+                ]
+            },
+            {
+                "question": "Communication bus type and address for accessing SCM FRU information",
+                "short_answers": [
+                    "I2C_3 0x70 Channel4 (0x08) 0x52 "
+                ]
+            },
+            {
+                "question": "Communication protocol used to read SCM FRU information",
+                "short_answers": [
+                    "I2C "
+                ]
+            },
+            {
+                "question": "How to parse SCM FRU information",
+                "short_answers": [
+                    "Custom message format"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the FRU information of the BSM",
+        "qa_pairs": [
+            {
+                "question": "Hardware communication topology for storing BSM FRU information",
+                "short_answers": [
+                    "I2C_3 0x70switch Channel7 (0x40) 0x56 "
+                ]
+            },
+            {
+                "question": "Chip model storing BSM FRU information",
+                "short_answers": [
+                    "24C64"
+                ]
+            },
+            {
+                "question": "Communication bus type and address for accessing BSM FRU information",
+                "short_answers": [
+                    "I2C_3 0x70switch Channel7 (0x40) 0x56 "
+                ]
+            },
+            {
+                "question": "Communication protocol or address used to read BSM FRU information",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "How to parse BSM FRU information",
+                "short_answers": [
+                    "Custom message format"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC monitor the FRU status of the fan board",
+        "qa_pairs": [
+            {
+                "question": "Hardware communication topology for fan tray FRU status monitoring",
+                "short_answers": [
+                    "I2C_12 0x70switch channel2(0x02) 0x51 24c02"
+                ]
+            },
+            {
+                "question": "Chip used for fan tray FRU",
+                "short_answers": [
+                    "24c02"
+                ]
+            },
+            {
+                "question": "Communication bus type and address for fan tray FRU status monitoring",
+                "short_answers": [
+                    "I2C_12 0x70switch channel2(0x02) 0x51 24c02"
+                ]
+            },
+            {
+                "question": "Communication protocol used to obtain fan tray FRU status",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "How to parse fan tray FRU status data",
+                "short_answers": [
+                    "Custom message format"
+                ]
+            }
+        ]
+    },{
+        "question": "In Wedge400C, how does BMC obtain the FRU information of PSU1",
+        "qa_pairs": [
+            {
+                "question": "Hardware communication topology for storing PSU1 FRU information",
+                "short_answers": [
+                    "I2C_9 0x70switch channel1(0x01) 0x50"
+                ]
+            },
+            {
+                "question": "Chip model storing PSU1 FRU information",
+                "short_answers": [
+                    "24c02."
+                ]
+            },
+            {
+                "question": "Communication bus type and address for accessing PSU1 FRU information",
+                "short_answers": [
+                    "I2C_9 0x70switch channel1(0x01) 0x50"
+                ]
+            },
+            {
+                "question": "Protocol or address used to read PSU1 FRU information",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "How to parse PSU1 FRU information",
+                "short_answers": [
+                    "Custom message format"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the FRU information of PSU2",
+        "qa_pairs": [
+            {
+                "question": "Hardware communication topology for storing PSU FRU information",
+                "short_answers": [
+                    "I2C_9 0x70switch channel2(0x02) 0x50"
+                ]
+            },
+            {
+                "question": "Chip model storing PSU FRU information",
+                "short_answers": [
+                    "24c02."
+                ]
+            },
+            {
+                "question": "Communication bus type and address for accessing PSU FRU information",
+                "short_answers": [
+                    "I2C_9 0x70switch channel2(0x02) 0x50"
+                ]
+            },
+            {
+                "question": "Protocol or address used to read PSU FRU information",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "How to parse PSU FRU information",
+                "short_answers": [
+                    "Custom message format"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC monitor the FRU presence status of the SCM",
+        "qa_pairs": [
+            {
+                "question": "Hardware communication topology for storing SCM FRU information",
+                "short_answers": [
+                    "I2C_3 0x70switch channel4(0x80) 0x52"
+                ]
+            },
+            {
+                "question": "Chip model storing SCM FRU information",
+                "short_answers": [
+                    "24C64"
+                ]
+            },
+            {
+                "question": "Communication bus type and address for accessing SCM FRU information",
+                "short_answers": [
+                    "I2C_3 0x70switch channel4(0x80) 0x52"
+                ]
+            },
+            {
+                "question": "Protocol or address used to read SCM FRU information",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "How to parse SCM FRU information",
+                "short_answers": [
+                    "Custom message format"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC parse the model information from the SMB's FRU",
+        "qa_pairs": [
+            {
+                "question": "Hardware communication topology for storing SMB FRU information",
+                "short_answers": [
+                    "I2C_7 0x51"
+                ]
+            },
+            {
+                "question": "Chip model storing SMB FRU information",
+                "short_answers": [
+                    "24C64"
+                ]
+            },
+            {
+                "question": "Communication bus type and address for accessing SMB FRU information",
+                "short_answers": [
+                    "I2C_7 0x51"
+                ]
+            },
+            {
+                "question": "Protocol or address used to read SMB FRU information",
+                "short_answers": [
+                    "I2C"
+                ]
+            },
+            {
+                "question": "How to parse SMB FRU information",
+                "short_answers": [
+                    "Custom message format"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC control the System Information LED (SIM)",
+        "qa_pairs": [
+            {
+                "question": "Hardware communication topology of the System Information LED",
+                "short_answers": [
+                    "I2C_7 0x20"
+                ]
+            },
+            {
+                "question": "Chip model controlling the System Information LED",
+                "short_answers": [
+                    "PCA9535"
+                ]
+            },
+            {
+                "question": "Communication bus type and address of the System Information LED",
+                "short_answers": [
+                    "I2C_7 0x20"
+                ]
+            },
+            {
+                "question": "Register and bit mapping to access for controlling the System Information LED",
+                "short_answers": [
+                    "PCA9535 output register:\nBit 0: SYS_RED_L (System red LED, 0 is ON, 1 is OFF)\nBit 1: SYS_GRN_L (System green LED, 0 is ON, 1 is OFF)\nBit 2: SYS_BLU_L (System blue LED, 0 is ON, 1 is OFF)\nBit 3: FAN_RED_L (Fan red LED, 0 is ON, 1 is OFF)\nBit 4: FAN_GRN_L (Fan green LED, 0 is ON, 1 is OFF)\nBit 5: FAN_BLU_L (Fan blue LED, 0 is ON, 1 is OFF)\nBit 8: PSU_RED_L (PSU red LED, 0 is ON, 1 is OFF)\nBit 9: PSU_GRN_L (PSU green LED, 0 is ON, 1 is OFF)\nBit 10: PSU_BLU_L (PSU blue LED, 0 is ON, 1 is OFF)\nBit 11: SCM_RED_L (SCM red LED, 0 is ON, 1 is OFF)\nBit 12: SCM_GRN_L (SCM green LED, 0 is ON, 1 is OFF)\nBit 13: SCM_BLU_L (SCM blue LED, 0 is ON, 1 is OFF)"
+                ]
+            },
+            {
+                "question": "How do the color and state of the System Information LED correspond?",
+                "short_answers": [
+                    "Blue: All FRUs present and no alarms.\nAmber (Red + Green): FRU missing or alarm present.\nBlue/Amber flashing (0.5s alternating): Firmware upgrade in progress.\nAmber flashing: Technician intervention required."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC query the interrupt status of the SMB sys_CPLD",
+        "qa_pairs": [
+            {
+                "question": "How does BMC access the SMB sys_CPLD?",
+                "short_answers": [
+                    "I2c_13 0x3e"
+                ]
+            },
+            {
+                "question": "Register addresses for SMB sys_CPLD interrupt status",
+                "short_answers": [
+                    "Read SYS CPLD's 0x30 SYSPLD_REG_SYSTEM_INT_Status_1, 0x31 SYSPLD_REG_SYSTEM_INT_Status_2, 0x32 SYSPLD_REG_SYSTEM_INT_Status_3"
+                ]
+            },
+            {
+                "question": "How to parse the data in the SMB sys_CPLD interrupt status registers?",
+                "short_answers": [
+                    "0x30 SYSPLD_REG_SYSTEM_INT_Status_1\nbit7 PSU_ALERT_2_L Status SCM_CPLD Interrupt Status\nbit6 PSU_ALERT_1_L Status FCB_CPLD Interrupt Status\nbit5 SCM_CPLD_Int Status SCM_CPLD Interrupt Status\nbit4 FCB_CPLD_Int Status FCB_CPLD Interrupt Status\nbit3 TEMP_SENSOR_CPLD_ALERT4 Status Thermal sensor int_4 Status\nbit2 TEMP_SENSOR_CPLD_ALERT3 Status Thermal sensor int_3 Status\nbit1 TEMP_SENSOR_CPLD_ALERT2 Status Thermal sensor int_2 Status\nbit0 TEMP_SENSOR_CPLD_ALERT1 Status Thermal sensor int_1 Status\n\n0x31 SYSPLD_REG_SYSTEM_INT_ Status_2\nbit7 PSU_PRNST_2_N Status PSU 2 present interrupts Status\nbit6 PSU_PRNST_1_N Status PSU 1 present interrupts Status\nbit5 SCM_PRESET Status SCM present interrupts Status\nbit4 DEBUG_PRESENT_N_Status DEBUG card present interrupts Status\nbit3 Reserved PCIE Wake interrupt Status\nbit2 SMB_TPM_INT_N Status TPM I2C INTR Status\nbit1 Reserved \nbit0 TPM_PP Status TPM PP interrupt Status\n\n0x32 SYSPLD_REG_SYSTEM_INT_ Status_3\nbit7 FAULT_R_XP5R0V_USB Status USB XP5R0V fault interrupts Status\nbit6 XP5R0V_PG Status  XP5R0V power good interrupts Status\nbit5 BMC_POWER_OK Status  BMC all power rails power ok interrupts Status\nbit4 Reserved \nbit3 PSU_ACOK_2 Status  PSU2 AC Input power ok interrupts Status\nbit2 PSU_ACOK_1 Status  PSU1 AC Input power ok interrupts Status\nbit1 PSU_PWROK_2 Status  PSU2 DC output power ok interrupts Status\nbit0 PSU_PWROK_1 Status  PSU1 DC output power ok interrupts Status\n0 indicates interrupt present, 1 indicates no interrupt"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC mask the interrupt of the SCM sys_CPLD",
+        "qa_pairs": [
+            {
+                "question": "Where does the interrupt signal for the SCM sys_CPLD come from?",
+                "short_answers": [
+                    "SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "What is the communication bus between the BMC and the SMB sys_CPLD?",
+                "short_answers": [
+                    "I2c_13 0x3e"
+                ]
+            },
+            {
+                "question": "Register addresses for SMB sys_CPLD interrupt status",
+                "short_answers": [
+                    "Read SYS CPLD's 0x20 SYSPLD_REG_SYSTEM_INT_Mask_1, 0x21 SYSPLD_REG_SYSTEM_INT_Mask_2, 0x22 SYSPLD_REG_SYSTEM_INT_Mask_3"
+                ]
+            },
+            {
+                "question": "How to mask the interrupt of the SCM sys_CPLD",
+                "short_answers": [
+                    "0x20 SYSPLD_REG_SYSTEM_INT_Mask_1 \nbit5 SCM_CPLD_Int Status SCM_CPLD Interrupt Status\n1 indicates mask (interrupt disabled), 0 indicates no mask (interrupt enabled)"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC mask the interrupt of the FCB CPLD",
+        "qa_pairs": [
+            {
+                "question": "Where does the interrupt signal for the FCB CPLD come from?",
+                "short_answers": [
+                    "SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "What is the communication bus between the BMC and the SMB sys_CPLD?",
+                "short_answers": [
+                    "I2c_13 0x3e"
+                ]
+            },
+            {
+                "question": "Register addresses for SMB sys_CPLD interrupt status",
+                "short_answers": [
+                    "Read SYS CPLD's 0x20 SYSPLD_REG_SYSTEM_INT_Mask_1, 0x21 SYSPLD_REG_SYSTEM_INT_Mask_2, 0x22 SYSPLD_REG_SYSTEM_INT_Mask_3"
+                ]
+            },
+            {
+                "question": "How to mask the interrupt of the FCB CPLD",
+                "short_answers": [
+                    "0x20 SYSPLD_REG_SYSTEM_INT_Mask_1 \nbit4 FCB_CPLD_Int Status FCB_CPLD Interrupt Status\n1 indicates mask (interrupt disabled), 0 indicates no mask (interrupt enabled)"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC mask the PSU1 ACOK interrupt",
+        "qa_pairs": [
+            {
+                "question": "Where does the PSU1 ACOK interrupt signal come from?",
+                "short_answers": [
+                    "SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "What is the communication bus between the BMC and the SMB sys_CPLD?",
+                "short_answers": [
+                    "I2c_13 0x3e"
+                ]
+            },
+            {
+                "question": "Register addresses for SMB sys_CPLD interrupt status",
+                "short_answers": [
+                    "Read SYS CPLD's 0x20 SYSPLD_REG_SYSTEM_INT_Mask_1, 0x21 SYSPLD_REG_SYSTEM_INT_Mask_2, 0x22 SYSPLD_REG_SYSTEM_INT_Mask_3"
+                ]
+            },
+            {
+                "question": "How to mask the PSU1 ACOK interrupt",
+                "short_answers": [
+                    "0x32 SYSPLD_REG_SYSTEM_INT_ Status_3\nbit2 PSU_ACOK_1 Status  PSU1 AC Input power ok interrupts Status\n0 indicates interrupt present, 1 indicates no interrupt"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC mask the PSU1 PWROK interrupt",
+        "qa_pairs": [
+            {
+                "question": "Where does the FCB CPLD interrupt signal come from?",
+                "short_answers": [
+                    "SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "What is the communication bus between the BMC and the SMB sys_CPLD?",
+                "short_answers": [
+                    "I2c_13 0x3e"
+                ]
+            },
+            {
+                "question": "Register addresses for SMB sys_CPLD interrupt status",
+                "short_answers": [
+                    "Read SYS CPLD's 0x20 SYSPLD_REG_SYSTEM_INT_Mask_1, 0x21 SYSPLD_REG_SYSTEM_INT_Mask_2, 0x22 SYSPLD_REG_SYSTEM_INT_Mask_3"
+                ]
+            },
+            {
+                "question": "How to mask the PSU1 PWROK interrupt",
+                "short_answers": [
+                    "0x32 SYSPLD_REG_SYSTEM_INT_ Status_3\nbit0 PSU_PWROK_1 Status  PSU1 DC output power ok interrupts Status\n0 indicates interrupt present, 1 indicates no interrupt"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the SMB board device present signal",
+        "qa_pairs": [
+            {
+                "question": "Who collects the present signals for SMB board devices?",
+                "short_answers": [
+                    "sys_CPLD"
+                ]
+            },
+            {
+                "question": "What is the hardware topology of the present signals?",
+                "short_answers": [
+                    "The present signals are connected to the sys_CPLD's I/O pins. The BMC obtains device presence information by accessing specific registers of the sys_CPLD via I2C."
+                ]
+            },
+            {
+                "question": "What is the communication topology of the present signals?",
+                "short_answers": [
+                    "I2C_13 0x3e sys_CPLD"
+                ]
+            },
+            {
+                "question": "What communication protocol should be used or which register should be read?",
+                "short_answers": [
+                    "I2C 0x31 SYSPLD_REG_SYSTEM_INT_Status_2"
+                ]
+            },
+            {
+                "question": "How to parse presence information from the data in the register?",
+                "short_answers": [
+                    "SMB sys_CPLD 0x31 register (SYSPLD_REG_SYSTEM_INT_Status_2)\nbit5 (SCM_PRESET Status) indicates SCM presence (0 for present, 1 for absent)\nbit7 (PSU_PRNST_2_N Status) and bit6 (PSU_PRNST_1_N Status) indicate PSU2 and PSU1 presence (0 for present, 1 for absent)"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the FCB board device present signal",
+        "qa_pairs": [
+            {
+                "question": "Who collects the present signals for FCB board devices?",
+                "short_answers": [
+                    "fan_CPLD"
+                ]
+            },
+            {
+                "question": "What is the hardware topology of the present signals?",
+                "short_answers": [
+                    "The present signals are connected to the fan_CPLD's I/O pins. The BMC obtains device presence information by accessing specific registers of the fan_CPLD via I2C."
+                ]
+            },
+            {
+                "question": "What is the communication topology of the present signals?",
+                "short_answers": [
+                    "I2C_12 0x70switch channel1(0x01) 0x3e fan_cpld"
+                ]
+            },
+            {
+                "question": "What communication protocol should be used or which register should be read?",
+                "short_answers": [
+                    "I2C read FANi_PRESENT registers, where i represents the fan number. Addresses are 0x28 FAN1_PRESENT, 0x38 FAN2_PRESENT, 0x48 FAN3_PRESENT, 0x58 FAN4_PRESENT."
+                ]
+            },
+            {
+                "question": "What are the fan presence signal register address and bit definition in the Fan CPLD?",
+                "short_answers": [
+                    "fan_CPLD register (FANi_PRESENT)\nbit0 (FANi_PRESENT) is used to indicate the fan presence status, 0 indicates fan present, 1 indicates absent."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC query the power status of the SCM CPLD",
+        "qa_pairs": [
+            {
+                "question": "What are the I2C communication address and bus for the SCM CPLD?",
+                "short_answers": [
+                    "The SCM CPLD communicates with the BMC via the I2C bus, with address 0x3e (requires access via the corresponding I2C switch channel)."
+                ]
+            },
+            {
+                "question": "What is the register address for reading the SCM CPLD power status?",
+                "short_answers": [
+                    "Read the 0x30 register (SYSTEM_POWER_STUTS) of the SCM CPLD. Bits like bit5 (COM_PWROK), bit3 (XP12R0V_COME_PG) etc., represent the status of different power rails, 1 indicates normal."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC control the reset of the SCM",
+        "qa_pairs": [
+            {
+                "question": "What is the register and bit definition for controlling reset in the SCM CPLD?",
+                "short_answers": [
+                    "Controlled via bit0 (SYS_RESET_N) of the SCM CPLD's 0x10 register (SCM_RST_CTRL). Writing 0 triggers COMe reset, 1 indicates normal."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC mask specific interrupt signals of the SCM",
+        "qa_pairs": [
+            {
+                "question": "What is the interrupt mask register address and bit definition in the SCM CPLD?",
+                "short_answers": [
+                    "The SCM CPLD's 0x28 register (SYSTEM_INTERRUPT_MASK) is the interrupt mask register. Bits like bit5 (BCM54616S_INT_N_MASK), bit4 (LM75B_INT_N_MASK) etc., correspond to masking different interrupt sources; 1 indicates mask (interrupt disabled), 0 indicates no mask (interrupt enabled)."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the enable status of SCM power rails",
+        "qa_pairs": [
+            {
+                "question": "What is the register address and bit definition for power enable signals in the SCM CPLD?",
+                "short_answers": [
+                    "The SCM CPLD's 0x31 register (SYSTEM_POWER_ENABLE) stores the power enable status. Bits like bit3 (XP12R0V_COME_EN), bit2 (XP5R0V_COME_EN), bit1 (XP1R8V_EN), bit0 (XP3R3V_SSD_EN) correspond to the enable status of different power rails; 1 indicates enabled (power ON), 0 indicates disabled (power OFF)."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC control the enable status of the SCM I2C buffer",
+        "qa_pairs": [
+            {
+                "question": "What is the register address and bit definition for the I2C buffer enable signal in the SCM CPLD?",
+                "short_answers": [
+                    "bit3 (I2C1_BUF_EN) of the SCM CPLD's 0x32 register (SYSTEM_ISO_1) is used to control the I2C buffer enable; 0 indicates enabled, 1 indicates disabled."
+                ]
+            }
+        ]
+    },{
+        "question": "In Wedge400C, how does BMC set the reset for devices on the SCM board",
+        "qa_pairs": [
+            {
+                "question": "Who controls the reset of SCM board devices?",
+                "short_answers": [
+                    "SCM sys_CPLD"
+                ]
+            },
+            {
+                "question": "What is the hardware topology of the SCM sys_CPLD?",
+                "short_answers": [
+                    "BMC is directly connected to the SCM sys_CPLD via the I2C bus. The CPLD's I/O ports are connected to the reset interfaces of various devices."
+                ]
+            },
+            {
+                "question": "Through which communication link does the BMC control the reset signal?",
+                "short_answers": [
+                    "I2C_3 0x3e SCM sys_CPLD"
+                ]
+            },
+            {
+                "question": "What is the communication protocol or register for setting the reset signal?",
+                "short_answers": [
+                    "SCM sys_CPLD\n0x10 SCM_RST_CTRL\nbit4 (ISO_SMB_CB_RESET_N) system PCIe reset\nbit3 (NVME_SSD_PERST) M.2 reset\nbit2 (PCA9548_RST_N) PCA9548 reset\nbit1 (CPLD_COM_PHY_RST_N) BCM54616S reset\nbit0 (SYS_RESET_N) COMe reset"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC obtain the reset status of the DOM FPGA",
+        "qa_pairs": [
+            {
+                "question": "Who controls the device reset?",
+                "short_answers": [
+                    "SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "What is the hardware topology of the sys_CPLD?",
+                "short_answers": [
+                    "BMC is directly connected to the SMB sys_CPLD via the I2C bus. The CPLD's I/O ports are connected to the reset interfaces of various devices."
+                ]
+            },
+            {
+                "question": "Through which communication link does the BMC control the reset signal?",
+                "short_answers": [
+                    "I2C_13 0x3e SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "What is the communication protocol or register for setting the reset signal?",
+                "short_answers": [
+                    "0x07 SYSPLD_REG_SYSTEM_RST_3"
+                ]
+            },
+            {
+                "question": "What are the register address and bit definition for the DOM FPGA reset signal in the SMB sys_CPLD?",
+                "short_answers": [
+                    "0x07 SYSPLD_REG_SYSTEM_RST_3\nbit1 DOM_FPGA2_RST_IN DOM_FPGA2_RST.\nbit0 DOM_FPGA1_RST_IN DOM_FPGA1_RST. "
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC set the reset of the SCM sys_CPLD",
+        "qa_pairs": [
+            {
+                "question": "Who controls the device reset?",
+                "short_answers": [
+                    "SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "What is the hardware topology of the sys_CPLD?",
+                "short_answers": [
+                    "BMC is directly connected to the SMB sys_CPLD via the I2C bus. The CPLD's I/O ports are connected to the reset interfaces of various devices."
+                ]
+            },
+            {
+                "question": "Through which communication link does the BMC control the reset signal?",
+                "short_answers": [
+                    "I2C_13 0x3e SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "What is the communication protocol or register for setting the reset signal?",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x06 SYSPLD_REG_SYSTEM_RST_2"
+                ]
+            },
+            {
+                "question": "What information do the bits in the register represent?",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x06 SYSPLD_REG_SYSTEM_RST_2\nbit5 SCM_CPLD_RESET R/W 1 SCM CPLD reset."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC set the reset of the FCM sys_CPLD",
+        "qa_pairs": [
+            {
+                "question": "Who controls the device reset?",
+                "short_answers": [
+                    "SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "What is the hardware topology of the sys_CPLD?",
+                "short_answers": [
+                    "BMC is directly connected to the SMB sys_CPLD via the I2C bus. The CPLD's I/O ports are connected to the reset interfaces of various devices."
+                ]
+            },
+            {
+                "question": "Through which communication link does the BMC control the reset signal?",
+                "short_answers": [
+                    "I2C_13 0x3e SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "What is the communication protocol or register for setting the reset signal?",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x06 SYSPLD_REG_SYSTEM_RST_2"
+                ]
+            },
+            {
+                "question": "What information do the bits in the register represent?",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x06 SYSPLD_REG_SYSTEM_RST_2\nbit4 FCM_CPLD_RST R/W 1 FCB board reset. "
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC set the reset of the PCA9548 I/O expander chip on the SMB board",
+        "qa_pairs": [
+            {
+                "question": "Who controls the device reset?",
+                "short_answers": [
+                    "SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "What is the hardware topology of the sys_CPLD?",
+                "short_answers": [
+                    "BMC is directly connected to the SMB sys_CPLD via the I2C bus. The CPLD's I/O ports are connected to the reset interfaces of various devices."
+                ]
+            },
+            {
+                "question": "Through which communication link does the BMC control the reset signal?",
+                "short_answers": [
+                    "I2C_13 0x3e SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "What is the communication protocol or register for setting the reset signal?",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x06 SYSPLD_REG_SYSTEM_RST_2"
+                ]
+            },
+            {
+                "question": "What information do the bits in the register represent?",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x06 SYSPLD_REG_SYSTEM_RST_2\nbit0 PCA9548A_2_RESET_N R/W 1 SMB board 9548 reset. BMC I2C bus 9. "
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC set the reset of the TPM module",
+        "qa_pairs": [
+            {
+                "question": "Who controls the device reset?",
+                "short_answers": [
+                    "SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "What is the hardware topology of the sys_CPLD?",
+                "short_answers": [
+                    "BMC is directly connected to the SMB sys_CPLD via the I2C bus. The CPLD's I/O ports are connected to the reset interfaces of various devices."
+                ]
+            },
+            {
+                "question": "Through which communication link does the BMC control the reset signal?",
+                "short_answers": [
+                    "I2C_13 0x3e SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "What is the communication protocol or register for setting the reset signal?",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x06 SYSPLD_REG_SYSTEM_RST_2"
+                ]
+            },
+            {
+                "question": "What information do the bits in the register represent?",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x06 SYSPLD_REG_SYSTEM_RST_2\nbit6 TPM_RST_N R/W 1 TPM module reset."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC set the reset for devices on the SMB board",
+        "qa_pairs": [
+            {
+                "question": "Who controls the device reset?",
+                "short_answers": [
+                    "SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "What is the hardware topology of the sys_CPLD?",
+                "short_answers": [
+                    "BMC is directly connected to the SMB sys_CPLD via the I2C bus. The CPLD's I/O ports are connected to the reset interfaces of various devices."
+                ]
+            },
+            {
+                "question": "Through which communication link does the BMC control the reset signal?",
+                "short_answers": [
+                    "I2C_13 0x3e SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "What is the communication protocol or register for setting the reset signal?",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x05 SYSPLD_REG_SYSTEM_RST_1\n0x06 SYSPLD_REG_SYSTEM_RST_2\n0x07 SYSPLD_REG_SYSTEM_RST_3"
+                ]
+            },
+            {
+                "question": "What information do the bits in the register represent?",
+                "short_answers": [
+                    "SMB sys_CPLD\n0x05 SYSPLD_REG_SYSTEM_RST_1\nbit7 (SI5391B_RST_N) clock buffer reset\nbit6 (USBHUB_RST_N) USB bridge reset\nbit5 (BMC_LPCRST_N) BMC_LPC reset\nbit4 (BMC_PHY_2_RST_N ) OOB front panel Phy reset\nbit3 (BMC_PHY_1_RST_N) OOB RGMII Phy reset\nbit2 (BCM5389_RESETB_N) OOB switch reset\nbit1 Reserved\nbit0 (MAC_RESET_N) GB reset\n\n0x06 SYSPLD_REG_SYSTEM_RST_2\nbit7 FT232_RESET_N R/W 1 FT232_RESET.\nbit6 TPM_RST_N R/W 1 TPM module reset.\nbit5 SCM_CPLD_RESET R/W 1 SCM CPLD reset.\nbit4 FCM_CPLD_RST R/W 1 FCB board reset.\nbit3 FCM_PCA9548_RST R/W 1 FCB board 9548 reset. BMC I2C bus 9.\nbit2 PCA9534_RST_N R/W 1 SMB board 9548 reset. BMC I2C bus 14.\nbit1 PCA9535_RST_N R/W 1 SMB board 9548 reset. BMC I2C bus 10.\nbit0 PCA9548A_2_RESET_N R/W 1 SMB board 9548 reset. BMC I2C bus 9.\n\n0x07 SYSPLD_REG_SYSTEM_RST_3\nbit1 DOM_FPGA2_RST_IN R/W 1 DOM_FPGA2_RST.\nbit0 DOM_FPGA1_RST_IN R/W 1 DOM_FPGA1_RST."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC control the write protection status of SPI Flash",
+        "qa_pairs": [
+            {
+                "question": "Who controls the SPI Flash write protection?",
+                "short_answers": [
+                    "SMB sys_CPLD "
+                ]
+            },
+            {
+                "question": "How does BMC access the SMB sys_CPLD?",
+                "short_answers": [
+                    "I2C_13 0x3e SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "What is the SPI Flash write protection control register address?",
+                "short_answers": [
+                    "0x40 register (SYSPLD_REG_MISC_BMC) of the SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "What is the register bit definition for SPI Flash write protection in the SMB sys_CPLD?",
+                "short_answers": [
+                    "0x40 register (SYSPLD_REG_MISC_BMC) of the SMB sys_CPLD\nbit7 CPLD_GB_QSPI_WP_N R/W 1 GB PCIE FW E2PROM WP\nbit6 CPLD_BMC_SPI_1_WP_N\nbit5 CPLD_BMC_PHY1_WP R/W 1 PHY1 E2 WP\nbit4 CPLD_BMC_SPI_2_WP_N\nbit3 CPLD_BMC_PHY2_WP R/W 1 PHY1 E2 WP\nbit2 SCM_SPI_WP_N R/W 1 COME BIOS WP\nbit1 FPGA1_SPI_WP_N R/W 1 FPGA SPI E2PROM WP\nbit0 FPGA2_SPI_WP_N R/W 1 FPGA SPI E2PROM WP; 1 indicates write protection enabled, 0 indicates disabled."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC set the core frequency of the GB chip",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for BMC to set GB frequency?",
+                "short_answers": [
+                    "BMC accesses the GB frequency register in the PWR_CPLD via the I2C bus. The PWR_CPLD controls the frequency configuration of the GB chip."
+                ]
+            },
+            {
+                "question": "What register controls the GB frequency?",
+                "short_answers": [
+                    "0x25 register (GB_FREQ_SET) of the PWR_CPLD is used to set the GB core frequency."
+                ]
+            },
+            {
+                "question": "What is the communication bus type and address?",
+                "short_answers": [
+                    "I2C_9 0x70 switch Channel8 (0x80) 0x3e"
+                ]
+            },
+            {
+                "question": "What is the range and meaning of the frequency setting value?",
+                "short_answers": [
+                    "Register value is 8-bit binary, default value 0x35 "
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC set the test mode for QSFP port LEDs",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for BMC controlling the LED test mode?",
+                "short_answers": [
+                    "BMC accesses the SMB sys_CPLD via the I2C_13 bus. Its 0x39 register controls the LED test mode, thereby switching the LED control logic."
+                ]
+            },
+            {
+                "question": "What register controls the test mode?",
+                "short_answers": [
+                    "0x39 register (SYSPLD_REG_PORT_LED_TEST) of the SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "What is the communication bus type and address?",
+                "short_answers": [
+                    "Communication bus type is I2C. SMB sys_CPLD is on the I2C_13 bus with address 0x3e."
+                ]
+            },
+            {
+                "question": "What is the bit definition for color control in test mode?",
+                "short_answers": [
+                    "0x39 register (SYSPLD_REG_PORT_LED_TEST). When bit3 is 1, it enters manual test mode. bit2 (LED_Green), bit1 (LED_Blue), bit0 (LED_Red): 1 lights up the corresponding color, 0 turns it off."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC set the write protection status of the GB PCIe firmware EEPROM",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for BMC to control EEPROM write protection?",
+                "short_answers": [
+                    "BMC accesses the SMB sys_CPLD via the I2C bus. The CPLD is connected to the write protection pin of the EEPROM."
+                ]
+            },
+            {
+                "question": "What are the register and bit definition for controlling write protection?",
+                "short_answers": [
+                    "0x40 register (SYSPLD_REG_MISC_BMC) of the SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "What is the communication bus type and address?",
+                "short_answers": [
+                    "I2C_13  0x3e"
+                ]
+            },
+            {
+                "question": "How is the write protection command parsed?",
+                "short_answers": [
+                    "0x40 SYSPLD_REG_MISC_BMC bit7 CPLD_GB_QSPI_WP_N. Writing 1 to the target bit enables write protection for the corresponding EEPROM (writes disabled); writing 0 disables write protection (writes allowed)."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC configure the reset of the clock chip SI5391B",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for BMC to control SI5391B reset?",
+                "short_answers": [
+                    "BMC communicates with the SI5391B (address 0x74) via the I2C_10 bus, and can also indirectly control it through the reset register of the SMB sys_CPLD."
+                ]
+            },
+            {
+                "question": "What register controls the SI5391B reset?",
+                "short_answers": [
+                    "0x05 register (SYSPLD_REG_SYSTEM_RST_1) of the SMB sys_CPLD, or SI5391 I2C register 0x001C"
+                ]
+            },
+            {
+                "question": "What is the communication bus type and address?",
+                "short_answers": [
+                    "Soft reset: I2C_10 bus, SI5391B address 0x74, register 0x001C; Via CPLD reset: I2C_13 bus, SMB sys_CPLD address 0x3e, 0x05 register (SYSPLD_REG_SYSTEM_RST_1)"
+                ]
+            },
+            {
+                "question": "What is the reset command?",
+                "short_answers": [
+                    "When using the CPLD, writing bit7 as 0 is parsed as triggering SI5391B reset; writing 1 is parsed as releasing reset, and the chip re-locks the clock."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC reset the NVME SSD device",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for BMC to control the NVME SSD device reset?",
+                "short_answers": [
+                    "BMC accesses the SCM sys_CPLD via the I2C bus. The CPLD is connected to the PERST pin of the NVMe device."
+                ]
+            },
+            {
+                "question": "What is the register and bit definition for controlling the PCIe device reset?",
+                "short_answers": [
+                    "bit3 (NVME_SSD_PERST) of the 0x10 register (SCM_RST_CTRL) in the SCM CPLD is used to control NVMe SSD reset. A bit value of 0 triggers the reset."
+                ]
+            },
+            {
+                "question": "What is the communication bus type and address?",
+                "short_answers": [
+                    "I2C_3 0x3e"
+                ]
+            },
+            {
+                "question": "How is the reset command parsed?",
+                "short_answers": [
+                    "Writing 0 to the target bit triggers device reset; writing 1 releases the reset."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC set the enable status of USB ports",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for BMC controlling USB port enable?",
+                "short_answers": [
+                    "BMC communicates with the SMB sys_CPLD (address 0x3e) via the I2C_13 bus. The CPLD is connected to the enable pin of the USB hub."
+                ]
+            },
+            {
+                "question": "What are the register and bit definition for controlling USB port enable?",
+                "short_answers": [
+                    "bits 0-2 (USB_EN1-3) of the 0x41 register (SYSPLD_REG_MISC_1) in the SMB sys_CPLD control the enable for each USB port. A bit value of 1 enables the port."
+                ]
+            },
+            {
+                "question": "What is the communication bus type and address?",
+                "short_answers": [
+                    "I2C_13 0x3e"
+                ]
+            },
+            {
+                "question": "How is the enable command parsed?",
+                "short_answers": [
+                    "SMB sys_CPLD 0x41 register (SYSPLD_REG_MISC_1)\nbit2 USB_EN3\nbit1 USB_EN2\nbit0 USB_EN1\nA bit value of 1 enables."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC configure SCM power enable",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for BMC to control SCM power enable?",
+                "short_answers": [
+                    "BMC accesses the SMB sys_CPLD via the I2C bus. The sys_CPLD is connected to the SCM's power control circuit."
+                ]
+            },
+            {
+                "question": "What are the register and bit definition for controlling SCM power enable?",
+                "short_answers": [
+                    "0x42 register (SYSPLD_REG_MISC_2) of the SMB sys_CPLD"
+                ]
+            },
+            {
+                "question": "What is the communication bus type and address?",
+                "short_answers": [
+                    "I2C_13 0x3e"
+                ]
+            },
+            {
+                "question": "How is the enable command parsed?",
+                "short_answers": [
+                    "0x42 register (SYSPLD_REG_MISC_2) of the SMB sys_CPLD\nWhen bit2 is 1, it turns on the SCM power supply; writing 0 turns off SCM power."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC clear the interrupt status of the SCM CPLD",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for BMC to clear SCM CPLD interrupts?",
+                "short_answers": [
+                    "BMC accesses the SCM CPLD via the I2C bus, reading its interrupt register to clear the interrupt status."
+                ]
+            },
+            {
+                "question": "What are the register and bit definition for clearing interrupt status?",
+                "short_answers": [
+                    "0x21 register (SYSTEM_INTERRUPT) of the SCM CPLD is the interrupt report register. It uses a read-clear (RC) mechanism; reading this register clears the corresponding interrupt bit."
+                ]
+            },
+            {
+                "question": "What is the communication bus type and address?",
+                "short_answers": [
+                    "I2C_3 0x3e"
+                ]
+            },
+            {
+                "question": "How is the interrupt clear command parsed?",
+                "short_answers": [
+                    "When a read operation is performed on the 0x21 register of the SCM CPLD, it automatically clears all currently triggered interrupt status (register bits change from 0 to 1)."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC enable power for the M.2 SSD on the SCM",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for BMC to enable M.2 SSD power?",
+                "short_answers": [
+                    "BMC accesses the SCM CPLD via the I2C bus. The SCM CPLD controls the M.2 SSD power enable signal."
+                ]
+            },
+            {
+                "question": "What are the register and bit definition for controlling M.2 SSD power enable?",
+                "short_answers": [
+                    "0x31 register (SYSTEM_POWER_ENABLE) of the SCM CPLD"
+                ]
+            },
+            {
+                "question": "What is the communication bus type and address?",
+                "short_answers": [
+                    "I2C_3 0x3e."
+                ]
+            },
+            {
+                "question": "How is the enable command parsed?",
+                "short_answers": [
+                    "Writing 1 to bit0 of the SCM CPLD's 0x31 register turns on the 3.3V power supply for the M.2 SSD; writing 0 turns off the power supply."
+                ]
+            }
+        ]
+    },{
+        "question": "In Wedge400C, how does BMC trigger PCIe link retraining",
+        "qa_pairs": [
+            {
+                "question": "Under what circumstances will PCIe link retraining be triggered?",
+                "short_answers": [
+                    "PCIe link reset triggers retraining"
+                ]
+            },
+            {
+                "question": "What is the register for controlling PCIe reset?",
+                "short_answers": [
+                    "bit4 (ISO_SMB_CB_RESET_N) of the 0x10 register (SCM_RST_CTRL) in the SCM CPLD. Writing 0 triggers PCIe reset (retraining)."
+                ]
+            },
+            {
+                "question": "What is the communication bus type and address?",
+                "short_answers": [
+                    "I2C_3 0x3e"
+                ]
+            },
+            {
+                "question": "How is the trigger command parsed?",
+                "short_answers": [
+                    "0x10 register (SCM_RST_CTRL) of the SCM CPLD\n bit4 (ISO_SMB_CB_RESET_N), writing 0 triggers PCIe reset (retraining)."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC reset the DOM FPGA",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for BMC to reset the DOM FPGA?",
+                "short_answers": [
+                    "BMC accesses the SMB sys_CPLD (address 0x3e) via the I2C_13 bus. The sys_CPLD's reset register is connected to the DOM FPGA's reset pin."
+                ]
+            },
+            {
+                "question": "What are the register and bit definition for controlling DOM FPGA reset?",
+                "short_answers": [
+                    "bit1 (DOM_FPGA2_RST_IN) and bit0 (DOM_FPGA1_RST_IN) of the 0x07 register (SYSPLD_REG_SYSTEM_RST_3) in the SMB sys_CPLD. Writing 0 triggers reset (active-low)."
+                ]
+            },
+            {
+                "question": "What is the communication bus type and address?",
+                "short_answers": [
+                    "I2C_13 0x3e"
+                ]
+            },
+            {
+                "question": "How is the reset command parsed?",
+                "short_answers": [
+                    "0x07 register (SYSPLD_REG_SYSTEM_RST_3) of the SMB sys_CPLD\nbit1 (DOM_FPGA2_RST_IN)\nbit0 (DOM_FPGA1_RST_IN)\nWriting 0 triggers reset (active-low)."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC configure its own UART interface baud rate",
+        "qa_pairs": [
+            {
+                "question": "What operating system is on the BMC chip?",
+                "short_answers": [
+                    "ARM core, Linux system, running C/C++ programs"
+                ]
+            },
+            {
+                "question": "What is the hardware communication topology for BMC to configure UART baud rate?",
+                "short_answers": [
+                    "The baud rate of the BMC's UART interface is controlled by internal registers, requiring no external hardware intervention."
+                ]
+            },
+            {
+                "question": "What is the register controlling the UART baud rate?",
+                "short_answers": [
+                    "The Baud Rate Divisor registers (DLH and DLL) in the UART control registers of the BMC (AST2520) are used to set the baud rate."
+                ]
+            },
+            {
+                "question": "How is the baud rate parameter parsed?",
+                "short_answers": [
+                    "Calculate the divisor (= system clock / (16 × baud rate)) based on the target baud rate (e.g., 115200), and write it to DLH (high 8 bits) and DLL (low 8 bits) respectively."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC switch the I2C channel of PCA9548",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology of the PCA9548?",
+                "short_answers": [
+                    "The PCA9548, as an I2C multiplexer, connects to the BMC via the I2C bus. PCA9548s in different locations are distributed on buses like I2c_3 (0x70), I2c_9 (0x70), I2c_12 (0x70), etc., to expand I2C channels."
+                ]
+            },
+            {
+                "question": "What are the register and bit definition for controlling PCA9548 channel switching?",
+                "short_answers": [
+                    "By writing to the control register (0x00) of the PCA9548, each bit corresponds to a channel (e.g., bit0 corresponds to Channel1, bit1 to Channel2). The corresponding channel is enabled when its bit is written to 1."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC query the currently active channel of PCA9548",
+        "qa_pairs": [
+            {
+                "question": "What is the register for querying PCA9548 channel status?",
+                "short_answers": [
+                    "Read the control register (0x00) of the PCA9548. The binary bits of the register value indicate the currently active channels (e.g., 0x01 indicates Channel1 active, 0x02 indicates Channel2 active)."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC configure the GPIO pin direction of PCA9535",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology of the PCA9535?",
+                "short_answers": [
+                    "The PCA9535, as an I2C IO expander, is located on the I2c_7 bus (address 0x20). It is used to control peripherals like LEDs. The BMC configures pin direction by reading/writing its registers via the I2C bus."
+                ]
+            },
+            {
+                "question": "What is the register controlling the PCA9535 pin direction?",
+                "short_answers": [
+                    "By writing to the configuration registers (0x00 is the input direction register, 0x01 is the output direction register). A bit value of 1 indicates input, 0 indicates output."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC query the GPIO pin level of PCA9535",
+        "qa_pairs": [
+            {
+                "question": "What is the register for reading the PCA9535 pin level?",
+                "short_answers": [
+                    "Read the input port register (0x00). The level state of the corresponding bits (1 for high level, 0 for low level) reflects the current pin status."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC configure the startup current limit of the hot-swap controller ADM1278",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for BMC to configure the ADM1278 current limit?",
+                "short_answers": [
+                    "BMC accesses the ADM1278 (address 0x10) via Channel1 (0x01) of the PCA9548 switch (address 0x70) on the I2C_3 bus, configuring its current limit register."
+                ]
+            },
+            {
+                "question": "What is the register controlling the current limit?",
+                "short_answers": [
+                    "0xF6 STRT_UP_IOUT_LIM "
+                ]
+            },
+            {
+                "question": "What is the communication bus type and address?",
+                "short_answers": [
+                    "Communication bus type is I2C. ADM1278 is on Channel1 of the I2C_3 bus, address 0x10."
+                ]
+            },
+            {
+                "question": "How is the current limit parameter parsed?",
+                "short_answers": [
+                    "Write data format is a 12-bit value (0x0000–0x000F). Write value N (0–15), corresponding current limit is (ISET × (N+1)/16)."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC query the current control mode of the LED",
+        "qa_pairs": [
+            {
+                "question": "What are the register and bit definition for LED control mode?",
+                "short_answers": [
+                    "By reading bit3 of the 0x39 register (SYSPLD_REG_PORT_LED_TEST) in the SMB sys_CPLD. 1 indicates manual test mode, 0 indicates FPGA automatic control mode."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC set the enable status of the power rail XP3R3V_BMC",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for setting XP3R3V_BMC enable?",
+                "short_answers": [
+                    "The enable for XP3R3V_BMC is controlled by the PWR1220 chip. BMC communicates with PWR1220 via the I2C_2 bus. PWR1220 is connected to the power control circuit to implement enable switching."
+                ]
+            },
+            {
+                "question": "What are the chip model and register controlling XP3R3V_BMC enable?",
+                "short_answers": [
+                    "The involved chip is PWR1220, configured via its enable control register (the enable bit corresponding to XP3R3V_BMC)."
+                ]
+            },
+            {
+                "question": "What is the communication bus type and address?",
+                "short_answers": [
+                    "Communication bus type is I2C. PWR1220 is on the I2C_2 bus, address 0x3A."
+                ]
+            },
+            {
+                "question": "What is the bit definition for writing the enable status register?",
+                "short_answers": [
+                    "In PWR1220, the enable bit corresponding to XP3R3V_BMC being 1 indicates enabled (power ON), 0 indicates disabled (power OFF)."
+                ]
+            },
+            {
+                "question": "How is the enable status data parsed?",
+                "short_answers": [
+                    "When the write value is 1, it is parsed as turning on XP3R3V_BMC power supply; writing 0 is parsed as turning off the power supply, ensuring the dependent XP5R0V power rail is normal."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC configure alerts for the hot-swap controller ADM1278",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for BMC to configure ADM1278 alerts?",
+                "short_answers": [
+                    "BMC accesses the ADM1278 (e.g., located on Channel1 of the I2C_3 bus, address 0x10) via the I2C bus, directly writing to its threshold registers."
+                ]
+            },
+            {
+                "question": "What is the register controlling alert enable?",
+                "short_answers": [
+                    "ALERT1_CONFIG register (address: 0xD5) and ALERT2_CONFIG register (address: 0xD6)"
+                ]
+            },
+            {
+                "question": "What is the communication bus type and address?",
+                "short_answers": [
+                    "Communication bus type is I2C. ADM1278 is on the corresponding I2C bus (e.g., I2C_3), accessed via Channel1 (0x01) of the PCA9548 switch, address 0x10."
+                ]
+            },
+            {
+                "question": "How to configure the alert register and how is it parsed?",
+                "short_answers": [
+                    "These registers are 16-bit readable/writable, with a default reset value of 0x0000 (all alerts disabled). Write data is a bitmask, with each bit corresponding to a specific alert source:\nBit definitions (using ALERT1_CONFIG as an example, ALERT2_CONFIG has the same structure):\nBit 15: FET_HEALTH_FAULT_EN1 (FET health fault enable)\nBit 14: IOUT_OC_FAULT_EN1 (overcurrent fault enable)\nBit 13: VIN_OV_FAULT_EN1 (input overvoltage fault enable)\nBit 12: VIN_UV_FAULT_EN1 (input undervoltage fault enable)\nBit 11: CML_ERROR_EN1 (communication error enable)\nBit 10: IOUT_OC_WARN_EN1 (overcurrent warning enable)\nBit 9: HYSTERETIC_EN1 (hysteresis output enable)\nBit 8: VIN_OV_WARN_EN1 (input overvoltage warning enable)\nBit 7: VIN_UV_WARN_EN1 (input undervoltage warning enable)\nBit 6: VOUT_OV_WARN_EN1 (output overvoltage warning enable)\nBit 5: VOUT_UV_WARN_EN1 (output undervoltage warning enable)\nBit 4: HS_INLIM_EN1 (hot-swap in-limit status enable)\nBit 3: PIN_OP_WARN_EN1 (input overpower warning enable)\nBit 2: OT_FAULT_EN1 (overtemperature fault enable)\nBit 1: OT_WARN_EN1 (overtemperature warning enable)"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC enable the overcurrent fault alert of the hot-swap controller ADM1278",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for BMC to configure ADM1278 alerts?",
+                "short_answers": [
+                    "BMC accesses the ADM1278 (e.g., located on Channel1 of the I2C_3 bus, address 0x10) via the I2C bus, directly writing to its threshold registers."
+                ]
+            },
+            {
+                "question": "What is the register controlling the alert threshold?",
+                "short_answers": [
+                    "ALERT1_CONFIG register (address: 0xD5) and ALERT2_CONFIG register (address: 0xD6)"
+                ]
+            },
+            {
+                "question": "What is the communication bus type and address?",
+                "short_answers": [
+                    "Communication bus type is I2C. ADM1278 is on the corresponding I2C bus (e.g., I2C_3), accessed via Channel1 (0x01) of the PCA9548 switch, address 0x10."
+                ]
+            },
+            {
+                "question": "How to configure the alert register and how is it parsed?",
+                "short_answers": [
+                    "These registers are 16-bit readable/writable, with a default reset value of 0x0000 (all alerts disabled). Write data is a bitmask, with each bit corresponding to a specific alert source:\nBit definitions (using ALERT1_CONFIG as an example, ALERT2_CONFIG has the same structure):\nBit 14: IOUT_OC_FAULT_EN1 (overcurrent fault enable)\n"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC enable the overcurrent alert of the hot-swap controller ADM1278",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for BMC to configure ADM1278 alerts?",
+                "short_answers": [
+                    "BMC accesses the ADM1278 (e.g., located on Channel1 of the I2C_3 bus, address 0x10) via the I2C bus, directly writing to its threshold registers."
+                ]
+            },
+            {
+                "question": "What is the register controlling the alert threshold?",
+                "short_answers": [
+                    "ALERT1_CONFIG register (address: 0xD5) and ALERT2_CONFIG register (address: 0xD6)"
+                ]
+            },
+            {
+                "question": "What is the communication bus type and address?",
+                "short_answers": [
+                    "Communication bus type is I2C. ADM1278 is on the corresponding I2C bus (e.g., I2C_3), accessed via Channel1 (0x01) of the PCA9548 switch, address 0x10."
+                ]
+            },
+            {
+                "question": "How to configure the alert register and how is it parsed?",
+                "short_answers": [
+                    "These registers are 16-bit readable/writable, with a default reset value of 0x0000 (all alerts disabled). Write data is a bitmask, with each bit corresponding to a specific alert source:\nBit definitions (using ALERT1_CONFIG as an example, ALERT2_CONFIG has the same structure):\nBit 10: IOUT_OC_WARN_EN1 (overcurrent warning enable)"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC set the channel of the I2C switch PCA9548",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for BMC to control PCA9548 channel switching?",
+                "short_answers": [
+                    "BMC directly accesses the PCA9548 (address 0x70) via the corresponding I2C bus (e.g., I2C_3, I2C_9, I2C_12), writing the channel control value."
+                ]
+            },
+            {
+                "question": "What is the register controlling the PCA9548 channel?",
+                "short_answers": [
+                    "The 0x00 register of the PCA9548 is the channel control register. Each bit corresponds to a channel (bit0 corresponds to Channel1, bit1 to Channel2, etc.)."
+                ]
+            },
+            {
+                "question": "What is the communication bus type and address?",
+                "short_answers": [
+                    "Communication bus type is I2C. PCA9548 addresses are 0x70 on different buses (e.g., I2C_3, I2C_9, I2C_12)."
+                ]
+            },
+            {
+                "question": "How is the channel configuration value parsed?",
+                "short_answers": [
+                    "A write value of 0x01 is parsed as enabling Channel1; 0x02 enables Channel2, and so on (supports single or multiple channels enabled simultaneously)."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC enable the function of the hot-swap controller ADM1278",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for BMC to enable ADM1278?",
+                "short_answers": [
+                    "BMC accesses the ADM1278 via the I2C bus, directly configuring its enable register."
+                ]
+            },
+            {
+                "question": "What are the register and bit definition controlling ADM1278 enable?",
+                "short_answers": [
+                    "OPERATION register (address: 0x01)"
+                ]
+            },
+            {
+                "question": "What is the communication bus type and address?",
+                "short_answers": [
+                    "Communication bus type is I2C. ADM1278 is on the I2C_3 bus, accessed via Channel1 (0x01) of the PCA9548 switch, address 0x10."
+                ]
+            },
+            {
+                "question": "How is the enable command parsed?",
+                "short_answers": [
+                    "This register is 8-bit readable/writable, with a default reset value of 0x80 (enabled state). The key bit is Bit 7 (ON bit):\nBit 7 (ON): Controls hot-swap output status.\n0: Disable output (GATE pin pulled low).\n1: Enable output (allows GATE to drive external FET)."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC enable the output channel of POWR1220",
+        "qa_pairs": [
+            {
+                "question": "What is the communication link between BMC and PWR1220?",
+                "short_answers": [
+                    "BMC communicates with the PWR1220 chip (address 0x3A) via the I2C_2 bus. PWR1220 controls the enable signal for the XP1R8V_FPGA power rail, which provides 1.8V power to the DOM FPGA."
+                ]
+            },
+            {
+                "question": "What is the register for PWR1220 channel enable?",
+                "short_answers": [
+                    "0x0E gp_output1 R/W GPOUT[8:1] 0 0 0 1 0 0 0 0\n0x0F gp_output2 R/W GPOUT[16:9] 0 0 0 0 0 0 0 0\n0x10 gp_output3 R/W GPOUT[20:17] X X X X 0 0 0 0"
+                ]
+            },
+            {
+                "question": "What is the bit definition of the PWR1220 channel enable register?",
+                "short_answers": [
+                    "GP_OUTPUT1 (address 0x0E) controls channels: OUT5–OUT12 (8 channels)\nGP_OUTPUT2 (address 0x0F) controls channels: OUT13–OUT20 (8 channels)\nGP_OUTPUT3 (address 0x10) controls channels: HVOUT1–HVOUT4 (high 4 bits)"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC configure the overtemperature fault alert for the hot-swap controller ADM1278",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for BMC to configure ADM1278?",
+                "short_answers": [
+                    "BMC accesses the ADM1278 (e.g., located on Channel1 of the I2C_3 bus, address 0x10) via the I2C bus, directly writing to its threshold registers."
+                ]
+            },
+            {
+                "question": "What is the register controlling alert enable?",
+                "short_answers": [
+                    "ALERT1_CONFIG register (address: 0xD5) and ALERT2_CONFIG register (address: 0xD6)"
+                ]
+            },
+            {
+                "question": "What is the communication bus type and address?",
+                "short_answers": [
+                    "Communication bus type is I2C. ADM1278 is on the corresponding I2C bus (e.g., I2C_3), accessed via Channel1 (0x01) of the PCA9548 switch, address 0x10."
+                ]
+            },
+            {
+                "question": "How to configure the overtemperature fault alert register and how is it parsed?",
+                "short_answers": [
+                    "These registers are 16-bit readable/writable, with a default reset value of 0x0000 (all alerts disabled). Write data is a bitmask, with each bit corresponding to a specific alert source:\nBit definitions (using ALERT1_CONFIG as an example, ALERT2_CONFIG has the same structure):\nBit 2: OT_FAULT_EN1 (overtemperature fault enable)\n"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In Wedge400C, how does BMC configure the overtemperature alert for the hot-swap controller ADM1278",
+        "qa_pairs": [
+            {
+                "question": "What is the hardware communication topology for BMC to configure ADM1278?",
+                "short_answers": [
+                    "BMC accesses the ADM1278 (e.g., located on Channel1 of the I2C_3 bus, address 0x10) via the I2C bus, directly writing to its threshold registers."
+                ]
+            },
+            {
+                "question": "What is the register controlling alert enable?",
+                "short_answers": [
+                    "ALERT1_CONFIG register (address: 0xD5) and ALERT2_CONFIG register (address: 0xD6)"
+                ]
+            },
+            {
+                "question": "What is the communication bus type and address?",
+                "short_answers": [
+                    "Communication bus type is I2C. ADM1278 is on the corresponding I2C bus (e.g., I2C_3), accessed via Channel1 (0x01) of the PCA9548 switch, address 0x10."
+                ]
+            },
+            {
+                "question": "How to configure the overtemperature alert register and how is it parsed?",
+                "short_answers": [
+                    "These registers are 16-bit readable/writable, with a default reset value of 0x0000 (all alerts disabled). Write data is a bitmask, with each bit corresponding to a specific alert source:\nBit definitions (using ALERT1_CONFIG as an example, ALERT2_CONFIG has the same structure):\nBit 1: OT_WARN_EN1 (overtemperature warning enable)"
+                ]
+            }
+        ]
+    }
+]

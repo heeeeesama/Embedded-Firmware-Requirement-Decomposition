@@ -51,7 +51,7 @@
             "deepnote": "BMC通过TMP75传感器（如0x48或0x4C）监控PSU2温度，配置THIGH和TLOW阈值，当温度超出阈值时触发ALERT引脚，BMC读取温度寄存器清除警报，并通过故障队列（F1/F0）设置连续故障次数以减少误报。",
             "mapping_miki": "在Wedge400C中，BMC通过以下路径监控PSU2的温度：\n\n1. **通信链路**：  \n   BMC通过I2C_9总线直接连接到SMB板上的PCA9548多路复用器（地址0x70），并通过该多路复用器的**通道0x02**（I2C Switch地址0x58）路由到PSU2的温度传感器。\n\n2. **温度传感器访问**：  \n   PSU2的温度传感器（如LM92芯片）直接连接到I2C总线。BMC通过上述链路访问该传感器的I2C地址（例如0x48或0x49），读取温度数据。\n\n3. **数据读取与处理**：  \n   BMC通过I2C协议向PSU2的温度传感器发送读取指令，获取实时温度值，并通过系统监控逻辑（如sys_CPLD寄存器或pwr_cpld的寄存器代理）进行异常检测（如温度过高触发告警）。\n\n**关键点**：  \n- BMC直接通过I2C_9和PCA9548多路复用器访问PSU2的温度传感器，无需依赖pwr_cpld的寄存器代理。  \n- 温度数据通过I2C协议读取，具体地址需根据硬件设计确认（如LM92的0x48/0x49）。  \n- 系统级监控（如sys_CPLD的TEMP_SENSOR_CPLD_ALERT寄存器）可能用于告警状态的传递，但温度值本身由I2C传感器直接提供。",
             "mapping_base": "BMC通过I2C_9总线(I2C协议)访问地址0x70连接到pca9548_smb，再通过I2C Switch(地址:0x58)的通道0x02路由到psu2。",
-            "mapping_base_wo_retri": "BMC通过I2C总线9的PSU MCU/DC PSU热插拔设备（地址0x58）监控PSU2温度，或通过TMP75/TMP421等温度传感器（如I2C总线4或12）读取数据。具体依赖硬件设计，但知识清单未明确PSU2温度传感器地址，需结合CPLD中断状态（如SYSPLD_REG_SYSTEM_INT_Status_1的位7/6）判断。"
+            "mapping_base_wo_retri": "BMC通过I2C总线9的PSU MCU/DC PSU热插拔设备（地址0x58）监控PSU2温度，或通过TMP75/TMP421等温度传感器（如I2C总线4或12）读取数据。具体依赖硬件设计，但提供的信息未明确PSU2温度传感器地址，需结合CPLD中断状态（如SYSPLD_REG_SYSTEM_INT_Status_1的位7/6）判断。"
         },
         "score":{
             "ircot": 2,
@@ -381,7 +381,7 @@
             "deepnote": "BMC通过I2C_4总线访问系统出口传感器（右）（地址0x4B），该传感器为LM75型号，用于监测风扇板右侧出风口温度。BMC读取温度数据并根据预设阈值触发警报或调整风扇速度，同时通过FAN_CPLD控制风扇操作以维持系统热平衡。",
             "mapping_miki": "BMC通过I2C_12总线（地址0x70）连接至pca9548_fcm，再通过I2C Switch（地址0x49）的通道0x04路由至tmp75_fcm2，该传感器用于监测风扇板右侧出风口温度。",
             "mapping_base": "BMC通过I2C_12总线(I2C协议)访问地址0x70的pca9548_fcm，经其I2C Switch(地址0x49)通道0x04连接至tmp75_fcm2(地址0x48)读取右侧出风口温度。",
-            "mapping_base_wo_retri": "好的，我现在需要回答用户的问题：“在Wedge400C中，BMC怎样监控风扇板右侧出风口温度”。根据提供的知识清单，我需要仔细分析相关的信息，然后给出准确的答案。\n\n首先，用户的问题是关于BMC如何监控风扇板右侧出风口温度的。根据知识清单中的信息，首先需要确定温度传感器的型号和通信路径。知识清单中提到，风扇板出风口温度传感器的芯片型号是TMP75，而BMC通过I2C_12总线连接到PCA9548，然后通过PCA9548的通道0x04访问TMP75。因此，通信链路应该是BMC的I2C_12总线连接到PCA9548的地址0x49，然后通过通道0x04连接到TMP75的地址0x49？或者可能需要确认PCA9548的地址和通道是否正确。\n\n接下来，需要确认TMP75的地址。根据知识清单，PCA9548的地址是0x49，而TMP75通过该Switch的通道0x04访问。通常，PCA9548的每个通道对应不同的I2C地址，所以可能TMP75的地址是0x49加上通道号？或者可能通道号是用于选择不同的设备，而TMP75的地址是0x49？这里可能需要更仔细的分析。例如，PCA9548的地址是0x49，当通过通道0x04选择设备时，实际的I2C地址可能由PCA9548的通道选择决定，而TMP75的地址可能被设置为某个特定值，比如0x48或0x49？不过根据知识清单中的描述，TMP75的地址是0x49，但可能需要通过PCA9548的通道0x04来访问，所以实际访问时，BMC会先发送PCA9548的地址0x49，然后选择通道0x04，再访问TMP75的地址？\n\n另外，读取TMP75的温度寄存器需要读取两个字节，数据格式是二进制补码，前12位有效，其余为零。解析时需要考虑补码，处理负数，以及分辨率设置等。但用户的问题是关于监控过程，所以可能需要更关注通信路径和步骤。\n\n总结步骤应该是：BMC通过I2C_12总线发送数据到PCA9548的地址0x49，选择通道0x04，然后访问TMP75的温度寄存器（地址可能是0x49？或者需要确认）。然后读取两个字节的数据，解析为温度值，考虑补码和分辨率等。\n\n不过根据知识清单中的描述，BMC通过I2C_12总线访问PCA9548，而PCA9548通过通道0x04连接到TMP75。因此，BMC需要先通过I2C_12与PCA9548通信，选择通道0x04，然后通过该通道访问TMP75的地址。TMP75的默认地址是0x00？或者可能需要确认。根据知识清单，TMP75的默认指针地址是0x00，但实际I2C地址可能不同。可能需要更仔细地查看知识清单中的描述。\n\n在知识清单中，提到“BMC I2C_12→0x70 PCA9548通道0x04→0x49 TMP75”，这可能表示PCA9548的地址是0x70？或者可能这里的描述有误？或者可能PCA9548的地址是0x49？需要仔细分析。例如，原句是“BMC I2C_12→0x70 PCA9548通道0x04→0x49 TMP75”，这可能表示BMC通过I2C_12总线连接到PCA9548的地址0x70，然后通过PCA9548的通道0x04连接到TMP75的地址0x49？或者可能PCA9548的地址是0x49，而通道0x04对应的是TMP75的地址？\n\n这里可能存在一些混淆，需要更仔细地解析。例如，通常PCA9548的地址是0x70或0x71，但根据知识清单中的描述，PCA9548的地址是0x49？或者可能这里的描述有误？或者可能PCA9548的地址是0x49，而通道0x04对应的是TMP75的地址？\n\n根据知识清单中的描述：“BMC通过I2C_12总线访问PCA9548；PCA9548通过I2C Switch通道0x04连接TMP75；PCA9548地址为0x49；” 所以，BMC通过I2C_12总线访问PCA9548的地址0x49，然后通过通道0x04连接到TMP75。因此，访问TMP75时，BMC需要先与PCA9548通信，选择通道0x04，然后访问TMP75的地址。但TMP75的I2C地址可能是什么？根据知识清单中的描述，可能TMP75的地址是0x49？或者可能需要通过PCA9548的通道选择，而TMP75的地址是0x48或0x49？这里可能需要更准确的信息。\n\n不过根据知识清单中的描述，“BMC I2C_12→0x70 PCA9548通道0x04→0x49 TMP75”，这可能表示PCA9548的地址是0x70，而通过通道0x04连接到TMP75的地址0x49？或者可能这里的描述有误？例如，可能PCA9548的地址是0x70，而通道0x04对应的是TMP75的地址0x49？或者可能这里的描述是说，BMC通过I2C_12总线连接到PCA9548的地址0x70，然后通过该PCA9548的通道0x04连接到TMP75的地址0x49？\n\n无论如何，关键点是BMC通过I2C_12总线访问PCA9548，然后通过PCA9548的通道0x04访问TMP75。因此，BMC需要先发送I2C命令到PCA9548的地址，选择通道0x04，然后读取TMP75的温度寄存器。读取时需要发送读取命令到TMP75的地址，然后读取两个字节的数据，解析为温度值。\n\n因此，答案应该包括以下步骤：BMC通过I2C_12总线访问PCA9548（地址0x49），选择通道0x04，然后通过该通道访问TMP75的温度寄存器（地址可能为0x49？或者需要确认），读取两个字节的数据，解析为温度值，考虑补码、分辨率等。\n\n不过根据知识清单中的描述，可能PCA9548的地址是0x49，而TMP75的地址是0x49？或者可能PCA9548的地址是0x70？这里可能存在矛盾，需要仔细检查。\n\n在知识清单中，明确提到“PCA9548地址为0x49”，所以BMC通过I2C_12总线访问PCA9548的地址0x49，然后通过通道0x04连接到TMP75。因此，访问TMP75时，BMC需要先与PCA9548通信，选择通道0x04，然后访问TMP75的地址。但TMP75的I2C地址可能是什么？根据知识清单中的描述，可能TMP75的地址是0x49？或者可能通过PCA9548的通道选择，而TMP75的地址是0x48？或者可能这里的描述有误？\n\n可能需要更仔细地查看知识清单中的描述。例如，原句是：“BMC I2C_12→0x70 PCA9548通道0x04→0x49 TMP75”，这可能表示PCA9548的地址是0x70，而通过通道0x04连接到TMP75的地址0x49？或者可能这里的描述是说，BMC通过I2C_12总线连接到PCA9548的地址0x70，然后通过该PCA9548的通道0x04连接到TMP75的地址0x49？如果是这样的话，那么访问TMP75的地址是0x49，但需要通过PCA9548的通道0x04来选择。\n\n不过根据知识清单中的另一条，“PCA9548地址为0x49”，"
+            "mapping_base_wo_retri": "BMC的I2C_12总线连接到PCA9548的地址0x49，然后通过通道0x04连接到TMP75的地址0x49，读取TMP75的温度寄存器，读取两个字节，数据格式是二进制补码，前12位有效，其余为零。"
         },
         "score":{
 "ircot": 2,
@@ -613,7 +613,7 @@
             "deepnote": "BMC通过读取Fan Interrupt Report Register (Register 0x04)中的Bit 0 (FAN1_INT)来获取风扇1故障状态，其中值为1表示故障，0表示无故障。",
             "mapping_miki": "BMC通过I2C_12总线(地址0x70)访问pca9548_fcm，经I2C Switch(地址0x3e)通道0x01连接到fan_cpld，读取Register 0x04的FAN1_INT位或Register 0x10*(i-1)+28的FAN1_PRESENT位获取风扇1故障状态。",
             "mapping_base": "BMC通过I2C_12总线(I2C协议)访问地址0x70的pca9548_fcm，通过其I2C Switch地址0x3e的通道0x01路由到fan_cpld，从而获取风扇1故障状态。",
-            "mapping_base_wo_retri": "答案：根据提供的知识清单，未提及BMC获取风扇1故障状态的具体方法或相关寄存器信息。"
+            "mapping_base_wo_retri": "答案：根据提供的信息，未提及BMC获取风扇1故障状态的具体方法或相关寄存器信息。"
         }
     ,
     "score":{
@@ -782,7 +782,7 @@
             "deepnote": "BMC通过PMBus读取System CPLD寄存器0x03中的PSU1_ACOK和PSU1_PWROK位判断PSU1输入/输出状态，结合PWR_CPLD寄存器0x10的CPLD_PSU1_ON位确认PSU1供电状态，并通过PWR_CPLD寄存器0x01的RELEASE_STA和CPLD_VER验证固件兼容性，从而推断PSU1的额定功率。",
             "mapping_miki": "答案：BMC通过I2C_9总线访问pca9548_smb，再通过I2C Switch的通道0x01路由到psu1的PMBus接口，读取PSU1的功率寄存器（如PMBus的0x02或0x03寄存器）获取当前额定功率。",
             "mapping_base": "答案：BMC通过I2C_9总线(I2C协议)访问地址0x70的pca9548_smb，再通过I2C Switch地址0x58的通道0x01路由到psu1，使用PMBus协议获取额定功率。",
-            "mapping_base_wo_retri": "答案：根据提供的知识清单，未明确提及BMC通过PMBus获取PSU1额定功率的具体机制。知识清单主要涉及CPLD寄存器、电源状态信号及控制逻辑，未包含PMBus接口或BMC与PSU的直接通信细节。"
+            "mapping_base_wo_retri": "答案：根据提供的信息，未明确提及BMC通过PMBus获取PSU1额定功率的具体机制。提供的信息主要涉及CPLD寄存器、电源状态信号及控制逻辑，未包含PMBus接口或BMC与PSU的直接通信细节。"
         }
     ,
     "score":{
@@ -2562,7 +2562,7 @@
             "deepnote": "BMC UART baud rate configuration is not explicitly detailed in the documents, but it is likely managed through BMC firmware or external configuration tools. The System CPLD and Register 0x3A handle UART port routing, not baud rate parameters. The debug interface may use predefined defaults (e.g., 115200 bps), but specific settings require BMC firmware or external tools.",
             "mapping_miki": "答案：BMC通过I2C总线与CPLD通信，使用Register 0x3A的UART Selection位配置UART接口的连接模式，但波特率由硬件默认值或固件设定，未在提供的材料中明确说明。",
             "mapping_base": "答案：BMC通过I2C总线访问UART控制器的寄存器，配置UART接口的波特率参数。具体通信链路为：总线编号I2C0，总线地址0x18，通信协议I2C。",
-            "mapping_base_wo_retri": "答案：根据提供的知识清单，未提及Wedge400C中BMC配置UART接口波特率的具体方法。"
+            "mapping_base_wo_retri": "答案：根据提供的信息，未提及Wedge400C中BMC配置UART接口波特率的具体方法。"
         }
     ,
     "score":{"ircot": 0, "iter-retgen": 0, "SuRe": 0, "base": 0, "base_wo_retri": 0, "deepnote": 0, "mapping_miki": 0, "mapping_base": 0, "mapping_base_wo_retri": 0}
